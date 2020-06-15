@@ -1,0 +1,5 @@
+book_filename: "C-Cpp-insa-sistemleri-paket-yoneticileri"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
