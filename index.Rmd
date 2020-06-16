@@ -22,7 +22,7 @@ Türkçe kapsamlı bir kitap olmasını hedefleyerek başladığımız bu yolcul
 
 ## Katkıda Bulunanlar {-}
 
-  Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bununla birlikte kitab oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
+  Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bunun ile birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
   
 ```{r echo=FALSE, eval=TRUE}
 contributors <- read.csv("extras/contributors.csv", fileEncoding = "UTF-8")
