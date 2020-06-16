@@ -3,7 +3,7 @@
 ["giris.html", "Bölüm 1 Giriş 1.1 IDE Kullanımı 1.2 Editör + Derleyici Kullanımı", " Bölüm 1 Giriş Bu kısımda önsözde bahsettiğimiz problemlere değineceğiz. 1.1 IDE Kullanımı 1.2 Editör + Derleyici Kullanımı "],
 ["ide.html", "Bölüm 2 IDE", " Bölüm 2 IDE IDE kullanımı, avantajları ve dezavantajları yazılacak. "],
 ["editör-ve-derleyici.html", "Bölüm 3 Editör ve Derleyici", " Bölüm 3 Editör ve Derleyici Editör ve derleyici kullanımından bahsedilecek. "],
-["cmake.html", "Bölüm 4 Cmake", " Bölüm 4 Cmake Cmake kullanımı. "],
-["final-words.html", "Bölüm 5 Final Words", " Bölüm 5 Final Words We have finished a nice book. "],
+["makefile-ve-make.html", "Bölüm 4 Makefile ve Make", " Bölüm 4 Makefile ve Make Makefile kullanımı. "],
+["cmake.html", "Bölüm 5 Cmake", " Bölüm 5 Cmake We have finished a nice book. "],
 ["referanslar.html", "Referanslar", " Referanslar "]
 ]
