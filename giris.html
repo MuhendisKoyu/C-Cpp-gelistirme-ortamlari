@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>C C++ İnşa Sistemleri ve Paket Yöneticileri</title>
+  <title>Bölüm 1 Giriş | C C++ İnşa Sistemleri ve Paket Yöneticileri</title>
   <meta name="description" content="Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="C C++ İnşa Sistemleri ve Paket Yöneticileri" />
+  <meta property="og:title" content="Bölüm 1 Giriş | C C++ İnşa Sistemleri ve Paket Yöneticileri" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="C C++ İnşa Sistemleri ve Paket Yöneticileri" />
+  <meta name="twitter:title" content="Bölüm 1 Giriş | C C++ İnşa Sistemleri ve Paket Yöneticileri" />
   
   <meta name="twitter:description" content="Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="giris.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="literature.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -107,50 +107,14 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">C C++ İnşa Sistemleri ve Paket Yöneticileri</h1>
-<p class="author"><em>Mühendis Köyü</em></p>
-<p class="date"><em>2020-06-16</em></p>
+<div id="giris" class="section level1">
+<h1><span class="header-section-number">Bölüm 1</span> Giriş</h1>
+<p>Bu kısımda önsözde bahsettiğimiz problemlere değineceğiz.</p>
+<div id="ide-kullanımı" class="section level2">
+<h2><span class="header-section-number">1.1</span> IDE Kullanımı</h2>
 </div>
-<div id="bir-tutam-yazı" class="section level1 unnumbered">
-<h1>Bir Tutam Yazı</h1>
-<div id="önsöz" class="section level2 unnumbered">
-<h2>Önsöz</h2>
-<p><img src="images/muhendis_koyu.jpg" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
-C/C++ yazılım geliştirme sadece bu dil ile kod yazmayı kapsamıyor. <em>IDE</em> (<strong>Integrated Development Environment – Tümleşik Geliştirme Ortamı</strong>) haricincde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. <em>IDE</em> kullanımı ise bizi <em>IDE</em>’ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde <em>dâhili</em> (<strong>builtin</strong>) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?</p>
-<p>İşte bu kitapla bu problemlere getirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik.</p>
-<p>Türkçe kapsamlı bir kitap olmasını hedefleyerek başladığımız bu yolculuğumuzda türü ne olursa olsun bizlere ulaşacak her bir eleştiri sönük bir mumun alev almasına yardımcı olan yanan bir mumun ateşi olacaktır.</p>
-</div>
-<div id="katkıda-bulunanlar" class="section level2 unnumbered">
-<h2>Katkıda Bulunanlar</h2>
-<p>Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bununla birlikte kitab oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.</p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">Ahmet Burak ÖZYURT</td>
-<td align="left">Enes AYDIN</td>
-<td align="left">Erdem GÜNEŞ</td>
-</tr>
-<tr class="even">
-<td align="left">Melisa CEYLAN</td>
-<td align="left">Muhammed Erkam KOCAER</td>
-<td align="left">Numan Faruk AYDIN</td>
-</tr>
-<tr class="odd">
-<td align="left">Semanur AYDINLIK</td>
-<td align="left">Senanur PAKSOY</td>
-<td align="left">Süleyman Emre IŞIK</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="lisans" class="section level2 unnumbered">
-<h2>Lisans</h2>
-<p>Kitabın tamamı veya bir kısmı, “kaynak gösterildiği ve değişiklik yapılmadığı” takdirde, herhangi bir izne gerek kalmadan, her türlü ortamda çoğaltılabilir, dağıtılabilir, kullanılabilir.</p>
-</div>
-<div id="bu-kitap-nasıl-geliştiriliyor" class="section level2 unnumbered">
-<h2>Bu Kitap Nasıl Geliştiriliyor</h2>
-<p>Mühendis Köyü <em>telegram</em> grubunda bulunan gönüllülük esasına dayalı bu kitaba girişilmiştir. Kitap, <em>R Markdown</em>’da <em>bookdown</em> paketi kullanılarak yazılmaktadır. <a href="https://github.com/MuhendisKoyu">Mühendis Köyü</a> <em>Github</em> organizasyonu altında bulunan <a href="https://github.com/MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri">C-Cpp-insa-sistemleri-paket-yoneticileri</a> reposunun <strong>master</strong> <em>dalına</em> (<strong>branch</strong>) <em>BuildingOfCCpp</em> ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından <strong>gh-pages</strong> dalına ise <em>R Markdown</em> olarak yazılan projenin <em>HTML</em> çıktısı yüklenmektedir. Kitap geliştirilirken <em>Trello</em> üzerinden paylaşım, <em>telegram</em> üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.</p>
+<div id="editör-derleyici-kullanımı" class="section level2">
+<h2><span class="header-section-number">1.2</span> Editör + Derleyici Kullanımı</h2>
 
 </div>
 </div>
@@ -159,8 +123,8 @@ C/C++ yazılım geliştirme sadece bu dil ile kod yazmayı kapsamıyor. <em>IDE<
           </div>
         </div>
       </div>
-
-<a href="giris.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
