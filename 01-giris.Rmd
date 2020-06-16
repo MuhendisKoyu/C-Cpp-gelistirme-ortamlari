@@ -1,0 +1,9 @@
+# Giriş {#giris}
+
+Bu kısımda önsözde bahsettiğimiz problemlere değineceğiz.
+
+## IDE Kullanımı
+
+## Editör + Derleyici Kullanımı
+
+

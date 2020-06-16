@@ -1,0 +1,3 @@
+# IDE
+
+_IDE_ kullanımı, avantajları ve dezavantajları yazılacak.

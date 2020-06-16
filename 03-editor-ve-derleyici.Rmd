@@ -1,0 +1,3 @@
+# Editör ve Derleyici
+
+Editör ve derleyici kullanımından bahsedilecek.
