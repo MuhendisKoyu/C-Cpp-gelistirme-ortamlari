@@ -13,7 +13,7 @@ description: "Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakk�
 
 ## Önsöz {-}
 
-<img src="images/muhendis_koyu.jpg" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
+<img src="images/muhendis_koyu.png" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
 C/C++ yazılım geliştirme sadece bu dil ile kod yazmayı kapsamıyor. _IDE_ (**Integrated Development Environment – Tümleşik Geliştirme Ortamı**) haricincde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. _IDE_ kullanımı ise bizi _IDE_'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde _dâhili_ (**builtin**) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?
 
 İşte bu kitapla bu problemlere getirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik. 
