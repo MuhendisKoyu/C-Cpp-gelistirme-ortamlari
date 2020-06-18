@@ -6,6 +6,7 @@ site: bookdown::bookdown_site
 documentclass: book
 biblio-style: apalike
 link-citations: yes
+favicon: images/favicon.ico
 description: "Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakkında detaylı bir anlatım içermeyi hedeflemektedir."
 ---
 
@@ -22,7 +23,7 @@ Türkçe kapsamlı bir kitap olmasını hedefleyerek başladığımız bu yolcul
 
 ## Katkıda Bulunanlar {-}
 
-  Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bunun ile birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
+Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bunun ile birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
   
 ```{r echo=FALSE, eval=TRUE}
 contributors <- read.csv("extras/contributors.csv", fileEncoding = "UTF-8")
@@ -42,5 +43,5 @@ Kitabın tamamı veya bir kısmı, "kaynak gösterildiği ve değişiklik yapıl
 
 ## Bu Kitap Nasıl Geliştiriliyor {-}
 
-Mühendis Köyü _telegram_ grubunda bulunan gönüllülük esasına dayalı bu kitaba girişilmiştir. Kitap, _R Markdown_'da _bookdown_ paketi kullanılarak yazılmaktadır. [Mühendis Köyü](https://github.com/MuhendisKoyu) _Github_ organizasyonu altında bulunan [C-Cpp-insa-sistemleri-paket-yoneticileri](https://github.com/MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri) reposunun **master** _dalına_ (**branch**) _BuildingOfCCpp_ ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından **gh-pages** dalına ise _R Markdown_ olarak yazılan projenin _HTML_ çıktısı yüklenmektedir. Kitap geliştirilirken _Trello_ üzerinden paylaşım, _telegram_ üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
+[Mühendis Köyü telegram](https://t.me/koyumuhendis) grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, _R Markdown_'da _bookdown_ paketi kullanılarak yazılmaktadır. [Mühendis Köyü](https://github.com/MuhendisKoyu) _Github_ organizasyonu altında bulunan [C-Cpp-insa-sistemleri-paket-yoneticileri](https://github.com/MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri) reposunun **master** _dalına_ (**branch**) _BuildingOfCCpp_ ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından **gh-pages** dalına ise _R Markdown_ olarak yazılan projenin _HTML_ çıktısı yüklenmektedir. Kitap geliştirilirken _Trello_ üzerinden paylaşım, _telegram_ üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
 
