@@ -1,0 +1,5 @@
+# Xmake
+
+##  Bölüm içeriği
+
+Xmake kullanımı avantajı dezavantajı...

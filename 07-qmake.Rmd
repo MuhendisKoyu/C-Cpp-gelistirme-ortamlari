@@ -1,0 +1,5 @@
+# Qmake
+
+##  Bölüm içeriği
+
+Qmake kullanımı avantajı dezavantajı...
