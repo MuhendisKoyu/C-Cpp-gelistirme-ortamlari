@@ -1,5 +1,5 @@
-# Msbuild
+# Msbuild {-}
 
-##  Bölüm içeriği
+##  Bölüm içeriği {-}
 
 Msbuild kullanımı avantajı dezavantajı...

@@ -1,5 +1,5 @@
-# Qmake
+# Qmake {-}
 
-##  Bölüm içeriği
+##  Bölüm içeriği {-}
 
 Qmake kullanımı avantajı dezavantajı...

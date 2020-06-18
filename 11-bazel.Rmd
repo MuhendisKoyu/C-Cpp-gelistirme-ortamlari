@@ -1,5 +1,5 @@
-# Bazel
+# Bazel {-}
 
-##  Bölüm içeriği
+##  Bölüm içeriği {-}
 
 Bazel kullanımı avantajı dezavantajı...

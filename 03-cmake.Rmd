@@ -1,5 +1,5 @@
-# Cmake
+# Cmake {-}
 
-##  Bölüm içeriği
+##  Bölüm içeriği {-}
 
 CMake kullanımı avantajı dezavantajı...

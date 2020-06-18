@@ -1,6 +1,8 @@
-# Makefile
+# (PART) İnşa Sistemleri {-} 
 
-##  Bölüm içeriği
+# Makefile {-}
+
+##  Bölüm içeriği {-}
 
 Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 

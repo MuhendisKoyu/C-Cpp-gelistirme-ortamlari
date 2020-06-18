@@ -1,5 +1,5 @@
-# Build2
+# Build2 {-}
 
-##  Bölüm içeriği
+##  Bölüm içeriği {-}
 
 Build2 kullanımı avantajı dezavantajı...

@@ -1,5 +1,5 @@
-# Kbuild
+# Kbuild {-}
 
-##  Bölüm içeriği
+##  Bölüm içeriği {-}
 
 Kbuild kullanımı avantajı dezavantajı...

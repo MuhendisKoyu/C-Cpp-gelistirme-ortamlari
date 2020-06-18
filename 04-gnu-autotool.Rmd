@@ -1,5 +1,5 @@
-# GNU Autotool
+# GNU Autotool {-}
 
-##  Bölüm içeriği
+##  Bölüm içeriği {-}
 
 GNU Autotool kullanımı avantajı dezavantajı...
