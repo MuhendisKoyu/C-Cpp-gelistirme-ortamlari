@@ -7,6 +7,9 @@ documentclass: book
 biblio-style: apalike
 link-citations: yes
 favicon: images/favicon.ico
+cover-image: images/muhendis_koyu.png
+url: https://MuhendisKoyu.github.io/C-Cpp-insa-sistemleri-paket-yoneticileri/
+github-repo: MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri
 description: "Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakkında detaylı bir anlatım içermeyi hedeflemektedir."
 ---
 
