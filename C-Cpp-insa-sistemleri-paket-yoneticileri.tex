@@ -73,7 +73,7 @@
 
 \title{C C++ İnşa Sistemleri ve Paket Yöneticileri}
 \author{Mühendis Köyü}
-\date{2020-06-17}
+\date{2020-06-18}
 
 \begin{document}
 \maketitle
@@ -122,10 +122,13 @@ Kitabın tamamı veya bir kısmı, ``kaynak gösterildiği ve değişiklik yapı
 \section*{Bu Kitap Nasıl Geliştiriliyor}\label{bu-kitap-nasux131l-geliux15ftiriliyor}}
 \addcontentsline{toc}{section}{Bu Kitap Nasıl Geliştiriliyor}
 
-Mühendis Köyü \emph{telegram} grubunda bulunan gönüllülük esasına dayalı bu kitaba girişilmiştir. Kitap, \emph{R Markdown}'da \emph{bookdown} paketi kullanılarak yazılmaktadır. \href{https://github.com/MuhendisKoyu}{Mühendis Köyü} \emph{Github} organizasyonu altında bulunan \href{https://github.com/MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri}{C-Cpp-insa-sistemleri-paket-yoneticileri} reposunun \textbf{master} \emph{dalına} (\textbf{branch}) \emph{BuildingOfCCpp} ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından \textbf{gh-pages} dalına ise \emph{R Markdown} olarak yazılan projenin \emph{HTML} çıktısı yüklenmektedir. Kitap geliştirilirken \emph{Trello} üzerinden paylaşım, \emph{telegram} üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
+\href{https://t.me/koyumuhendis}{Mühendis Köyü telegram} grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, \emph{R Markdown}'da \emph{bookdown} paketi kullanılarak yazılmaktadır. \href{https://github.com/MuhendisKoyu}{Mühendis Köyü} \emph{Github} organizasyonu altında bulunan \href{https://github.com/MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri}{C-Cpp-insa-sistemleri-paket-yoneticileri} reposunun \textbf{master} \emph{dalına} (\textbf{branch}) \emph{BuildingOfCCpp} ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından \textbf{gh-pages} dalına ise \emph{R Markdown} olarak yazılan projenin \emph{HTML} çıktısı yüklenmektedir. Kitap geliştirilirken \emph{Trello} üzerinden paylaşım, \emph{telegram} üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
 
 \hypertarget{giris}{%
 \chapter{Giriş}\label{giris}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi}}
 
 Bu kısımda önsözde bahsettiğimiz problemlere değineceğiz.
 
@@ -135,24 +138,84 @@ Bu kısımda önsözde bahsettiğimiz problemlere değineceğiz.
 \hypertarget{edituxf6r-derleyici-kullanux131mux131}{%
 \section{Editör + Derleyici Kullanımı}\label{edituxf6r-derleyici-kullanux131mux131}}
 
-\hypertarget{ide}{%
-\chapter{IDE}\label{ide}}
+\hypertarget{makefile}{%
+\chapter{Makefile}\label{makefile}}
 
-\emph{IDE} kullanımı, avantajları ve dezavantajları yazılacak.
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-1}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-1}}
 
-\hypertarget{edituxf6r-ve-derleyici}{%
-\chapter{Editör ve Derleyici}\label{edituxf6r-ve-derleyici}}
-
-Editör ve derleyici kullanımından bahsedilecek.
-
-\hypertarget{makefile-ve-make}{%
-\chapter{Makefile ve Make}\label{makefile-ve-make}}
-
-Makefile kullanımı.
+Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 
 \hypertarget{cmake}{%
 \chapter{Cmake}\label{cmake}}
 
-We have finished a nice book.
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-2}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-2}}
+
+CMake kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{gnu-autotool}{%
+\chapter{GNU Autotool}\label{gnu-autotool}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-3}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-3}}
+
+GNU Autotool kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{msbuild}{%
+\chapter{Msbuild}\label{msbuild}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-4}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-4}}
+
+Msbuild kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{meson}{%
+\chapter{Meson}\label{meson}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-5}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-5}}
+
+Meson kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{qmake}{%
+\chapter{Qmake}\label{qmake}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-6}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-6}}
+
+Qmake kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{kbuild}{%
+\chapter{Kbuild}\label{kbuild}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-7}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-7}}
+
+Kbuild kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{build2}{%
+\chapter{Build2}\label{build2}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-8}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-8}}
+
+Build2 kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{xmake}{%
+\chapter{Xmake}\label{xmake}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-9}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-9}}
+
+Xmake kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{bazel}{%
+\chapter{Bazel}\label{bazel}}
+
+\hypertarget{buxf6luxfcm-iuxe7eriux11fi-10}{%
+\section{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-10}}
+
+Bazel kullanımı avantajı dezavantajı\ldots{}
 
 \end{document}
