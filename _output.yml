@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">C C++ İnşa Sistemleri ve Paket Yöneticileri</a></li>
+        <li><a href="./">C/C++ Geliştirme Ortamları</a></li>
       after: |
         <li><a href="https://muhendiskoyu.github.io/C-Cpp-gelistirme-ortamlari" target="blank">At Gihub Pages</a></li>
     download: ["pdf", "epub"]
