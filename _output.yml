@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">C C++ İnşa Sistemleri ve Paket Yöneticileri</a></li>
       after: |
-        <li><a href="https://muhendiskoyu.github.io/C-Cpp-insa-sistemleri-paket-yoneticileri" target="blank">At Gihub Pages</a></li>
+        <li><a href="https://muhendiskoyu.github.io/C-Cpp-gelistirme-ortamlari" target="blank">At Gihub Pages</a></li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

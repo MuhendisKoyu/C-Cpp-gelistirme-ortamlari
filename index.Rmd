@@ -1,5 +1,5 @@
 --- 
-title: "C C++ İnşa Sistemleri ve Paket Yöneticileri"
+title: "C/C++ Geliştirme Ortamları"
 author: "Mühendis Köyü"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -8,9 +8,9 @@ biblio-style: apalike
 link-citations: yes
 favicon: images/favicon.ico
 cover-image: images/muhendis_koyu.png
-url: https://MuhendisKoyu.github.io/C-Cpp-insa-sistemleri-paket-yoneticileri/
-github-repo: MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri
-description: "Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakkında detaylı bir anlatım içermeyi hedeflemektedir."
+url: https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/
+github-repo: MuhendisKoyu/C-Cpp-gelistirme-ortamlari
+description: "Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir."
 ---
 
 # Bir Tutam Yazı {-}
@@ -18,7 +18,7 @@ description: "Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakk�
 ## Önsöz {-}
 
 <img src="images/muhendis_koyu.png" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
-C/C++ yazılım geliştirme sadece bu dil ile kod yazmayı kapsamıyor. _IDE_ (**Integrated Development Environment – Tümleşik Geliştirme Ortamı**) haricincde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. _IDE_ kullanımı ise bizi _IDE_'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde _dâhili_ (**builtin**) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?
+C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. _IDE_ (**Integrated Development Environment – Tümleşik Geliştirme Ortamı**) haricinde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. _IDE_ kullanımı ise bizi _IDE_'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde _dâhili_ (**builtin**) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?
 
 İşte bu kitapla bu problemlere getirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik. 
 
@@ -46,5 +46,5 @@ Kitabın tamamı veya bir kısmı, "kaynak gösterildiği ve değişiklik yapıl
 
 ## Bu Kitap Nasıl Geliştiriliyor {-}
 
-[Mühendis Köyü telegram](https://t.me/koyumuhendis) grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, _R Markdown_'da _bookdown_ paketi kullanılarak yazılmaktadır. [Mühendis Köyü](https://github.com/MuhendisKoyu) _Github_ organizasyonu altında bulunan [C-Cpp-insa-sistemleri-paket-yoneticileri](https://github.com/MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri) reposunun **master** _dalına_ (**branch**) _BuildingOfCCpp_ ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından **gh-pages** dalına ise _R Markdown_ olarak yazılan projenin _HTML_ çıktısı yüklenmektedir. Kitap geliştirilirken _Trello_ üzerinden paylaşım, _telegram_ üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
+[Mühendis Köyü telegram](https://t.me/koyumuhendis) grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, _R Markdown_'da _bookdown_ paketi kullanılarak yazılmaktadır. [Mühendis Köyü](https://github.com/MuhendisKoyu) _Github_ organizasyonu altında bulunan [C-Cpp-gelistirme-ortamlari](https://github.com/MuhendisKoyu/C-Cpp-gelistirme-ortamlari) reposunun **master** _dalına_ (**branch**) _CGOY_ (**C Geliştirme Ortamı Yazarları**) ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından **gh-pages** dalına ise _R Markdown_ olarak yazılan projenin _HTML_ çıktısı yüklenmektedir. Kitap geliştirilirken _Trello_ üzerinden paylaşım, _telegram_ üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
 
