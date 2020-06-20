@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>C C++ İnşa Sistemleri ve Paket Yöneticileri</title>
-  <meta name="description" content="Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
+  <title>C/C++ Geliştirme Ortamları</title>
+  <meta name="description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="C C++ İnşa Sistemleri ve Paket Yöneticileri" />
+  <meta property="og:title" content="C/C++ Geliştirme Ortamları" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://MuhendisKoyu.github.io/C-Cpp-insa-sistemleri-paket-yoneticileri/" />
-  <meta property="og:image" content="https://MuhendisKoyu.github.io/C-Cpp-insa-sistemleri-paket-yoneticileri/images/muhendis_koyu.png" />
-  <meta property="og:description" content="Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
-  <meta name="github-repo" content="MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri" />
+  <meta property="og:url" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/" />
+  <meta property="og:image" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/images/muhendis_koyu.png" />
+  <meta property="og:description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
+  <meta name="github-repo" content="MuhendisKoyu/C-Cpp-gelistirme-ortamlari" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="C C++ İnşa Sistemleri ve Paket Yöneticileri" />
+  <meta name="twitter:title" content="C/C++ Geliştirme Ortamları" />
   
-  <meta name="twitter:description" content="Bu kitap C/C++ için inşa sistemleri ve paket yöneticileri hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
-  <meta name="twitter:image" content="https://MuhendisKoyu.github.io/C-Cpp-insa-sistemleri-paket-yoneticileri/images/muhendis_koyu.png" />
+  <meta name="twitter:description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
+  <meta name="twitter:image" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/images/muhendis_koyu.png" />
 
 <meta name="author" content="Mühendis Köyü" />
 
 
-<meta name="date" content="2020-06-18" />
+<meta name="date" content="2020-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,7 +119,7 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i>Referanslar</a></li>
 <li class="divider"></li>
-<li><a href="https://muhendiskoyu.github.io/C-Cpp-insa-sistemleri-paket-yoneticileri" target="blank">At Gihub Pages</a></li>
+<li><a href="https://muhendiskoyu.github.io/C-Cpp-gelistirme-ortamlari" target="blank">At Gihub Pages</a></li>
 
 </ul>
 
@@ -130,7 +130,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">C C++ İnşa Sistemleri ve Paket Yöneticileri</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">C/C++ Geliştirme Ortamları</a>
           </h1>
         </div>
 
@@ -139,16 +139,16 @@
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">C C++ İnşa Sistemleri ve Paket Yöneticileri</h1>
+<h1 class="title">C/C++ Geliştirme Ortamları</h1>
 <p class="author"><em>Mühendis Köyü</em></p>
-<p class="date"><em>2020-06-18</em></p>
+<p class="date"><em>2020-06-20</em></p>
 </div>
 <div id="bir-tutam-yazı" class="section level1 unnumbered">
 <h1>Bir Tutam Yazı</h1>
 <div id="önsöz" class="section level2 unnumbered">
 <h2>Önsöz</h2>
 <p><img src="images/muhendis_koyu.png" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
-C/C++ yazılım geliştirme sadece bu dil ile kod yazmayı kapsamıyor. <em>IDE</em> (<strong>Integrated Development Environment – Tümleşik Geliştirme Ortamı</strong>) haricincde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. <em>IDE</em> kullanımı ise bizi <em>IDE</em>’ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde <em>dâhili</em> (<strong>builtin</strong>) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?</p>
+C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. <em>IDE</em> (<strong>Integrated Development Environment – Tümleşik Geliştirme Ortamı</strong>) haricinde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. <em>IDE</em> kullanımı ise bizi <em>IDE</em>’ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde <em>dâhili</em> (<strong>builtin</strong>) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?</p>
 <p>İşte bu kitapla bu problemlere getirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik.</p>
 <p>Türkçe kapsamlı bir kitap olmasını hedefleyerek başladığımız bu yolculuğumuzda türü ne olursa olsun bizlere ulaşacak her bir eleştiri sönük bir mumun alev almasına yardımcı olan yanan bir mumun ateşi olacaktır.</p>
 </div>
@@ -181,7 +181,7 @@ C/C++ yazılım geliştirme sadece bu dil ile kod yazmayı kapsamıyor. <em>IDE<
 </div>
 <div id="bu-kitap-nasıl-geliştiriliyor" class="section level2 unnumbered">
 <h2>Bu Kitap Nasıl Geliştiriliyor</h2>
-<p><a href="https://t.me/koyumuhendis">Mühendis Köyü telegram</a> grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, <em>R Markdown</em>’da <em>bookdown</em> paketi kullanılarak yazılmaktadır. <a href="https://github.com/MuhendisKoyu">Mühendis Köyü</a> <em>Github</em> organizasyonu altında bulunan <a href="https://github.com/MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri">C-Cpp-insa-sistemleri-paket-yoneticileri</a> reposunun <strong>master</strong> <em>dalına</em> (<strong>branch</strong>) <em>BuildingOfCCpp</em> ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından <strong>gh-pages</strong> dalına ise <em>R Markdown</em> olarak yazılan projenin <em>HTML</em> çıktısı yüklenmektedir. Kitap geliştirilirken <em>Trello</em> üzerinden paylaşım, <em>telegram</em> üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.</p>
+<p><a href="https://t.me/koyumuhendis">Mühendis Köyü telegram</a> grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, <em>R Markdown</em>’da <em>bookdown</em> paketi kullanılarak yazılmaktadır. <a href="https://github.com/MuhendisKoyu">Mühendis Köyü</a> <em>Github</em> organizasyonu altında bulunan <a href="https://github.com/MuhendisKoyu/C-Cpp-gelistirme-ortamlari">C-Cpp-gelistirme-ortamlari</a> reposunun <strong>master</strong> <em>dalına</em> (<strong>branch</strong>) <em>CGOY</em> (<strong>C Geliştirme Ortamı Yazarları</strong>) ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından <strong>gh-pages</strong> dalına ise <em>R Markdown</em> olarak yazılan projenin <em>HTML</em> çıktısı yüklenmektedir. Kitap geliştirilirken <em>Trello</em> üzerinden paylaşım, <em>telegram</em> üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.</p>
 
 </div>
 </div>
@@ -233,7 +233,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["C-Cpp-insa-sistemleri-paket-yoneticileri.pdf", "C-Cpp-insa-sistemleri-paket-yoneticileri.epub"],
+"download": ["C-Cpp-gelistirme-ortamlari.pdf", "C-Cpp-gelistirme-ortamlari.epub"],
 "toc": {
 "collapse": "subsection"
 }

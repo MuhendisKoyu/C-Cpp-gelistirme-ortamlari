@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={C C++ İnşa Sistemleri ve Paket Yöneticileri},
+  pdftitle={C/C++ Geliştirme Ortamları},
   pdfauthor={Mühendis Köyü},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -71,9 +71,9 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
-\title{C C++ İnşa Sistemleri ve Paket Yöneticileri}
+\title{C/C++ Geliştirme Ortamları}
 \author{Mühendis Köyü}
-\date{2020-06-18}
+\date{2020-06-20}
 
 \begin{document}
 \maketitle
@@ -90,7 +90,7 @@
 \section*{Önsöz}\label{uxf6nsuxf6z}}
 \addcontentsline{toc}{section}{Önsöz}
 
-C/C++ yazılım geliştirme sadece bu dil ile kod yazmayı kapsamıyor. \emph{IDE} (\textbf{Integrated Development Environment -- Tümleşik Geliştirme Ortamı}) haricincde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. \emph{IDE} kullanımı ise bizi \emph{IDE}'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde \emph{dâhili} (\textbf{builtin}) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?
+C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. \emph{IDE} (\textbf{Integrated Development Environment -- Tümleşik Geliştirme Ortamı}) haricinde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. \emph{IDE} kullanımı ise bizi \emph{IDE}'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde \emph{dâhili} (\textbf{builtin}) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?
 
 İşte bu kitapla bu problemlere getirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik.
 
@@ -122,7 +122,7 @@ Kitabın tamamı veya bir kısmı, ``kaynak gösterildiği ve değişiklik yapı
 \section*{Bu Kitap Nasıl Geliştiriliyor}\label{bu-kitap-nasux131l-geliux15ftiriliyor}}
 \addcontentsline{toc}{section}{Bu Kitap Nasıl Geliştiriliyor}
 
-\href{https://t.me/koyumuhendis}{Mühendis Köyü telegram} grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, \emph{R Markdown}'da \emph{bookdown} paketi kullanılarak yazılmaktadır. \href{https://github.com/MuhendisKoyu}{Mühendis Köyü} \emph{Github} organizasyonu altında bulunan \href{https://github.com/MuhendisKoyu/C-Cpp-insa-sistemleri-paket-yoneticileri}{C-Cpp-insa-sistemleri-paket-yoneticileri} reposunun \textbf{master} \emph{dalına} (\textbf{branch}) \emph{BuildingOfCCpp} ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından \textbf{gh-pages} dalına ise \emph{R Markdown} olarak yazılan projenin \emph{HTML} çıktısı yüklenmektedir. Kitap geliştirilirken \emph{Trello} üzerinden paylaşım, \emph{telegram} üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
+\href{https://t.me/koyumuhendis}{Mühendis Köyü telegram} grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, \emph{R Markdown}'da \emph{bookdown} paketi kullanılarak yazılmaktadır. \href{https://github.com/MuhendisKoyu}{Mühendis Köyü} \emph{Github} organizasyonu altında bulunan \href{https://github.com/MuhendisKoyu/C-Cpp-gelistirme-ortamlari}{C-Cpp-gelistirme-ortamlari} reposunun \textbf{master} \emph{dalına} (\textbf{branch}) \emph{CGOY} (\textbf{C Geliştirme Ortamı Yazarları}) ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından \textbf{gh-pages} dalına ise \emph{R Markdown} olarak yazılan projenin \emph{HTML} çıktısı yüklenmektedir. Kitap geliştirilirken \emph{Trello} üzerinden paylaşım, \emph{telegram} üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
 
 \hypertarget{giriux15f}{%
 \chapter*{Giriş}\label{giriux15f}}
