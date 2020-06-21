@@ -1,5 +1,18 @@
 # Xmake {-}
 
-##  Bölüm içeriği {-}
+##  Nedir {-}
 
 Xmake kullanımı avantajı dezavantajı...
+
+##  Kullanımı {-}
+
+Xmake kullanımı avantajı dezavantajı...
+
+##  Avantajları {-}
+
+Xmake kullanımı avantajı dezavantajı...
+
+##  Dezavantajları {-}
+
+Xmake kullanımı avantajı dezavantajı...
+

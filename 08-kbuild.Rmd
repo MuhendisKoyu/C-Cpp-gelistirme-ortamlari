@@ -1,5 +1,18 @@
 # Kbuild {-}
 
-##  Bölüm içeriği {-}
+##  Nedir {-}
 
 Kbuild kullanımı avantajı dezavantajı...
+
+##  Kullanımı {-}
+
+Kbuild kullanımı avantajı dezavantajı...
+
+##  Avantajları {-}
+
+Kbuild kullanımı avantajı dezavantajı...
+
+##  Dezavantajları {-}
+
+Kbuild kullanımı avantajı dezavantajı...
+

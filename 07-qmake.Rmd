@@ -1,5 +1,18 @@
 # Qmake {-}
 
-##  Bölüm içeriği {-}
+##  Nedir {-}
 
 Qmake kullanımı avantajı dezavantajı...
+
+##  Kullanımı {-}
+
+Qmake kullanımı avantajı dezavantajı...
+
+##  Avantajları {-}
+
+Qmake kullanımı avantajı dezavantajı...
+
+##  Dezavantajları {-}
+
+Qmake kullanımı avantajı dezavantajı...
+

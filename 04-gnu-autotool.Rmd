@@ -1,5 +1,18 @@
 # GNU Autotool {-}
 
-##  Bölüm içeriği {-}
+##  Nedir {-}
 
 GNU Autotool kullanımı avantajı dezavantajı...
+
+##  Kullanımı {-}
+
+GNU Autotool kullanımı avantajı dezavantajı...
+
+##  Avantajları {-}
+
+GNU Autotool kullanımı avantajı dezavantajı...
+
+##  Dezavantajları {-}
+
+GNU Autotool kullanımı avantajı dezavantajı...
+

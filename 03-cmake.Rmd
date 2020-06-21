@@ -1,5 +1,18 @@
 # Cmake {-}
 
-##  Bölüm içeriği {-}
+##  Nedir {-}
 
 CMake kullanımı avantajı dezavantajı...
+
+##  Kullanımı {-}
+
+CMake kullanımı avantajı dezavantajı...
+
+##  Avantajları {-}
+
+CMake kullanımı avantajı dezavantajı...
+
+##  Dezavantajları {-}
+
+CMake kullanımı avantajı dezavantajı...
+

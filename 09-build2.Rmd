@@ -1,5 +1,18 @@
 # Build2 {-}
 
-##  Bölüm içeriği {-}
+##  Nedir {-}
 
 Build2 kullanımı avantajı dezavantajı...
+
+##  Kullanımı {-}
+
+Build2 kullanımı avantajı dezavantajı...
+
+##  Avantajları {-}
+
+Build2 kullanımı avantajı dezavantajı...
+
+##  Dezavantajları {-}
+
+Build2 kullanımı avantajı dezavantajı...
+
