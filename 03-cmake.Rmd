@@ -1,18 +1,18 @@
-# Cmake {-}
+# Cmake
 
-##  Nedir {-}
-
-CMake kullanımı avantajı dezavantajı...
-
-##  Kullanımı {-}
+## Cmake Nedir
 
 CMake kullanımı avantajı dezavantajı...
 
-##  Avantajları {-}
+## Cmake Kullanımı
 
 CMake kullanımı avantajı dezavantajı...
 
-##  Dezavantajları {-}
+## Cmake Avantajları
+
+CMake kullanımı avantajı dezavantajı...
+
+## Cmake Dezavantajları
 
 CMake kullanımı avantajı dezavantajı...
 

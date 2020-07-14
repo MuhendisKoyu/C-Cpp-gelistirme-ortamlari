@@ -1,18 +1,18 @@
-# Bazel {-}
+# Bazel
 
-##  Nedir {-}
-
-Bazel kullanımı avantajı dezavantajı...
-
-##  Kullanımı {-}
+## Bazel Nedir
 
 Bazel kullanımı avantajı dezavantajı...
 
-##  Avantajları {-}
+## Bazel Kullanımı
 
 Bazel kullanımı avantajı dezavantajı...
 
-##  Dezavantajları {-}
+## Bazel Avantajları
+
+Bazel kullanımı avantajı dezavantajı...
+
+## Bazel Dezavantajları
 
 Bazel kullanımı avantajı dezavantajı...
 

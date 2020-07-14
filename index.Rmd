@@ -13,9 +13,9 @@ github-repo: MuhendisKoyu/C-Cpp-gelistirme-ortamlari
 description: "Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir."
 ---
 
-# Bir Tutam Yazı {-}
+# Bir Tutam Yazı
 
-## Önsöz {-}
+## Önsöz
 
 <img src="images/muhendis_koyu.png" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
 C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. _IDE_ (**Integrated Development Environment – Tümleşik Geliştirme Ortamı**) haricinde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. _IDE_ kullanımı ise bizi _IDE_'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde _dâhili_ (**builtin**) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?
@@ -24,7 +24,7 @@ C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. _IDE_ (
 
 Türkçe kapsamlı bir kitap olmasını hedefleyerek başladığımız bu yolculuğumuzda türü ne olursa olsun bizlere ulaşacak her bir eleştiri sönük bir mumun alev almasına yardımcı olan yanan bir mumun ateşi olacaktır.
 
-## Katkıda Bulunanlar {-}
+## Katkıda Bulunanlar
 
 Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bunun ile birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
   
@@ -40,11 +40,11 @@ table <- matrix(names, ncol = colCount, byrow = TRUE)
 table <- as.data.frame(table)
 knitr::kable(table, col.names = NULL)
 ```
-## Lisans {-}
+## Lisans
 
 Kitabın tamamı veya bir kısmı, "kaynak gösterildiği ve değişiklik yapılmadığı" takdirde, herhangi bir izne gerek kalmadan, her türlü ortamda çoğaltılabilir, dağıtılabilir, kullanılabilir.
 
-## Bu Kitap Nasıl Geliştiriliyor {-}
+## Bu Kitap Nasıl Geliştiriliyor
 
 [Mühendis Köyü telegram](https://t.me/koyumuhendis) grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, _R Markdown_'da _bookdown_ paketi kullanılarak yazılmaktadır. [Mühendis Köyü](https://github.com/MuhendisKoyu) _Github_ organizasyonu altında bulunan [C-Cpp-gelistirme-ortamlari](https://github.com/MuhendisKoyu/C-Cpp-gelistirme-ortamlari) reposunun **master** _dalına_ (**branch**) _CGOY_ (**C Geliştirme Ortamı Yazarları**) ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından **gh-pages** dalına ise _R Markdown_ olarak yazılan projenin _HTML_ çıktısı yüklenmektedir. Kitap geliştirilirken _Trello_ üzerinden paylaşım, _telegram_ üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
 

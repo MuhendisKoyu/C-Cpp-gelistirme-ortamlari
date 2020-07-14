@@ -1,8 +1,8 @@
-# (PART) Paket Yöneticileri {-} 
+# (PART) Paket Yöneticileri
 
-# Conan {-}
+# Conan
 
-##  Bölüm içeriği {-}
+## Conan Bölüm içeriği
 
 Conan kullanımı avantajı dezavantajı...
 

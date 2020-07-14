@@ -1,18 +1,18 @@
-# Msbuild {-}
+# Msbuild
 
-##  Nedir {-}
-
-Msbuild kullanımı avantajı dezavantajı...
-
-##  Kullanımı {-}
+## Msbuild Nedir
 
 Msbuild kullanımı avantajı dezavantajı...
 
-##  Avantajları {-}
+## Msbuild Kullanımı
 
 Msbuild kullanımı avantajı dezavantajı...
 
-##  Dezavantajları {-}
+## Msbuild Avantajları
+
+Msbuild kullanımı avantajı dezavantajı...
+
+## Msbuild Dezavantajları
 
 Msbuild kullanımı avantajı dezavantajı...
 

@@ -1,14 +1,14 @@
-# Giriş {-}
+# Giriş
 
-##  Bölüm içeriği {-}
+##  Bölüm içeriği
 
 Bu kısımda önsözde kısaca bahsettiğimiz problemlerin çıkış noktaları ile C/C++ için inşa sistemleri ve paket yöneticilerine değineceğiz.
 
-## IDE Kullanımı {-}
+## IDE Kullanımı
 
-## Editör + Derleyici Kullanımı {-}
+## Editör + Derleyici Kullanımı
 
-## C/C++ için İnşa Sistemleri {-}
+## C/C++ için İnşa Sistemleri
 
-## C/C++ için Paket Yöneticileri {-}
+## C/C++ için Paket Yöneticileri
 

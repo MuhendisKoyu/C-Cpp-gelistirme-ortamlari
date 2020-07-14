@@ -1,6 +1,6 @@
-# GNU Autotools İnşa etme Sistemi: {-}
+# GNU Autotool
 
-## Genel bakış. {-}
+## Genel Bakış
 
 * Autotools
 	+ =>> Autoconf, automake ve libtool için GNU Yapı Sistemi veya umbrela adı. GNU otomatik araçları birçok açık kaynaklı Linux projesi ve gömülü Linux tarafından kullanılmaktadır.
@@ -60,7 +60,7 @@
 	+ $ make install => Install application.
 	+ $ … … ..
 
-## Referans Kartı {-}
+## Referans Kartı
 
 ### Kurulum
 
@@ -94,7 +94,6 @@ $ make distcheck -> Dist yapmaya benzer, ancak derleme olup olmadığını kontr
 </code></pre>
 
 #### Çoğu Yapılandırma değişkeni
-
 
 <pre><code>
 Değişken -> Açıklama
@@ -193,20 +192,21 @@ ADIM 3:
 * => Oluşturulan dosyaları çalıştırarak test edin:
 	+ <code>$ ./configure && make && make install.</code>
 
-## Örnek: Temel GNU autotools projesi {-}
+## Örnek: Temel GNU autotools projesi
 
-### Proje Dosyaları {-}
+### Proje Dosyaları
 
 Dosya: main.cpp
 
-<pre class="src src-sh">
+<code><pre class="src src-sh">
 #include <iostream>
 
 int main()
 {
   std::cout << "Hello world autotools" << std::endl;
   return 0;
-}</pre>
+}
+</pre></code>
 
 ##### Dosya: configure.ac
 
@@ -246,15 +246,15 @@ app_SOURCES  = app.cpp
 
 * Geçerli dizini temizlemek için kullanılan yardımcı bash betiği.
 
-<pre class="src src-sh">
+<code><pre class="src src-sh">
 #!/usr/bin/env sh 
 rm -v configure config.log config.status install-sh missing aclocal.m4 compile depcomp 
 rm -vrf autom4te.cache
 rm -v *.o *.bin *.so
 rm *~ # Remove temporary files 
-</pre>
+</pre></code>
 
-### İnşa Adımları {-}
+### İnşa Adımları
 
 ADIM 1: Geliştirici tarafından gerçekleştirilen kısım
 
@@ -325,7 +325,7 @@ ADIM 4: Kullanıcı tarafından gerçekleştirilen kısım
 
 Çalıştır: <code>$ make</code>
 
-<pre class="src src-sh">
+<code><pre class="src src-sh">
 $ make
 
 g++ -DPACKAGE_NAME=\"app\" -DPACKAGE_TARNAME=\"app\" -DPACKAGE_VERSION=\"0.1\"  \
@@ -335,11 +335,11 @@ g++ -DPACKAGE_NAME=\"app\" -DPACKAGE_TARNAME=\"app\" -DPACKAGE_VERSION=\"0.1\"  
     mv -f .deps/app.Tpo .deps/app.Po \
 
  g++  -g -O2   -o app app.o  
-</pre>
+</pre></code>
 
 Çalıştır: <code>$ make install</code>
 
-<pre class="src src-sh">
+<code><pre class="src src-sh">
 $ make install
 make[1]: Entering directory '/home/archbox/projects/autools1'
  /usr/bin/mkdir -p '/usr/local/bin'
@@ -348,11 +348,11 @@ make[1]: Entering directory '/home/archbox/projects/autools1'
 make[1]: *** [Makefile:313: install-binPROGRAMS] Error 1
 make[1]: Leaving directory '/home/archbox/projects/autools1'
 make: *** [Makefile:615: install-am] Error 2
-</pre>
+</pre></code>
 
 Çalıştır: <code>$ make dist</code> => Bir tarball dağılımı oluşturun.
 
-<pre class="src src-sh">
+<code><pre class="src src-sh">
 $ make dist
 make  dist-gzip am__post_remove_distdir='@:'
 make[1]: Entering directory '/home/archbox/projects/autools1'
@@ -361,11 +361,11 @@ test -d "app-0.1" || mkdir "app-0.1"
 
   .. ... ... ... ... ... ... 
 rm -rf "app-0.1" || { sleep 5 && rm -rf "app-0.1"; }; else :; fi
-</pre>
+</pre></code>
 
 Tarball dosyasını kontrol edin:
 
-<pre class="src src-sh">
+<code><pre class="src src-sh">
     $ tar -tzvf app-0.1.tar.gz 
 drwxrwxr-x 1000/1000         0 2019-10-21 15:23 app-0.1/
 -rw-rw-r-- 1000/1000     42147 2019-10-21 15:22 app-0.1/aclocal.m4
@@ -384,13 +384,13 @@ drwxrwxr-x 1000/1000         0 2019-10-21 15:23 app-0.1/
 -rw-rw-r-- 1000/1000         0 2019-10-21 15:02 app-0.1/README
 -rw-rw-r-- 1000/1000         0 2019-10-21 15:02 app-0.1/NEWS
 -rw-rw-r-- 1000/1000     23477 2019-10-21 15:22 app-0.1/Makefile.in
-</pre>
+</pre></code>
 
 ADIM 5:
 
 * Uygulamayı test edin.
 
-<pre class="src src-sh">
+<code><pre class="src src-sh">
 # Check executable file 
 $ file app
 app: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter 
@@ -400,16 +400,16 @@ with debug_info, not stripped
 # Run native executable 
 $ ./app
 Hello world autotools
-</pre>
+</pre></code>
 
 #### Uygulamayı yeni bir konuma oluşturun ve yükleyin
 
 Configure betiğini çalıştırın.
 
-<pre class="src src-sh">
+<code><pre class="src src-sh">
 # Build with clang and install at ~/opt/app-test 
 $ ./configure CC=clang CXX=clang++ --prefix=$HOME/opt/app-test
-</pre>
+</pre></code>
 
 Make ve make install komutlarını çalıştırın
 
@@ -440,8 +440,7 @@ $ /home/archbox/opt/app-test/bin/app
 Hello world autotools
 </pre>
 
-
-## İleri düzey için tavsiye kaynaklar {-}
+## İleri düzey tavsiye kaynaklar
 
 + [Autotools Nasıl Kullanılır](https://eklitzke.org/how-to-autotools)
 + [GNU Autotools Kitabı](https://www.star.bnl.gov/~liuzx/autobook.html)

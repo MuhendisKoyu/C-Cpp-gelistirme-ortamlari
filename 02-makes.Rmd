@@ -1,20 +1,20 @@
-# (PART) İnşa Sistemleri {-} 
+# (PART) İnşa Sistemleri
 
-# Makefile {-}
+# Makefile
 
-##  Nedir {-}
-
-Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
-
-##  Kullanımı {-}
+## Makefile Nedir
 
 Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 
-##  Avantajları {-}
+## Makefile Kullanımı
 
 Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 
-##  Dezavantajları {-}
+## Makefile Avantajları
+
+Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
+
+## Makefile Dezavantajları
 
 Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 
