@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.7.8)  14 JUL 2020 14:00
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.7.8)  14 JUL 2020 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1064,9 +1064,7 @@ Underfull \hbox (badness 1688) in paragraph at lines 125--126
 ] [13] [14
 
 ]
-Chapter 1.
-
-Underfull \hbox (badness 6332) in paragraph at lines 235--237
+Underfull \hbox (badness 6332) in paragraph at lines 237--239
 [][]\TU/lmr/m/n/10 GNU Glibc[] (Linux’ta kullanılan GNU C Çalışma Zamanı
  []
 
@@ -1087,14 +1085,14 @@ Underfull \hbox (badness 6332) in paragraph at lines 235--237
 ] [33] [34
 
 ] [35] [36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 785.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 792.
 [37
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 785.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 792.
 (./C-Cpp-gelistirme-ortamlari.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 785.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 785.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 792.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 792.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1102,10 +1100,10 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  27737 strings out of 494894
  507825 string characters out of 6177063
- 722637 words of memory out of 5000000
+ 722649 words of memory out of 5000000
  31421 multiletter control sequences out of 15000+600000
  538724 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 58i,6n,115p,904b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,6n,115p,904b,486s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on C-Cpp-gelistirme-ortamlari.pdf (37 pages).

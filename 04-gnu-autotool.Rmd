@@ -1,6 +1,6 @@
-# 4 GNU Autotools İnşa etme Sistemi:
+# GNU Autotools İnşa etme Sistemi: {-}
 
-## 4.1 Genel bakış.
+## Genel bakış. {-}
 
 * Autotools
 	+ =>> Autoconf, automake ve libtool için GNU Yapı Sistemi veya umbrela adı. GNU otomatik araçları birçok açık kaynaklı Linux projesi ve gömülü Linux tarafından kullanılmaktadır.
@@ -60,7 +60,7 @@
 	+ $ make install => Install application.
 	+ $ … … ..
 
-## 4.2 Referans Kartı
+## Referans Kartı {-}
 
 ### Kurulum
 
@@ -193,9 +193,9 @@ ADIM 3:
 * => Oluşturulan dosyaları çalıştırarak test edin:
 	+ <code>$ ./configure && make && make install.</code>
 
-## 4.3 Örnek: Temel GNU autotools projesi
+## Örnek: Temel GNU autotools projesi {-}
 
-### 4.3.1 Proje Dosyaları
+### Proje Dosyaları {-}
 
 Dosya: main.cpp
 
@@ -254,7 +254,7 @@ rm -v *.o *.bin *.so
 rm *~ # Remove temporary files 
 </pre>
 
-### 4.3.2 İnşa Adımları
+### İnşa Adımları {-}
 
 ADIM 1: Geliştirici tarafından gerçekleştirilen kısım
 
@@ -440,7 +440,8 @@ $ /home/archbox/opt/app-test/bin/app
 Hello world autotools
 </pre>
 
-## 4.4 İleri düzey için tavsiye kaynaklar
+
+## İleri düzey için tavsiye kaynaklar {-}
 
 + [Autotools Nasıl Kullanılır](https://eklitzke.org/how-to-autotools)
 + [GNU Autotools Kitabı](https://www.star.bnl.gov/~liuzx/autobook.html)
