@@ -7,6 +7,7 @@ Bu kısımda önsözde kısaca bahsettiğimiz problemlerin çıkış noktaları 
 ## IDE Kullanımı
 
 ## Editör + Derleyici Kullanımı
+Bu bölümde terminal üzerinde VIM editörünün kullanımına değineceğiz.
 
 ## C/C++ için İnşa Sistemleri
 
