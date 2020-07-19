@@ -50,15 +50,15 @@
 	+ Erlang
 
 * Terminal Belgeleri:
-	+ $ info automake
-	+ $ info autoconf
-	+ $ info libtool
+	+ `$ info automake`
+	+ `$ info autoconf`
+	+ `$ info libtool`
 
 * Ortak yapı yapılandırma olanakları
-	+ $ ./configure
-	+ $ make
-	+ $ make install => Install application.
-	+ $ … … ..
+	+ `$ ./configure`
+	+ `$ make`
+	+ `$ make install => Install application.`
+	+ `$ … … ..`
 
 ## Referans Kartı
 
@@ -66,15 +66,15 @@
 
 ##### Fedora Linux Dağıtımına Kurulumu:
 
-<code>$ sudo dnf install autoconf automake</code>
+`$ sudo dnf install autoconf automake`
 
 ##### Ubuntu veya Debian Linux Dağıtımlarına Kurulumu:
 
-<code>$ sudo apt-get install autoconf automake</code>
+`$ sudo apt-get install autoconf automake`
 
 ### GNU Autotools için GNU Make Komutları
 
-<pre><code>
+```
 Make Komutları -> Açıklamaları
 $ make -> Uygulamayı oluştur
 $ make -j4 -> 4 iş parçacığı kullanarak uygulama oluşturma
@@ -91,11 +91,11 @@ $ make uninstall -> Yükleme dosyalarını kaldırma
  	 
 $ make dist -> Kaynak dağıtım tarball oluştur
 $ make distcheck -> Dist yapmaya benzer, ancak derleme olup olmadığını kontrol eder, bir tarball oluşturur.
-</code></pre>
+```
 
 #### Çoğu Yapılandırma değişkeni
 
-<pre><code>
+```
 Değişken -> Açıklama
 CC -> C derleyici	 
 CXX -> C++ derleyici	 
@@ -106,7 +106,7 @@ CXXFLAGS -> C ++ derleyicisinin bayrakları
  	 	 
 LDFLAGS -> Bağlayıcı Bayrakları 
 LIBS -> Bağlayıcıya aktarılan kütüphaneler
-</code></pre>
+```
 
 ##### Faydalı ./configure (Autotools) komut satırı anahtarları
 
@@ -114,13 +114,11 @@ Bunlar, açık kaynaklı uygulamalar veya kütüphaneden kaynaktan kütüphanele
 
 * ./Configure yardım kısmını göster
 
-<code>
-$ ./configure --help 
-</code>
+`$ ./configure --help`
 
 * Genel ./configure kullanım örneği.
 
-<pre><code>
+```
 # ---- Example 1 --------------------#
 # Install to /usr, /usr/bin, /usr/include, /usr/lib, /usr/lib64 on Linux 
 $ ./configure  
@@ -139,23 +137,23 @@ $ ./configure --prefix=/my/custom/location  --with-feature1 \
 
 $ make -j4 # Build using 4 threads (faster)
 $ make install 
-</code></pre>
+```
 
 ### Kullanıcılar için Autotools iş akışı
 
 ADIM 1: Kullanıcı ./configure inşa seçeneğini seçerek çalıştırır;
 
-<pre><code>
+```
 # Install application in default directory
 $ ./configure
 
 # Install the application in another directory 
 $ ./configure --prefix=/home/user/juliuscaesar/opt
-</code></pre>
+```
 
 ADIM 2: İnşa için (GNU) make çalıştırmak.
 
-<pre><code>
+```
 $ make 
 
 # Run GNY make with 4 threads 
@@ -163,16 +161,16 @@ $ make -j4
 
 # Run $ make and $ make install in a single step 
 $ make -j4 && sudo make install 
-</code></pre>
+```
 
 ADIM 3: Kurulum.
 
-<pre><code>
+```
 $ make install 
 
 # If permission is needed 
 $ sudo make install 
-</code></pre>
+```
 
 ### Geliştirici Worflow
 
@@ -190,7 +188,7 @@ ADIM 2:
 ADIM 3:
 
 * => Oluşturulan dosyaları çalıştırarak test edin:
-	+ <code>$ ./configure && make && make install.</code>
+	+ `$ ./configure && make && make install.`
 
 ## Örnek: Temel GNU autotools projesi
 
@@ -198,7 +196,7 @@ ADIM 3:
 
 Dosya: main.cpp
 
-<code><pre class="src src-sh">
+```
 #include <iostream>
 
 int main()
@@ -206,11 +204,11 @@ int main()
   std::cout << "Hello world autotools" << std::endl;
   return 0;
 }
-</pre></code>
+```
 
 ##### Dosya: configure.ac
 
-<pre class="src src-sh">
+```
 #------- File: configure.ac ----------#
 #-------------------------------------# 
 
@@ -230,29 +228,29 @@ AC_PROG_CC
 # Find and check a C++ compiler 
 AC_PROG_CXX 
 AC_OUTPUT 
-</pre>
+```
 
 ##### Dosya: Makefile.am
 
-<pre class="src src-sh">
+```
 # Contains all executable targets 
 bin_PROGRAMS = app
 
 # Sources for the executable targets 
 app_SOURCES  = app.cpp 
-</pre>
+```
 
 ##### Dosya: clean.sh
 
 * Geçerli dizini temizlemek için kullanılan yardımcı bash betiği.
 
-<code><pre class="src src-sh">
+```
 #!/usr/bin/env sh 
 rm -v configure config.log config.status install-sh missing aclocal.m4 compile depcomp 
 rm -vrf autom4te.cache
 rm -v *.o *.bin *.so
 rm *~ # Remove temporary files 
-</pre></code>
+```
 
 ### İnşa Adımları
 
@@ -260,16 +258,14 @@ ADIM 1: Geliştirici tarafından gerçekleştirilen kısım
 
 * GNU autotools araçlarının gerektirdiği ek meta veri dosyaları oluşturun
 
-<pre class="src src-sh">
-$ touch README NEWS AUTHORS ChangeLog # Set metadata files
-</pre>
+`$ touch README NEWS AUTHORS ChangeLog # Set metadata files`
 
 ADIM 2: Geliştirici tarafından gerçekleştirilen kısım
 
 * ./Configure kabuk komut dosyası ve ek dosyaları oluşturmak için atuoreconf komutunu çalıştırın.
-* Çalıştır: $ autoreconf -i -v
+* Çalıştır: `$ autoreconf -i -v`
 
-<pre class="src src-sh">
+```
 $ autoreconf -i -v 
 
 autoreconf: Entering directory `.'
@@ -286,16 +282,16 @@ configure.ac:11: installing './install-sh'
 configure.ac:11: installing './missing'
 Makefile.am: installing './depcomp'
 autoreconf: Leaving directory `.'
-</pre>
+```
 
 ADIM 3: Kullanıcı tarafından gerçekleştirilen kısım
 
 * Aşağıdaki adımlar, uygulamayı sisteme veya yerel bir dizine yüklemek için son kullanıcılar veya bakımcılar tarafından gerçekleştirilir.
 * Yapılandırma komut dosyasını çalıştırarak Makefile dosyasını oluşturun.
 
-Çalıştır: <code>$ ./configure</code>
+Çalıştır: `$ ./configure`
 
-<pre class="src src-sh">
+```
 $ ./configure 
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
@@ -311,21 +307,19 @@ checking that generated files are newer than configure... done
 configure: creating ./config.status
 config.status: creating Makefile
 config.status: executing depfiles commands
-</pre>
+```
 
 Çalıştır: Clang kullanmak için <code>$ ./configure CC=clang CXX=clang++</code>
 
-<pre class="src src-sh">
-$ ./configure CC=clang CXX=clang++
-</pre>
+`$ ./configure CC=clang CXX=clang++`
 
 ADIM 4: Kullanıcı tarafından gerçekleştirilen kısım
 
 * Makefile'ı çalıştırın (GNU make)
 
-Çalıştır: <code>$ make</code>
+Çalıştır: `$ make`
 
-<code><pre class="src src-sh">
+```
 $ make
 
 g++ -DPACKAGE_NAME=\"app\" -DPACKAGE_TARNAME=\"app\" -DPACKAGE_VERSION=\"0.1\"  \
@@ -335,11 +329,11 @@ g++ -DPACKAGE_NAME=\"app\" -DPACKAGE_TARNAME=\"app\" -DPACKAGE_VERSION=\"0.1\"  
     mv -f .deps/app.Tpo .deps/app.Po \
 
  g++  -g -O2   -o app app.o  
-</pre></code>
+```
 
-Çalıştır: <code>$ make install</code>
+Çalıştır: `$ make install`
 
-<code><pre class="src src-sh">
+```
 $ make install
 make[1]: Entering directory '/home/archbox/projects/autools1'
  /usr/bin/mkdir -p '/usr/local/bin'
@@ -348,11 +342,11 @@ make[1]: Entering directory '/home/archbox/projects/autools1'
 make[1]: *** [Makefile:313: install-binPROGRAMS] Error 1
 make[1]: Leaving directory '/home/archbox/projects/autools1'
 make: *** [Makefile:615: install-am] Error 2
-</pre></code>
+```
 
-Çalıştır: <code>$ make dist</code> => Bir tarball dağılımı oluşturun.
+Çalıştır: `$ make dist` => Bir tarball dağılımı oluşturun.
 
-<code><pre class="src src-sh">
+```
 $ make dist
 make  dist-gzip am__post_remove_distdir='@:'
 make[1]: Entering directory '/home/archbox/projects/autools1'
@@ -361,11 +355,11 @@ test -d "app-0.1" || mkdir "app-0.1"
 
   .. ... ... ... ... ... ... 
 rm -rf "app-0.1" || { sleep 5 && rm -rf "app-0.1"; }; else :; fi
-</pre></code>
+```
 
 Tarball dosyasını kontrol edin:
 
-<code><pre class="src src-sh">
+```
     $ tar -tzvf app-0.1.tar.gz 
 drwxrwxr-x 1000/1000         0 2019-10-21 15:23 app-0.1/
 -rw-rw-r-- 1000/1000     42147 2019-10-21 15:22 app-0.1/aclocal.m4
@@ -384,13 +378,13 @@ drwxrwxr-x 1000/1000         0 2019-10-21 15:23 app-0.1/
 -rw-rw-r-- 1000/1000         0 2019-10-21 15:02 app-0.1/README
 -rw-rw-r-- 1000/1000         0 2019-10-21 15:02 app-0.1/NEWS
 -rw-rw-r-- 1000/1000     23477 2019-10-21 15:22 app-0.1/Makefile.in
-</pre></code>
+```
 
 ADIM 5:
 
 * Uygulamayı test edin.
 
-<code><pre class="src src-sh">
+```
 # Check executable file 
 $ file app
 app: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter 
@@ -400,45 +394,45 @@ with debug_info, not stripped
 # Run native executable 
 $ ./app
 Hello world autotools
-</pre></code>
+```
 
 #### Uygulamayı yeni bir konuma oluşturun ve yükleyin
 
 Configure betiğini çalıştırın.
 
-<code><pre class="src src-sh">
+```
 # Build with clang and install at ~/opt/app-test 
 $ ./configure CC=clang CXX=clang++ --prefix=$HOME/opt/app-test
-</pre></code>
+```
 
 Make ve make install komutlarını çalıştırın
 
-<pre class="src src-sh">
+```
 $ make install
 make[1]: Entering directory '/home/archbox/projects/autools1'
  /usr/bin/mkdir -p '/home/archbox/opt/app-test/bin'
   /usr/bin/install -c app '/home/archbox/opt/app-test/bin'
 make[1]: Nothing to be done for 'install-data-am'.
 make[1]: Leaving directory '/home/archbox/projects/autools1'
-</pre>
+```
 
 Test kurulumu:
 
-<pre class="src src-sh">
+```
 $ tree /home/archbox/opt/app-test
 /home/archbox/opt/app-test
 └── bin
     └── app
 
 1 directory, 1 file
-</pre>
+```
 
 Uygulamayı çalıştırın:
 
-<pre class="src src-sh">
+```
 $ /home/archbox/opt/app-test/bin/app 
 Hello world autotools
-</pre>
+```
 
 ## İleri düzey tavsiye kaynaklar
 
