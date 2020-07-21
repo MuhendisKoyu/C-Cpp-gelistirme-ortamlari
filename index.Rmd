@@ -18,15 +18,15 @@ description: "Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket y
 ## Önsöz
 
 <img src="images/muhendis_koyu.png" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
-C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. _IDE_ (**Integrated Development Environment – Tümleşik Geliştirme Ortamı**) haricinde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. _IDE_ kullanımı ise bizi _IDE_'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde _dâhili_ (**builtin**) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?
+C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. _IDE_ (**Integrated Development Environment – Tümleşik Geliştirme Ortamı**) ortamı dışında geliştirdiğimiz yazılımlarda derleme, bağlama vb. işlemler sırasında projelere göre farklılık gösteren uzun paremetrelerle kullanmak durumunda kalırız. _IDE_ kullanımı ise bizi _IDE_'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde _dâhili_ (**built-in**) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirmek zorundadır?
 
-İşte bu kitapla bu problemlere getirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik. 
+İşte bu kitapla bahsi geçen problemler için geliştirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik. 
 
-Türkçe kapsamlı bir kitap olmasını hedefleyerek başladığımız bu yolculuğumuzda türü ne olursa olsun bizlere ulaşacak her bir eleştiri sönük bir mumun alev almasına yardımcı olan yanan bir mumun ateşi olacaktır.
+Kapsamlı bir Türkçe kaynak olmasını hedefleyerek başladığımız bu yolculuğumuzda türü ne olursa olsun bizlere ulaşacak her bir eleştiri sönük bir mumun alev almasına yardımcı olan yanan bir mumun ateşi olacaktır.
 
 ## Katkıda Bulunanlar
 
-Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bunun ile birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
+Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bununla birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
   
 ```{r echo=FALSE, eval=TRUE}
 contributors <- read.csv("extras/contributors.csv", fileEncoding = "UTF-8")
@@ -38,7 +38,7 @@ if (length(names) %% colCount != 0) {
 }
 table <- matrix(names, ncol = colCount, byrow = TRUE)
 table <- as.data.frame(table)
-knitr::kable(table, col.names = NULL)
+knitr::kable(table, col.names=c("","",""))
 ```
 ## Lisans
 
