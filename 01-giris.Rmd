@@ -53,10 +53,9 @@ Dersin devamına ve konunun detayına [Missing Semester TR](https://missing-seme
 
 `vim merhaba.c` ile merhaba isimli C dosyamızı açıp `i` harfi ile Insert moduna geçerek geleneksel uygulamamızı yazmaya başlayabiliriz.
 
-```
+```C
 #include <stdio.h>
 int main()
-
 {
   printf("Merhaba Mühendis Köyü!");
   return 0;
@@ -68,8 +67,9 @@ int main()
 
 Kodu tamamladıktan sonra `<ESC>` tuşu ile komut moduna geçip `:wq` yazarak kaydedip çıkış yapıyoruz. Yazdığımız kodu gcc ile derlemek için (clang kullanıyorsanız gcc yerine clang yazmanız yeterlidir):
 
-`gcc merhaba.c _//derlenmiş kodu a.out olarak çıktı verir_`
-`gcc merhaba.c -o merhaba _//derlenmiş kodu merhaba olarak çıktı verir_`
+`gcc merhaba.c //derlenmiş kodu a.out olarak çıktı verir.`
+
+`gcc merhaba.c -o merhaba //derlenmiş kodu merhaba olarak çıktı verir.`
 
 Derlenen kodu çalıştırmak için `./a.out` veya `./merhaba` komutunu çalıştırmanız yeterlidir.
 
@@ -77,7 +77,7 @@ Editör kullanarak yazdığımız kodlarda, programımızı derlerken dahil etti
 
 `vim us_alma.c`
 
-```
+```C
 #include <stdio.h>
 #include <math.h>
 
