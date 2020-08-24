@@ -2,17 +2,235 @@
 
 ## Meson Nedir
 
-Meson kullanımı avantajı dezavantajı...
+--- 
+favicon: images/favicon1.ico
+cover-image: images/meson.png 
+---  
+
+<img src="images/meson.png" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
+
++ Meson, yazılımın oluşturulmasını (derlenmesini) otomatikleştirmek için bir yazılım aracıdır. Meson'un genel amacı programcı verimliliğini arttırmaktır. Meson, Apache 2.0 Lisansı altında Python ile yazılmış ücretsiz ve açık kaynaklı bir yazılımdır.
+
++ Meson'un belirtilen bir diğer amacı, modern programlama araçları ve en iyi uygulamalar için birinci sınıf destek sağlamaktı. Bunlar, birim testi, kod kapsamı raporlaması, önceden derlenmiş başlıklar ve benzerleri gibi çeşitli özellikleri içerir. Bu özelliklerin tümü Meson kullanan herhangi bir projeye anında ulaşılabilir olmalıdır. Kullanıcının bu özellikleri alabilmesi için üçüncü taraf makroları araması veya kabuk komut dosyaları yazması gerekmez.Meson bunları kullanıcıların yerine yapar.
+
+
+### Özellikleri 
+ 
+**-->** Meson, MacOS,Windows ve diğer işletim sistemleri de dahil olmak üzere Unix benzeri işletim sistemlerinde yerel olarak çalışır.
+
+**-->** Meson, C, C++, CUDA, D, Objective-C, Fortran, Java, C#, Rust ve Vala dillerini destekler.
+
+**-->** Wrap adı verilen bağımlılıkları işlemek için bir mekanizmaya sahiptir.
+
+**-->** Meson, Ninja, GNU derleyici Koleksiyonu, Clang, Microsoft Visual Studio ve isteğe bağlı olarak diğer derleme sistemlerini destekler.
+
+**-->** Çok okunabilir ve kullanıcı dostu Turing olmayan eksiksiz bir DSL'de tanımlar oluşturur.
+
+**-->**  Meson, Meson ve CMake alt projelerini destekler. Bir Meson derleme dosyası WrapDB hizmetine de başvurabilir.
 
 ## Meson Kullanımı
 
-Meson kullanımı avantajı dezavantajı...
+Meson, kullanımı olabildiğince basit olacak şekilde tasarlanmıştır.
+Meson, Python 3'te uygulanmaktadır ve 3.5 veya daha yenisini gerektirir. İşletim sisteminiz bir paket yöneticisi sağlıyorsa, onunla birlikte yüklemelisiniz. Paket yöneticisi olmayan platformlar için, 
+[Python'un ana sayfasından](https://www.python.org/downloads/) indirmeniz gerekir.
+
+### Meson Yükleme
+
+Meson sürümleri [GitHub sürüm sayfasından](https://github.com/mesonbuild/meson/releases) indirilebilir ve özel bir şey yapmadan `./meson.py`'yi bir sürümden veya git deposundan çalıştırabilirsiniz.
+
+Windows'ta, Python'u Python komut dosyalarını çalıştırılabilir yapan yükleyici seçenekleriyle kurmadıysanız, `python /path/to/meson.py` çalıştırmanız gerekir; burada `python` Python 3.5 veya daha yeni sürümüdür.
+
+En yeni geliştirme kodunu doğrudan [Git](https://github.com/mesonbuild/meson)'ten alabilirsiniz. 
+
+### Gereksinimler
+
+ + Python 3
+ + Ninja
+
+### Bağımlılıklar
+
+En yaygın durumda, Meson'da varsayılan olan `ninja` arka ucunu kullanmak için [Ninja yürütülebilir dosyasına](https://ninja-build.org/) ihtiyacınız olacaktır. Bu arka uç, GCC, Clang, Visual Studio, Mingw, ICC, ARMCC vb.dahil olmak üzere tüm platformlarda ve tüm toolchains zincirlerinde kullanılabilir.
+
+Mümkünse paket yöneticiniz tarafından sağlanan sürümü kullanabilirsiniz, aksi takdirde çalıştırılabilir ikili dosyayı [Ninja projesinin yayın sayfasından](https://github.com/ninja-build/ninja/releases) indirebilirsiniz.
+
+Windows'ta Visual Studio çözümleri oluşturmak için yalnızca Visual Studio arka ucunu (`--backend = vs`) veya macOS'ta XCode projeleri oluşturmak için XCode arka ucunu (`--backend = xcode`) kullanmalısınız, Ninja'ya ihtiyacınız yoktur.
+
+### Meson Pip İle Kurulum
+
+Meson, [Python Paket](https://pypi.org/project/meson/) Dizininde mevcuttur ve kök gerektiren ve sistem genelinde yükleyecek olan `pip3 install meson` ile kurulabilir.
+
+Alternatif olarak(önerilir), kullanıcınız için kuracak ve herhangi bir özel ayrıcalık gerektirmeyen `pip3 install --user meson`'u kullanabilirsiniz. Bu, paketi `~/.local/` dizinine yükleyecektir, dolayısıyla `path`'inize `~/.local/bin` eklemeniz gerekecektir.
+
+### Paket Yöneticisi Kullanarak Kurulum
+
+Ubuntu:
+
+```
+$ sudo apt-get install python3 python3-pip python3-setuptools \
+                       python3-wheel ninja-build
+```
+! Distro paketli yazılım hızla modası geçmiş olabilir.
+
+### Sorun Giderme
+
+Ortak sorunlar:
+
+```
+$ meson builddir
+$ bash: /usr/bin/meson: No such file or directory
+```
+
+Açıklama: Python pip modülü kurulumu için varsayılan kurulum ön eki, kabuk ortamınız path içerisine dahil değildir.Python pip kurulum modülleri için varsayılan ön ek `/ usr / local` altında bulunur.
+
+** Çözüm: Bu sorun, varsayılan kabuk ortamı path'i `/ usr / local / bin `içerecek şekilde değiştirilerek çözülebilir.
+
+Not: Bu sorunu çözmenin sembolik bağları kullanmak veya ikili dosyaları varsayılan bir yola kopyalamak gibi başka yolları da vardır. Bu yöntemler, paket yönetiminin birlikte çalışabilirliğini bozabileceği için önerilmez veya desteklenmez.
+
+### Meson Projesi Derleme
+
+Meson'un en yaygın kullanım durumu, üzerinde çalıştığınız bir kod tabanında kod derlemektir. Atılacak adımlar çok basit.
+
+```
+$ cd /path/to/source/root
+$ meson builddir && cd builddir
+$ meson compile
+$ meson test
+```
+Unutulmaması gereken tek şey, ayrı bir yapı dizini oluşturmanız gerektiğidir. Meson, kaynak ağacınızın içinde kaynak kodu oluşturmanıza izin vermez. Tüm yapı eserleri, yapı dizininde saklanır. Bu, aynı anda farklı konfigürasyonlara(yapılandırmalara) sahip birden fazla yapı ağacına sahip olmanızı sağlar. Bu şekilde oluşturulan dosyalar kazara revizyon kontrolüne eklenmez.
+
+Kod değişikliklerinden sonra yeniden derlemek için `meson compile` yazmanız yeterlidir. Build (yapı) komutu her zaman aynıdır. Kaynak kodunda rastgele değişiklikler yapabilir ve sistem dosyalarını oluşturabilirsiniz .  Meson bunları algılar ve doğru olanı yapar. Optimize edilmiş ikili dosyalar oluşturmak istiyorsanız, Meson'u çalıştırırken `--buildtype = debugoptimized` argümanını kullanın. Optimize edilmemiş yapılar için bir yapı dizini ve optimize edilmiş yapılar için de bir tane yapı dizini tutmanız önerilir. Herhangi bir yapılandırmayı derlemek için, ilgili yapı dizinine gidin ve `meson compile`'i çalıştırın.
+
+Meson, hata ayıklama bilgilerini ve derleyici uyarılarını (yani `-g` ve `-Wall`) etkinleştirmek için otomatik olarak derleyici bayrakları ekleyecektir.Bu, kullanıcının onlarla uğraşmak zorunda olmadığı ve bunun yerine kodlamaya odaklanabileceği anlamına gelir.
+
+### Meson'u Dağıtım Paketleyici Olarak Kullanma
+
+Dağıtım paketleyicileri genellikle kullanılan derleme bayrakları üzerinde tam kontrol isterler. Meson bu kullanım durumunu yerel olarak desteklemektedir. Meson projelerini oluşturmak ve kurmak için gereken komutlar aşağıdadır:
+
+```
+$ cd /path/to/source/root
+$ meson --prefix /usr --buildtype=plain builddir -Dc_args=... -Dcpp_args=... -Dc_link_args=... -Dcpp_link_args=...
+$ meson compile -C builddir
+$ meson test -C builddir
+$ DESTDIR=/path/to/staging/root meson install -C builddir
+```
+Komut satırı anahtarı `--buildtype=plain` Meson'a komut satırına kendi bayraklarını eklememesini söyler. Bu, paketleyiciye kullanılan işaretler üzerinde tam kontrol sağlar.
+
+Bu, diğer yapı sistemlerine çok benzer.Tek fark, `DESTDIR` değişkeninin `meson kurulumuna` bir argüman olarak değil, bir ortam değişkeni olarak geçirilmesidir.
+
+Dağıtım derlemeleri her zaman sıfırdan gerçekleştiği için, daha hızlı olduklarından ve daha iyi kod ürettiklerinden paketlerinizin üzerinde [unity oluşturmayı](https://mesonbuild.com/Unity-builds.html) etkinleştirmeyi düşünebilirsiniz. Bununla birlikte, unity yapıları etkinleştirilmiş olarak oluşturulmayan birçok proje vardır, bu nedenle unity yapılarını kullanma kararı, paketleyici tarafından duruma göre yapılmalıdır.
+
+### Include Kullanımı
+
+Çoğu C / C ++ projesinin kaynaklardan farklı dizinlerde başlıkları vardır. Bu nedenle, içerme dizinlerini belirtmeniz gerekir. Bir alt dizinde olduğumuzu ve bunun `include` alt dizinini bazı hedefin arama yoluna eklemek istediğimizi varsayalım. Bir dahil etme dizini nesnesi oluşturmak için şunu yapıyoruz:
+```
+incdir = include_directories('include')
+```
+`İncdir` değişkeni artık `include` alt dizine bir başvuru tutar. Şimdi bunu bir yapı hedefine argüman olarak aktarıyoruz:
+
+```
+executable('someprog', 'someprog.c', include_directories : incdir)
+```
+Bu iki komutun herhangi bir alt dizinde verilebileceğini ve yine de çalışacağını unutmayın. Meson, konumları takip edecek ve hepsinin çalışması için uygun derleyici bayrakları oluşturacaktır.
+
+Unutulmaması gereken bir diğer nokta da `include_directories`'in  hem kaynak dizini hem de ilgili yapı dizinini  path'ı içerecek şekilde eklemesidir, bu yüzden dikkat etmeniz gerekmez.
+
+### Hello World Yazımı
+
+Önce kaynağı tutan bir main.c dosyası oluşturuyoruz. Şuna benziyor:
+
+```
+#include<stdio.h>
+
+int main(int argc, char **argv) {
+  printf("Hello world!\n");
+  return 0;
+}
+```
+Daha sonra bir Meson build (yapı) açıklaması oluşturup aynı dizindeki `meson.build` adlı bir dosyaya koyuyoruz. İçeriği aşağıdaki gibidir:
+
+````
+project('tutorial', 'c')
+executable('demo', 'main.c')
+````
+Hepsi bu. Autotools'tan farklı olarak, kaynaklar listesine herhangi bir kaynak başlığı eklemenize gerek olmadığını unutmayınız.
+
+Artık uygulamamızı oluşturmaya hazırız. Öncelikle kaynak dizine girip aşağıdaki komutu yazarak yapıyı başlatmamız gerekiyor:
+
+```
+$ meson builddir
+```
+Tüm derleyici çıktısını tutmak için ayrı bir yapı dizini oluşturuyoruz. Meson, kaynak içi derlemelere izin vermediği için diğer bazı derleme sistemlerinden farklıdır. Her zaman ayrı bir yapı dizini oluşturmanız gerekir. Genel kural, varsayılan yapı dizinini en üst düzey kaynak dizininizin bir alt dizinine koymaktır.
+
+Meson çalıştırıldığında aşağıdaki çıktıyı yazdırır:
+
+```
+The Meson build system
+ version: 0.13.0-research
+Source dir: /home/jpakkane/mesontutorial
+Build dir: /home/jpakkane/mesontutorial/builddir
+Build type: native build
+Project name is "tutorial".
+Using native c compiler "ccache cc". (gcc 4.8.2)
+Creating build target "demo" with 1 files.
+```
+Artık kodumuzu oluşturmaya hazırız.
+
+```
+$ cd builddir
+
+$ meson compile
+```
+
+Bunu yaptıktan sonra ortaya çıkan ikiliyi çalıştırabiliriz.
+
+```
+$ ./demo
+```
+
+Bu beklenen çıktıyı üretir.
+
+```
+Hello world!
+```
 
 ## Meson Avantajları
 
-Meson kullanımı avantajı dezavantajı...
+Meson kullanımının avantajları:
 
+ 1-Meson'a başlamak kolaydır.
+
+ 2-Meson, CMake ile karşılaştırılabilir ve kendi kriterlerine göre  diğer build (yapı) sistemlere kıyasla en hızlısıdır.
+ 
+ 3-Cmake'e kıyasla sadece zaman kazandırmaz. Aynı zamanda daha net ayırma, daha iyi bir iş akışı, okunabilir seçenekler, dosyalar oluşturma,önceden derlenmiş başlıklar ve Unity gibi daha fazla hedef bulundurur.
+Ayrıca, Meson bu kullanım durumu için baştan tasarlandığından, diğer dillerle karıştırmak daha kolaydır. Alt projeler ve çapraz derleme tamamen desteklenir ve sonradan düşünülmüş gibi hissetirmez.
+
+ 4-Meson dili güçlü* bir şekilde yazılmıştır, öyle ki kütüphane, yürütülebilir, dize ve bunların listeleri gibi yerleşik türler birbirinin yerine kullanılamaz. Özellikle, Make'dan farklı olarak, liste türü boşluktaki dizeleri ayırmaz. Böylece, dosya adlarındaki ve program argümanlarındaki boşluk ve diğer karakterler temiz bir şekilde işlenir.
+ (*Güçlü bir şekilde yazılan bir dilin derleme zamanında zayıf yazıma göre daha katı yazma kuralları vardır.)
+
+ 5-Çoklu platform özelliği vardır.
+
+ 6-Birçok desteklenen dil bulunmaktadır. 
+
+ 7-Ağaç dışı yapıya sahiptir.
+ 
+ 8-x86_64 Unix'te doğru kütüphane kurulum dizinini ayarlama otomatiktir.
+ 
+ 9-Pkg-config dosya üreticisi vardır.
+ 
 ## Meson Dezavantajları
 
-Meson kullanımı avantajı dezavantajı...
+Meson kullanımının dezavantajları:
+
+ 1-Meson, projeleri kaynaktan entegre etmek için kendi indirme hizmetini destekliyor, ancak şu anda çok fazla paketi yok. 
+
+ 2-Statik bağlantı desteğinin olmaması ve (işlevlerin olmaması nedeniyle) genişletilecek herhangi bir yeteneğin olmaması meson için bir dezavantajdır.
+
+ 3-Pkg-config olmadan kütüphane bağımlılıkları bulamamaktadır.
+
+ 4-Özel fonksiyonlar ile genişletilemez.
+ 
+ 5-Hata ayıklama yapıları varsayılan olarak en iyi duruma getirilmemiştir.
+
+ 
+**-->>** Avantaj ve dezavantaj bölümünde bulunan bazı maddeler [slant](https://www.slant.co/topics/4263/viewpoints/14/~open-source-build-systems-for-c-c~meson) sitesinde bulunan  kullanıcı yorumlarıdır.
 
