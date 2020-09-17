@@ -1,6 +1,6 @@
-# GNU Autotool
+# GNU Autotools
 
-## Genel Bakış
+## GNU Autotools Nedir
 
 * Autotools
 	+ =>> Autoconf, automake ve libtool için GNU Yapı Sistemi veya umbrela adı. GNU otomatik araçları birçok açık kaynaklı Linux projesi ve gömülü Linux tarafından kullanılmaktadır.
@@ -60,7 +60,7 @@
 	+ `$ make install => Install application.`
 	+ `$ … … ..`
 
-## Referans Kartı
+## GNU Autotools Kullanımı
 
 ### Kurulum
 
@@ -190,7 +190,7 @@ ADIM 3:
 * => Oluşturulan dosyaları çalıştırarak test edin:
 	+ `$ ./configure && make && make install.`
 
-## Örnek: Temel GNU autotools projesi
+### Örnek Temel GNU Autotools Projesi
 
 ### Proje Dosyaları
 
@@ -434,7 +434,7 @@ $ /home/archbox/opt/app-test/bin/app
 Hello world autotools
 ```
 
-## İleri düzey tavsiye kaynaklar
+### İleri düzey tavsiye kaynaklar
 
 + [Autotools Nasıl Kullanılır](https://eklitzke.org/how-to-autotools)
 + [GNU Autotools Kitabı](https://www.star.bnl.gov/~liuzx/autobook.html)
@@ -443,4 +443,13 @@ Hello world autotools
 + [Nasıl yapılandırma betiği oluştururum?](https://stackoverflow.com/questions/10999549/how-do-i-create-a-configure-script)
 + [Autotools — Fedora Geliştirici Portalı](https://developer.fedoraproject.org/tech/languages/c/autotools.html)
 + [GNU Derleme Sistemi (A.K.A. GNU Autotools) ile Üretilen C / C ++ Projesi: NetBeans vs. Eclipse CDT](http://thegreyblog.blogspot.com/2013/09/cc-project-built-with-gnu-build-system.html)
+
+
+## GNU Autotools Avantajları
+
+GNU Autotools bir nevi kendi derleme sistemini oluşturarak, bir yazılımın her hangi bir sistemde 2-3 komut ile çalışabilir hale gelmesini sağlayabilir. 
+
+## GNU Autotools Dezavantajları
+
+GNU Autotools yapımcıları tarafından kullanımı basit şeklinde ifade ediliyor ama biraz kullanımı zordur. 
 
