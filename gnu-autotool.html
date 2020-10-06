@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>GNU Autotool | C/C++ Geliştirme Ortamları</title>
+  <title>C/C++ Geliştirme Ortamları</title>
   <meta name="description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="GNU Autotool | C/C++ Geliştirme Ortamları" />
+  <meta property="og:title" content="C/C++ Geliştirme Ortamları" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/" />
   <meta property="og:image" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/images/muhendis_koyu.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MuhendisKoyu/C-Cpp-gelistirme-ortamlari" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="GNU Autotool | C/C++ Geliştirme Ortamları" />
+  <meta name="twitter:title" content="C/C++ Geliştirme Ortamları" />
   
   <meta name="twitter:description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
   <meta name="twitter:image" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/images/muhendis_koyu.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Mühendis Köyü" />
 
 
-<meta name="date" content="2020-06-21" />
+<meta name="date" content="2020-09-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,8 +50,72 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -75,79 +139,107 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#lisans"><i class="fa fa-check"></i>Lisans</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#bu-kitap-nasıl-geliştiriliyor"><i class="fa fa-check"></i>Bu Kitap Nasıl Geliştiriliyor</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html"><i class="fa fa-check"></i>Giriş</a><ul>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#bölüm-içeriği"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#ide-kullanımı"><i class="fa fa-check"></i>IDE Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#editör-derleyici-kullanımı"><i class="fa fa-check"></i>Editör + Derleyici Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#cc-için-inşa-sistemleri"><i class="fa fa-check"></i>C/C++ için İnşa Sistemleri</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#cc-için-paket-yöneticileri"><i class="fa fa-check"></i>C/C++ için Paket Yöneticileri</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html"><i class="fa fa-check"></i>Giriş</a><ul>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#bölüm-içeriği"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#ide-kullanımı"><i class="fa fa-check"></i>IDE Kullanımı</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#editör-derleyici-kullanımı"><i class="fa fa-check"></i>Editör + Derleyici Kullanımı</a><ul>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#vim"><i class="fa fa-check"></i>VIM</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#temel-öğeler"><i class="fa fa-check"></i>Temel Öğeler</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#vimde-c-programı-geliştirme"><i class="fa fa-check"></i>VIM’de C Programı Geliştirme</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#cc-için-inşa-sistemleri"><i class="fa fa-check"></i>C/C++ için İnşa Sistemleri</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#cc-için-paket-yöneticileri"><i class="fa fa-check"></i>C/C++ için Paket Yöneticileri</a></li>
 </ul></li>
 <li class="part"><span><b>I İnşa Sistemleri</b></span></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html"><i class="fa fa-check"></i>Makefile</a><ul>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#nedir"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#kullanımı"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#avantajları"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#dezavantajları"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="1" data-path="makefile.html"><a href="makefile.html"><i class="fa fa-check"></i><b>1</b> Makefile</a><ul>
+<li class="chapter" data-level="1.1" data-path="makefile.html"><a href="makefile.html#makefile-nedir"><i class="fa fa-check"></i><b>1.1</b> Makefile Nedir</a></li>
+<li class="chapter" data-level="1.2" data-path="makefile.html"><a href="makefile.html#makefile-kullanımı"><i class="fa fa-check"></i><b>1.2</b> Makefile Kullanımı</a></li>
+<li class="chapter" data-level="1.3" data-path="makefile.html"><a href="makefile.html#makefile-avantajları"><i class="fa fa-check"></i><b>1.3</b> Makefile Avantajları</a></li>
+<li class="chapter" data-level="1.4" data-path="makefile.html"><a href="makefile.html#makefile-dezavantajları"><i class="fa fa-check"></i><b>1.4</b> Makefile Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html"><i class="fa fa-check"></i>Cmake</a><ul>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#nedir-1"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#kullanımı-1"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#avantajları-1"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#dezavantajları-1"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="2" data-path="cmake.html"><a href="cmake.html"><i class="fa fa-check"></i><b>2</b> Cmake</a><ul>
+<li class="chapter" data-level="2.1" data-path="cmake.html"><a href="cmake.html#cmake-kullanımı"><i class="fa fa-check"></i><b>2.1</b> Cmake Kullanımı</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="cmake.html"><a href="cmake.html#windowsta-kurulum"><i class="fa fa-check"></i><b>2.1.1</b> Windows’ta Kurulum</a></li>
+<li class="chapter" data-level="2.1.2" data-path="cmake.html"><a href="cmake.html#linuxta-kurulum"><i class="fa fa-check"></i><b>2.1.2</b> Linux’ta Kurulum</a></li>
+<li class="chapter" data-level="2.1.3" data-path="cmake.html"><a href="cmake.html#projenin-oluşturulması"><i class="fa fa-check"></i><b>2.1.3</b> Projenin oluşturulması</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html"><i class="fa fa-check"></i>GNU Autotool</a><ul>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#nedir-2"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#kullanımı-2"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#avantajları-2"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#dezavantajları-2"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="2.2" data-path="cmake.html"><a href="cmake.html#cmake-avantajları"><i class="fa fa-check"></i><b>2.2</b> Cmake Avantajları</a></li>
+<li class="chapter" data-level="2.3" data-path="cmake.html"><a href="cmake.html#cmake-dezavantajları"><i class="fa fa-check"></i><b>2.3</b> Cmake Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html"><i class="fa fa-check"></i>Msbuild</a><ul>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#nedir-3"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#kullanımı-3"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#avantajları-3"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#dezavantajları-3"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="3" data-path="gnu-autotool.html"><a href="gnu-autotool.html"><i class="fa fa-check"></i><b>3</b> GNU Autotool</a><ul>
+<li class="chapter" data-level="3.1" data-path="gnu-autotool.html"><a href="gnu-autotool.html#genel-bakış"><i class="fa fa-check"></i><b>3.1</b> Genel Bakış</a></li>
+<li class="chapter" data-level="3.2" data-path="gnu-autotool.html"><a href="gnu-autotool.html#referans-kartı"><i class="fa fa-check"></i><b>3.2</b> Referans Kartı</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="gnu-autotool.html"><a href="gnu-autotool.html#kurulum"><i class="fa fa-check"></i><b>3.2.1</b> Kurulum</a></li>
+<li class="chapter" data-level="3.2.2" data-path="gnu-autotool.html"><a href="gnu-autotool.html#gnu-autotools-için-gnu-make-komutları"><i class="fa fa-check"></i><b>3.2.2</b> GNU Autotools için GNU Make Komutları</a></li>
+<li class="chapter" data-level="3.2.3" data-path="gnu-autotool.html"><a href="gnu-autotool.html#kullanıcılar-için-autotools-iş-akışı"><i class="fa fa-check"></i><b>3.2.3</b> Kullanıcılar için Autotools iş akışı</a></li>
+<li class="chapter" data-level="3.2.4" data-path="gnu-autotool.html"><a href="gnu-autotool.html#geliştirici-worflow"><i class="fa fa-check"></i><b>3.2.4</b> Geliştirici Worflow</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html"><i class="fa fa-check"></i>Meson</a><ul>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#nedir-4"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#kullanımı-4"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#avantajları-4"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#dezavantajları-4"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="3.3" data-path="gnu-autotool.html"><a href="gnu-autotool.html#örnek-temel-gnu-autotools-projesi"><i class="fa fa-check"></i><b>3.3</b> Örnek: Temel GNU autotools projesi</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="gnu-autotool.html"><a href="gnu-autotool.html#proje-dosyaları"><i class="fa fa-check"></i><b>3.3.1</b> Proje Dosyaları</a></li>
+<li class="chapter" data-level="3.3.2" data-path="gnu-autotool.html"><a href="gnu-autotool.html#inşa-adımları"><i class="fa fa-check"></i><b>3.3.2</b> İnşa Adımları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html"><i class="fa fa-check"></i>Qmake</a><ul>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#nedir-5"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#kullanımı-5"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#avantajları-5"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#dezavantajları-5"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="3.4" data-path="gnu-autotool.html"><a href="gnu-autotool.html#ileri-düzey-tavsiye-kaynaklar"><i class="fa fa-check"></i><b>3.4</b> İleri düzey tavsiye kaynaklar</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html"><i class="fa fa-check"></i>Kbuild</a><ul>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#nedir-6"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#kullanımı-6"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#avantajları-6"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#dezavantajları-6"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="4" data-path="msbuild.html"><a href="msbuild.html"><i class="fa fa-check"></i><b>4</b> Msbuild</a><ul>
+<li class="chapter" data-level="4.1" data-path="msbuild.html"><a href="msbuild.html#msbuild-nedir"><i class="fa fa-check"></i><b>4.1</b> Msbuild Nedir</a></li>
+<li class="chapter" data-level="4.2" data-path="msbuild.html"><a href="msbuild.html#msbuild-kullanımı"><i class="fa fa-check"></i><b>4.2</b> Msbuild Kullanımı</a></li>
+<li class="chapter" data-level="4.3" data-path="msbuild.html"><a href="msbuild.html#msbuild-avantajları"><i class="fa fa-check"></i><b>4.3</b> Msbuild Avantajları</a></li>
+<li class="chapter" data-level="4.4" data-path="msbuild.html"><a href="msbuild.html#msbuild-dezavantajları"><i class="fa fa-check"></i><b>4.4</b> Msbuild Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html"><i class="fa fa-check"></i>Build2</a><ul>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#nedir-7"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#kullanımı-7"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#avantajları-7"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#dezavantajları-7"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5" data-path="meson.html"><a href="meson.html"><i class="fa fa-check"></i><b>5</b> Meson</a><ul>
+<li class="chapter" data-level="5.1" data-path="meson.html"><a href="meson.html#meson-nedir"><i class="fa fa-check"></i><b>5.1</b> Meson Nedir</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="meson.html"><a href="meson.html#özellikleri"><i class="fa fa-check"></i><b>5.1.1</b> Özellikleri</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html"><i class="fa fa-check"></i>Xmake</a><ul>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#nedir-8"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#kullanımı-8"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#avantajları-8"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#dezavantajları-8"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5.2" data-path="meson.html"><a href="meson.html#meson-kullanımı"><i class="fa fa-check"></i><b>5.2</b> Meson Kullanımı</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="meson.html"><a href="meson.html#meson-yükleme"><i class="fa fa-check"></i><b>5.2.1</b> Meson Yükleme</a></li>
+<li class="chapter" data-level="5.2.2" data-path="meson.html"><a href="meson.html#gereksinimler"><i class="fa fa-check"></i><b>5.2.2</b> Gereksinimler</a></li>
+<li class="chapter" data-level="5.2.3" data-path="meson.html"><a href="meson.html#bağımlılıklar"><i class="fa fa-check"></i><b>5.2.3</b> Bağımlılıklar</a></li>
+<li class="chapter" data-level="5.2.4" data-path="meson.html"><a href="meson.html#meson-pip-ile-kurulum"><i class="fa fa-check"></i><b>5.2.4</b> Meson Pip İle Kurulum</a></li>
+<li class="chapter" data-level="5.2.5" data-path="meson.html"><a href="meson.html#paket-yöneticisi-kullanarak-kurulum"><i class="fa fa-check"></i><b>5.2.5</b> Paket Yöneticisi Kullanarak Kurulum</a></li>
+<li class="chapter" data-level="5.2.6" data-path="meson.html"><a href="meson.html#sorun-giderme"><i class="fa fa-check"></i><b>5.2.6</b> Sorun Giderme</a></li>
+<li class="chapter" data-level="5.2.7" data-path="meson.html"><a href="meson.html#meson-projesi-derleme"><i class="fa fa-check"></i><b>5.2.7</b> Meson Projesi Derleme</a></li>
+<li class="chapter" data-level="5.2.8" data-path="meson.html"><a href="meson.html#mesonu-dağıtım-paketleyici-olarak-kullanma"><i class="fa fa-check"></i><b>5.2.8</b> Meson’u Dağıtım Paketleyici Olarak Kullanma</a></li>
+<li class="chapter" data-level="5.2.9" data-path="meson.html"><a href="meson.html#include-kullanımı"><i class="fa fa-check"></i><b>5.2.9</b> Include Kullanımı</a></li>
+<li class="chapter" data-level="5.2.10" data-path="meson.html"><a href="meson.html#hello-world-yazımı"><i class="fa fa-check"></i><b>5.2.10</b> Hello World Yazımı</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html"><i class="fa fa-check"></i>Bazel</a><ul>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#nedir-9"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#kullanımı-9"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#avantajları-9"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#dezavantajları-9"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5.3" data-path="meson.html"><a href="meson.html#meson-avantajları"><i class="fa fa-check"></i><b>5.3</b> Meson Avantajları</a></li>
+<li class="chapter" data-level="5.4" data-path="meson.html"><a href="meson.html#meson-dezavantajları"><i class="fa fa-check"></i><b>5.4</b> Meson Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="qmake.html"><a href="qmake.html"><i class="fa fa-check"></i><b>6</b> Qmake</a><ul>
+<li class="chapter" data-level="6.1" data-path="qmake.html"><a href="qmake.html#qmake-nedir"><i class="fa fa-check"></i><b>6.1</b> Qmake Nedir</a></li>
+<li class="chapter" data-level="6.2" data-path="qmake.html"><a href="qmake.html#qmake-kullanımı"><i class="fa fa-check"></i><b>6.2</b> Qmake Kullanımı</a></li>
+<li class="chapter" data-level="6.3" data-path="qmake.html"><a href="qmake.html#qmake-avantajları"><i class="fa fa-check"></i><b>6.3</b> Qmake Avantajları</a></li>
+<li class="chapter" data-level="6.4" data-path="qmake.html"><a href="qmake.html#qmake-dezavantajları"><i class="fa fa-check"></i><b>6.4</b> Qmake Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="kbuild.html"><a href="kbuild.html"><i class="fa fa-check"></i><b>7</b> Kbuild</a><ul>
+<li class="chapter" data-level="7.1" data-path="kbuild.html"><a href="kbuild.html#kbuild-nedir"><i class="fa fa-check"></i><b>7.1</b> Kbuild Nedir</a></li>
+<li class="chapter" data-level="7.2" data-path="kbuild.html"><a href="kbuild.html#kbuild-kullanımı"><i class="fa fa-check"></i><b>7.2</b> Kbuild Kullanımı</a></li>
+<li class="chapter" data-level="7.3" data-path="kbuild.html"><a href="kbuild.html#kbuild-avantajları"><i class="fa fa-check"></i><b>7.3</b> Kbuild Avantajları</a></li>
+<li class="chapter" data-level="7.4" data-path="kbuild.html"><a href="kbuild.html#kbuild-dezavantajları"><i class="fa fa-check"></i><b>7.4</b> Kbuild Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="build2.html"><a href="build2.html"><i class="fa fa-check"></i><b>8</b> Build2</a><ul>
+<li class="chapter" data-level="8.1" data-path="build2.html"><a href="build2.html#build2-nedir"><i class="fa fa-check"></i><b>8.1</b> Build2 Nedir</a></li>
+<li class="chapter" data-level="8.2" data-path="build2.html"><a href="build2.html#build2-kullanımı"><i class="fa fa-check"></i><b>8.2</b> Build2 Kullanımı</a></li>
+<li class="chapter" data-level="8.3" data-path="build2.html"><a href="build2.html#build2-avantajları"><i class="fa fa-check"></i><b>8.3</b> Build2 Avantajları</a></li>
+<li class="chapter" data-level="8.4" data-path="build2.html"><a href="build2.html#build2-dezavantajları"><i class="fa fa-check"></i><b>8.4</b> Build2 Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="xmake.html"><a href="xmake.html"><i class="fa fa-check"></i><b>9</b> Xmake</a><ul>
+<li class="chapter" data-level="9.1" data-path="xmake.html"><a href="xmake.html#xmake-nedir"><i class="fa fa-check"></i><b>9.1</b> Xmake Nedir</a></li>
+<li class="chapter" data-level="9.2" data-path="xmake.html"><a href="xmake.html#xmake-kullanımı"><i class="fa fa-check"></i><b>9.2</b> Xmake Kullanımı</a></li>
+<li class="chapter" data-level="9.3" data-path="xmake.html"><a href="xmake.html#xmake-avantajları"><i class="fa fa-check"></i><b>9.3</b> Xmake Avantajları</a></li>
+<li class="chapter" data-level="9.4" data-path="xmake.html"><a href="xmake.html#xmake-dezavantajları"><i class="fa fa-check"></i><b>9.4</b> Xmake Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="bazel.html"><a href="bazel.html"><i class="fa fa-check"></i><b>10</b> Bazel</a><ul>
+<li class="chapter" data-level="10.1" data-path="bazel.html"><a href="bazel.html#bazel-nedir"><i class="fa fa-check"></i><b>10.1</b> Bazel Nedir</a></li>
+<li class="chapter" data-level="10.2" data-path="bazel.html"><a href="bazel.html#bazel-kullanımı"><i class="fa fa-check"></i><b>10.2</b> Bazel Kullanımı</a></li>
+<li class="chapter" data-level="10.3" data-path="bazel.html"><a href="bazel.html#bazel-avantajları"><i class="fa fa-check"></i><b>10.3</b> Bazel Avantajları</a></li>
+<li class="chapter" data-level="10.4" data-path="bazel.html"><a href="bazel.html#bazel-dezavantajları"><i class="fa fa-check"></i><b>10.4</b> Bazel Dezavantajları</a></li>
 </ul></li>
 <li class="part"><span><b>II Paket Yöneticileri</b></span></li>
-<li class="chapter" data-level="" data-path="conan.html"><a href="conan.html"><i class="fa fa-check"></i>Conan</a><ul>
-<li class="chapter" data-level="" data-path="conan.html"><a href="conan.html#bölüm-içeriği-1"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
+<li class="chapter" data-level="11" data-path="conan.html"><a href="conan.html"><i class="fa fa-check"></i><b>11</b> Conan</a><ul>
+<li class="chapter" data-level="11.1" data-path="conan.html"><a href="conan.html#conan-bölüm-içeriği"><i class="fa fa-check"></i><b>11.1</b> Conan Bölüm içeriği</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i>Referanslar</a></li>
+<li class="chapter" data-level="12" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i><b>12</b> Referanslar</a></li>
 <li class="divider"></li>
 <li><a href="https://muhendiskoyu.github.io/C-Cpp-gelistirme-ortamlari" target="blank">At Gihub Pages</a></li>
 
@@ -168,23 +260,412 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gnu-autotool" class="section level1 unnumbered">
-<h1>GNU Autotool</h1>
-<div id="nedir-2" class="section level2 unnumbered">
-<h2>Nedir</h2>
-<p>GNU Autotool kullanımı avantajı dezavantajı…</p>
+<div id="gnu-autotool" class="section level1">
+<h1><span class="header-section-number">Bölüm 3</span> GNU Autotool</h1>
+<div id="genel-bakış" class="section level2">
+<h2><span class="header-section-number">3.1</span> Genel Bakış</h2>
+<ul>
+<li><p>Autotools</p>
+<ul>
+<li>=&gt;&gt; Autoconf, automake ve libtool için GNU Yapı Sistemi veya umbrela adı. GNU otomatik araçları birçok açık kaynaklı Linux projesi ve gömülü Linux tarafından kullanılmaktadır.</li>
+</ul></li>
+<li><p>GNU Autotools Kullanan Bazı Projeler:</p>
+<ul>
+<li><a href="https://github.com/emacs-mirror/emacs">GNU Emacs</a></li>
+<li><a href="https://github.com/bminor/glibc">GNU Glibc</a> (Linux’ta kullanılan GNU C Çalışma Zamanı Kütüphanesi)</li>
+<li><a href="https://github.com/gcc-mirror/gcc/blob/master/configure.ac">GNU GCC Compiler</a></li>
+<li><a href="https://gitlab.freedesktop.org/NetworkManager/NetworkManager/blob/master/configure.ac">NetworkManager</a> (Linux ağ yöneticisi arka plan programı)</li>
+<li><a href="https://github.com/hishamhm/htop/blob/master/configure.ac">Htop tool</a> - htop etkileşimli bir metin modu süreç görüntüleyicisidir.</li>
+<li><a href="https://github.com/nghttp2/nghttp2/blob/master/configure.ac">Nhttp2</a> - (Köprü Metni Aktarım Protokolü sürüm 2’nin C’de uygulanması.)</li>
+<li><a href="https://github.com/mingw-deb/libffi/blob/master/configure">LibFFI</a></li>
+<li><a href="https://github.com/wireapp/libsodium/blob/master/configure.ac">LibSodium</a></li>
+</ul></li>
+<li><p>Çoğunlukla Unix benzeri veya POSIX benzeri işletim sistemlerinde, özellikle Linux’ta kullanılır.</p></li>
+<li><p>Motivasyon:</p>
+<ul>
+<li>Eski sistemler veya yazılımlarla başa çıkmak,</li>
+<li>Alternatif inşa sistemleri hakkında bilgi edinin,</li>
+<li>Mevcut açık kaynaklı projelerin bakımı,</li>
+<li>GNU otomatik araçlarını CMake’e taşıma olanağı,</li>
+<li>Gömülü Linux.</li>
+</ul></li>
+<li><p>Desteklenen IDE’ler (Entegre Geliştirme Ortamları)</p>
+<ul>
+<li>Eclipse IDE
+<ul>
+<li><a href="https://www.eclipse.org/linuxtools/">Linux Araçları Eklentisi</a></li>
+<li><a href="https://wiki.eclipse.org/CDT/Autotools/User_Guide">Eclipse CDT Autotools Kullanım Kılavuzu</a></li>
+</ul></li>
+<li>NetBeans
+<ul>
+<li><a href="http://plugins.netbeans.org/plugin/51647/cppgnuautotools">CppGnuAutoTools Eklentisi</a></li>
+</ul></li>
+<li>QTCreator
+<ul>
+<li><a href="https://doc.qt.io/qtcreator/creator-projects-autotools.html">Autotools Proje Yöneticisi Eklentisi</a></li>
+</ul></li>
+</ul></li>
+<li><p>Şunun için kullanılabilir:</p>
+<ul>
+<li>Linux, MacOSX, FreeBSD, OpenBSD, NetBSD vb.</li>
+</ul></li>
+<li><p>Belgeler:</p>
+<ul>
+<li><a href="https://www.gnu.org/software/autoconf/">GNU Autoconf</a></li>
+<li><a href="https://www.gnu.org/software/automake/automake.html">GNU Automake</a></li>
+<li><a href="https://www.gnu.org/software/libtool/libtool.html">GNU Libtool</a></li>
+</ul></li>
+<li><p>Desteklenen Programlama Dilleri</p>
+<ul>
+<li>C</li>
+<li>C++</li>
+<li>Objective C</li>
+<li>Fortran</li>
+<li>Fortran77</li>
+<li>Erlang</li>
+</ul></li>
+<li><p>Terminal Belgeleri:</p>
+<ul>
+<li><code>$ info automake</code></li>
+<li><code>$ info autoconf</code></li>
+<li><code>$ info libtool</code></li>
+</ul></li>
+<li><p>Ortak yapı yapılandırma olanakları</p>
+<ul>
+<li><code>$ ./configure</code></li>
+<li><code>$ make</code></li>
+<li><code>$ make install =&gt; Install application.</code></li>
+<li><code>$ … … ..</code></li>
+</ul></li>
+</ul>
 </div>
-<div id="kullanımı-2" class="section level2 unnumbered">
-<h2>Kullanımı</h2>
-<p>GNU Autotool kullanımı avantajı dezavantajı…</p>
+<div id="referans-kartı" class="section level2">
+<h2><span class="header-section-number">3.2</span> Referans Kartı</h2>
+<div id="kurulum" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Kurulum</h3>
+<div id="fedora-linux-dağıtımına-kurulumu" class="section level5">
+<h5><span class="header-section-number">3.2.1.0.1</span> Fedora Linux Dağıtımına Kurulumu:</h5>
+<p><code>$ sudo dnf install autoconf automake</code></p>
 </div>
-<div id="avantajları-2" class="section level2 unnumbered">
-<h2>Avantajları</h2>
-<p>GNU Autotool kullanımı avantajı dezavantajı…</p>
+<div id="ubuntu-veya-debian-linux-dağıtımlarına-kurulumu" class="section level5">
+<h5><span class="header-section-number">3.2.1.0.2</span> Ubuntu veya Debian Linux Dağıtımlarına Kurulumu:</h5>
+<p><code>$ sudo apt-get install autoconf automake</code></p>
 </div>
-<div id="dezavantajları-2" class="section level2 unnumbered">
-<h2>Dezavantajları</h2>
-<p>GNU Autotool kullanımı avantajı dezavantajı…</p>
+</div>
+<div id="gnu-autotools-için-gnu-make-komutları" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> GNU Autotools için GNU Make Komutları</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="gnu-autotool.html#cb18-1"></a><span class="ex">Make</span> Komutları -<span class="op">&gt;</span> Açıklamaları</span>
+<span id="cb18-2"><a href="gnu-autotool.html#cb18-2"></a>$ <span class="fu">make</span> -<span class="op">&gt;</span> Uygulamayı oluştur</span>
+<span id="cb18-3"><a href="gnu-autotool.html#cb18-3"></a>$ <span class="fu">make</span> -j4 -<span class="op">&gt;</span> 4 iş parçacığı kullanarak uygulama oluşturma</span>
+<span id="cb18-4"><a href="gnu-autotool.html#cb18-4"></a></span>
+<span id="cb18-5"><a href="gnu-autotool.html#cb18-5"></a> 	 </span>
+<span id="cb18-6"><a href="gnu-autotool.html#cb18-6"></a>$ <span class="fu">make</span> check -<span class="op">&gt;</span> Testleri çalıştırın</span>
+<span id="cb18-7"><a href="gnu-autotool.html#cb18-7"></a> 	 </span>
+<span id="cb18-8"><a href="gnu-autotool.html#cb18-8"></a>$ <span class="fu">make</span> clean -<span class="op">&gt;</span> Derleme dosyalarını temizle</span>
+<span id="cb18-9"><a href="gnu-autotool.html#cb18-9"></a>$ <span class="fu">make</span> distclean -<span class="op">&gt;</span> Oluşturulan otomatik dosyaları kaldırın.</span>
+<span id="cb18-10"><a href="gnu-autotool.html#cb18-10"></a> 	 </span>
+<span id="cb18-11"><a href="gnu-autotool.html#cb18-11"></a>$ <span class="fu">make</span> install -<span class="op">&gt;</span> / Usr / loca / bin, / etc,… için uygulamayı sisteme yükleyin.</span>
+<span id="cb18-12"><a href="gnu-autotool.html#cb18-12"></a>$ <span class="fu">make</span> intallcheck -<span class="op">&gt;</span> Kurulumu kontrol edin</span>
+<span id="cb18-13"><a href="gnu-autotool.html#cb18-13"></a>$ <span class="fu">make</span> uninstall -<span class="op">&gt;</span> Yükleme dosyalarını kaldırma</span>
+<span id="cb18-14"><a href="gnu-autotool.html#cb18-14"></a> 	 </span>
+<span id="cb18-15"><a href="gnu-autotool.html#cb18-15"></a>$ <span class="fu">make</span> dist -<span class="op">&gt;</span> Kaynak dağıtım tarball oluştur</span>
+<span id="cb18-16"><a href="gnu-autotool.html#cb18-16"></a>$ <span class="fu">make</span> distcheck -<span class="op">&gt;</span> Dist yapmaya benzer, ancak derleme olup olmadığını kontrol eder, bir tarball oluşturur.</span></code></pre></div>
+<div id="çoğu-yapılandırma-değişkeni" class="section level4">
+<h4><span class="header-section-number">3.2.2.1</span> Çoğu Yapılandırma değişkeni</h4>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="gnu-autotool.html#cb19-1"></a><span class="ex">De</span>ğişken -<span class="op">&gt;</span> Açıklama</span>
+<span id="cb19-2"><a href="gnu-autotool.html#cb19-2"></a><span class="ex">CC</span> -<span class="op">&gt;</span> C derleyici	 </span>
+<span id="cb19-3"><a href="gnu-autotool.html#cb19-3"></a><span class="ex">CXX</span> -<span class="op">&gt;</span> C++ derleyici	 </span>
+<span id="cb19-4"><a href="gnu-autotool.html#cb19-4"></a> 	 	 </span>
+<span id="cb19-5"><a href="gnu-autotool.html#cb19-5"></a><span class="ex">CPPFLAGS</span> -<span class="op">&gt;</span> C ve C ++ Önişlemci bayrakları	 </span>
+<span id="cb19-6"><a href="gnu-autotool.html#cb19-6"></a><span class="ex">CFLAGS</span> -<span class="op">&gt;</span> C derleyicisinin bayrakları</span>
+<span id="cb19-7"><a href="gnu-autotool.html#cb19-7"></a><span class="ex">CXXFLAGS</span> -<span class="op">&gt;</span> C ++ derleyicisinin bayrakları </span>
+<span id="cb19-8"><a href="gnu-autotool.html#cb19-8"></a> 	 	 </span>
+<span id="cb19-9"><a href="gnu-autotool.html#cb19-9"></a><span class="ex">LDFLAGS</span> -<span class="op">&gt;</span> Bağlayıcı Bayrakları </span>
+<span id="cb19-10"><a href="gnu-autotool.html#cb19-10"></a><span class="ex">LIBS</span> -<span class="op">&gt;</span> Bağlayıcıya aktarılan kütüphaneler</span></code></pre></div>
+<div id="faydalı-.configure-autotools-komut-satırı-anahtarları" class="section level5">
+<h5><span class="header-section-number">3.2.2.1.1</span> Faydalı ./configure (Autotools) komut satırı anahtarları</h5>
+<p>Bunlar, açık kaynaklı uygulamalar veya kütüphaneden kaynaktan kütüphaneler oluşturmak için kullanışlı ve yinelenen komut satırı anahtarlarıdır.</p>
+<ul>
+<li>./Configure yardım kısmını göster</li>
+</ul>
+<p><code>$ ./configure --help</code></p>
+<ul>
+<li>Genel ./configure kullanım örneği.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="gnu-autotool.html#cb20-1"></a><span class="co"># ---- Example 1 --------------------#</span></span>
+<span id="cb20-2"><a href="gnu-autotool.html#cb20-2"></a><span class="co"># Install to /usr, /usr/bin, /usr/include, /usr/lib, /usr/lib64 on Linux </span></span>
+<span id="cb20-3"><a href="gnu-autotool.html#cb20-3"></a>$ <span class="ex">./configure</span>  </span>
+<span id="cb20-4"><a href="gnu-autotool.html#cb20-4"></a>$ <span class="fu">make</span> </span>
+<span id="cb20-5"><a href="gnu-autotool.html#cb20-5"></a>$ <span class="fu">make</span> install </span>
+<span id="cb20-6"><a href="gnu-autotool.html#cb20-6"></a></span>
+<span id="cb20-7"><a href="gnu-autotool.html#cb20-7"></a><span class="co"># ---- Example 2 --------------------#</span></span>
+<span id="cb20-8"><a href="gnu-autotool.html#cb20-8"></a>$ <span class="ex">./configure</span>  --with-feature1 --without-feature2 --eanable-option1 --enable-option2=no </span>
+<span id="cb20-9"><a href="gnu-autotool.html#cb20-9"></a>$ <span class="fu">make</span> </span>
+<span id="cb20-10"><a href="gnu-autotool.html#cb20-10"></a>$ <span class="fu">make</span> install </span>
+<span id="cb20-11"><a href="gnu-autotool.html#cb20-11"></a></span>
+<span id="cb20-12"><a href="gnu-autotool.html#cb20-12"></a><span class="co"># ---- Example 3 --------------------#</span></span>
+<span id="cb20-13"><a href="gnu-autotool.html#cb20-13"></a><span class="co"># Install to custom location (directory)</span></span>
+<span id="cb20-14"><a href="gnu-autotool.html#cb20-14"></a>$ <span class="ex">./configure</span> --prefix=/my/custom/location  --with-feature1 \</span>
+<span id="cb20-15"><a href="gnu-autotool.html#cb20-15"></a>     --without-feature2 --eanable-option1 --enable-option2=no --disable-option3</span>
+<span id="cb20-16"><a href="gnu-autotool.html#cb20-16"></a></span>
+<span id="cb20-17"><a href="gnu-autotool.html#cb20-17"></a>$ <span class="fu">make</span> -j4 <span class="co"># Build using 4 threads (faster)</span></span>
+<span id="cb20-18"><a href="gnu-autotool.html#cb20-18"></a>$ <span class="fu">make</span> install </span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="kullanıcılar-için-autotools-iş-akışı" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Kullanıcılar için Autotools iş akışı</h3>
+<p>ADIM 1: Kullanıcı ./configure inşa seçeneğini seçerek çalıştırır;</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="gnu-autotool.html#cb21-1"></a><span class="co"># Install application in default directory</span></span>
+<span id="cb21-2"><a href="gnu-autotool.html#cb21-2"></a>$ <span class="ex">./configure</span></span>
+<span id="cb21-3"><a href="gnu-autotool.html#cb21-3"></a></span>
+<span id="cb21-4"><a href="gnu-autotool.html#cb21-4"></a><span class="co"># Install the application in another directory </span></span>
+<span id="cb21-5"><a href="gnu-autotool.html#cb21-5"></a>$ <span class="ex">./configure</span> --prefix=/home/user/juliuscaesar/opt</span></code></pre></div>
+<p>ADIM 2: İnşa için (GNU) make çalıştırmak.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="gnu-autotool.html#cb22-1"></a>$ <span class="fu">make</span> </span>
+<span id="cb22-2"><a href="gnu-autotool.html#cb22-2"></a></span>
+<span id="cb22-3"><a href="gnu-autotool.html#cb22-3"></a><span class="co"># Run GNY make with 4 threads </span></span>
+<span id="cb22-4"><a href="gnu-autotool.html#cb22-4"></a>$ <span class="fu">make</span> -j4 </span>
+<span id="cb22-5"><a href="gnu-autotool.html#cb22-5"></a></span>
+<span id="cb22-6"><a href="gnu-autotool.html#cb22-6"></a><span class="co"># Run $ make and $ make install in a single step </span></span>
+<span id="cb22-7"><a href="gnu-autotool.html#cb22-7"></a>$ <span class="fu">make</span> -j4 <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> make install </span></code></pre></div>
+<p>ADIM 3: Kurulum.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="gnu-autotool.html#cb23-1"></a>$ <span class="fu">make</span> install </span>
+<span id="cb23-2"><a href="gnu-autotool.html#cb23-2"></a></span>
+<span id="cb23-3"><a href="gnu-autotool.html#cb23-3"></a><span class="co"># If permission is needed </span></span>
+<span id="cb23-4"><a href="gnu-autotool.html#cb23-4"></a>$ <span class="fu">sudo</span> make install </span></code></pre></div>
+</div>
+<div id="geliştirici-worflow" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> Geliştirici Worflow</h3>
+<p>ADIM 1:</p>
+<ul>
+<li>=&gt; Dosya oluştur:
+<ul>
+<li>autoconf için configure.ac - M4 makro işlemcisi tarafından işlenen Bash’a (Bourne Kabuk Betiği) benzer bir dilde yazılmıştır.
+<ul>
+<li>Not: Makro invokasyonlardaki boşluklara dikkat etmek gerekir.</li>
+</ul></li>
+<li>Automake için Makefile.am.</li>
+</ul></li>
+</ul>
+<p>ADIM 2:</p>
+<ul>
+<li>=&gt; Geliştirici ./configure ve Makefile.in dosyalarını oluşturan autoreconf komutunu çalıştırır.</li>
+</ul>
+<p>ADIM 3:</p>
+<ul>
+<li>=&gt; Oluşturulan dosyaları çalıştırarak test edin:
+<ul>
+<li><code>$ ./configure &amp;&amp; make &amp;&amp; make install.</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="örnek-temel-gnu-autotools-projesi" class="section level2">
+<h2><span class="header-section-number">3.3</span> Örnek: Temel GNU autotools projesi</h2>
+<div id="proje-dosyaları" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Proje Dosyaları</h3>
+<p>Dosya: main.cpp</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb24-1"><a href="gnu-autotool.html#cb24-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb24-2"><a href="gnu-autotool.html#cb24-2"></a></span>
+<span id="cb24-3"><a href="gnu-autotool.html#cb24-3"></a><span class="dt">int</span> main()</span>
+<span id="cb24-4"><a href="gnu-autotool.html#cb24-4"></a>{</span>
+<span id="cb24-5"><a href="gnu-autotool.html#cb24-5"></a>  <span class="bu">std::</span>cout &lt;&lt; <span class="st">&quot;Hello world autotools&quot;</span> &lt;&lt; <span class="bu">std::</span>endl;</span>
+<span id="cb24-6"><a href="gnu-autotool.html#cb24-6"></a>  <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb24-7"><a href="gnu-autotool.html#cb24-7"></a>}</span></code></pre></div>
+<div id="dosya-configure.ac" class="section level5">
+<h5><span class="header-section-number">3.3.1.0.1</span> Dosya: configure.ac</h5>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="gnu-autotool.html#cb25-1"></a><span class="co">#------- File: configure.ac ----------#</span></span>
+<span id="cb25-2"><a href="gnu-autotool.html#cb25-2"></a><span class="co">#-------------------------------------# </span></span>
+<span id="cb25-3"><a href="gnu-autotool.html#cb25-3"></a></span>
+<span id="cb25-4"><a href="gnu-autotool.html#cb25-4"></a><span class="co"># app =&gt; Is the file name without extensions</span></span>
+<span id="cb25-5"><a href="gnu-autotool.html#cb25-5"></a><span class="co"># 0.1 =&gt; Is the version </span></span>
+<span id="cb25-6"><a href="gnu-autotool.html#cb25-6"></a><span class="ex">AC_INIT</span>( [app], [0.1], [maintener@email.com])</span>
+<span id="cb25-7"><a href="gnu-autotool.html#cb25-7"></a></span>
+<span id="cb25-8"><a href="gnu-autotool.html#cb25-8"></a><span class="co"># Require at least autoconf version &gt;= 2.68 </span></span>
+<span id="cb25-9"><a href="gnu-autotool.html#cb25-9"></a><span class="ex">AC_PREREQ</span>([2.68])  </span>
+<span id="cb25-10"><a href="gnu-autotool.html#cb25-10"></a><span class="ex">AM_INIT_AUTOMAKE</span>([-Wall -Wextra])</span>
+<span id="cb25-11"><a href="gnu-autotool.html#cb25-11"></a></span>
+<span id="cb25-12"><a href="gnu-autotool.html#cb25-12"></a><span class="co"># ./configure creates a Makefile</span></span>
+<span id="cb25-13"><a href="gnu-autotool.html#cb25-13"></a><span class="ex">AC_CONFIG_FILES</span>([Makefile])</span>
+<span id="cb25-14"><a href="gnu-autotool.html#cb25-14"></a></span>
+<span id="cb25-15"><a href="gnu-autotool.html#cb25-15"></a><span class="co"># Find and check C compiler </span></span>
+<span id="cb25-16"><a href="gnu-autotool.html#cb25-16"></a><span class="ex">AC_PROG_CC</span></span>
+<span id="cb25-17"><a href="gnu-autotool.html#cb25-17"></a><span class="co"># Find and check a C++ compiler </span></span>
+<span id="cb25-18"><a href="gnu-autotool.html#cb25-18"></a><span class="ex">AC_PROG_CXX</span> </span>
+<span id="cb25-19"><a href="gnu-autotool.html#cb25-19"></a><span class="ex">AC_OUTPUT</span> </span></code></pre></div>
+</div>
+<div id="dosya-makefile.am" class="section level5">
+<h5><span class="header-section-number">3.3.1.0.2</span> Dosya: Makefile.am</h5>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="gnu-autotool.html#cb26-1"></a><span class="co"># Contains all executable targets </span></span>
+<span id="cb26-2"><a href="gnu-autotool.html#cb26-2"></a><span class="ex">bin_PROGRAMS</span> = app</span>
+<span id="cb26-3"><a href="gnu-autotool.html#cb26-3"></a></span>
+<span id="cb26-4"><a href="gnu-autotool.html#cb26-4"></a><span class="co"># Sources for the executable targets </span></span>
+<span id="cb26-5"><a href="gnu-autotool.html#cb26-5"></a><span class="ex">app_SOURCES</span>  = app.cpp </span></code></pre></div>
+</div>
+<div id="dosya-clean.sh" class="section level5">
+<h5><span class="header-section-number">3.3.1.0.3</span> Dosya: clean.sh</h5>
+<ul>
+<li>Geçerli dizini temizlemek için kullanılan yardımcı bash betiği.</li>
+</ul>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="gnu-autotool.html#cb27-1"></a><span class="co">#!/usr/bin/env sh </span></span>
+<span id="cb27-2"><a href="gnu-autotool.html#cb27-2"></a><span class="fu">rm</span> -v configure config.log config.status install-sh missing aclocal.m4 compile depcomp </span>
+<span id="cb27-3"><a href="gnu-autotool.html#cb27-3"></a><span class="fu">rm</span> -vrf autom4te.cache</span>
+<span id="cb27-4"><a href="gnu-autotool.html#cb27-4"></a><span class="fu">rm</span> -v *.o *.bin *.so</span>
+<span id="cb27-5"><a href="gnu-autotool.html#cb27-5"></a><span class="fu">rm</span> *~ <span class="co"># Remove temporary files </span></span></code></pre></div>
+</div>
+</div>
+<div id="inşa-adımları" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> İnşa Adımları</h3>
+<p>ADIM 1: Geliştirici tarafından gerçekleştirilen kısım</p>
+<ul>
+<li>GNU autotools araçlarının gerektirdiği ek meta veri dosyaları oluşturun</li>
+</ul>
+<p><code>$ touch README NEWS AUTHORS ChangeLog # Set metadata files</code></p>
+<p>ADIM 2: Geliştirici tarafından gerçekleştirilen kısım</p>
+<ul>
+<li>./Configure kabuk komut dosyası ve ek dosyaları oluşturmak için atuoreconf komutunu çalıştırın.</li>
+<li>Çalıştır: <code>$ autoreconf -i -v</code></li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="gnu-autotool.html#cb28-1"></a>$ <span class="ex">autoreconf</span> -i -v </span>
+<span id="cb28-2"><a href="gnu-autotool.html#cb28-2"></a></span>
+<span id="cb28-3"><a href="gnu-autotool.html#cb28-3"></a><span class="ex">autoreconf</span>: Entering directory <span class="kw">`</span><span class="ex">.</span><span class="st">&#39;</span></span>
+<span id="cb28-4"><a href="gnu-autotool.html#cb28-4"></a><span class="st">autoreconf: configure.ac: not using Gettext</span></span>
+<span id="cb28-5"><a href="gnu-autotool.html#cb28-5"></a><span class="st">autoreconf: running: aclocal </span></span>
+<span id="cb28-6"><a href="gnu-autotool.html#cb28-6"></a><span class="st">autoreconf: configure.ac: tracing</span></span>
+<span id="cb28-7"><a href="gnu-autotool.html#cb28-7"></a><span class="st">autoreconf: configure.ac: not using Libtool</span></span>
+<span id="cb28-8"><a href="gnu-autotool.html#cb28-8"></a><span class="st">autoreconf: running: /usr/bin/autoconf</span></span>
+<span id="cb28-9"><a href="gnu-autotool.html#cb28-9"></a><span class="st">autoreconf: configure.ac: not using Autoheader</span></span>
+<span id="cb28-10"><a href="gnu-autotool.html#cb28-10"></a><span class="st">autoreconf: running: automake --add-missing --copy --no-force</span></span>
+<span id="cb28-11"><a href="gnu-autotool.html#cb28-11"></a><span class="st">configure.ac:11: warning: unknown warning category &#39;</span>extra<span class="st">&#39;</span></span>
+<span id="cb28-12"><a href="gnu-autotool.html#cb28-12"></a><span class="st">configure.ac:17: installing &#39;</span>./compile<span class="st">&#39;</span></span>
+<span id="cb28-13"><a href="gnu-autotool.html#cb28-13"></a><span class="st">configure.ac:11: installing &#39;</span>./install-sh<span class="st">&#39;</span></span>
+<span id="cb28-14"><a href="gnu-autotool.html#cb28-14"></a><span class="st">configure.ac:11: installing &#39;</span>./missing<span class="st">&#39;</span></span>
+<span id="cb28-15"><a href="gnu-autotool.html#cb28-15"></a><span class="st">Makefile.am: installing &#39;</span>./depcomp<span class="st">&#39;</span></span>
+<span id="cb28-16"><a href="gnu-autotool.html#cb28-16"></a><span class="st">autoreconf: Leaving directory `.&#39;</span></span></code></pre></div>
+<p>ADIM 3: Kullanıcı tarafından gerçekleştirilen kısım</p>
+<ul>
+<li>Aşağıdaki adımlar, uygulamayı sisteme veya yerel bir dizine yüklemek için son kullanıcılar veya bakımcılar tarafından gerçekleştirilir.</li>
+<li>Yapılandırma komut dosyasını çalıştırarak Makefile dosyasını oluşturun.</li>
+</ul>
+<p>Çalıştır: <code>$ ./configure</code></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="gnu-autotool.html#cb29-1"></a>$ <span class="ex">./configure</span> </span>
+<span id="cb29-2"><a href="gnu-autotool.html#cb29-2"></a><span class="ex">checking</span> for a BSD-compatible install... /usr/bin/install -c</span>
+<span id="cb29-3"><a href="gnu-autotool.html#cb29-3"></a><span class="ex">checking</span> whether build environment is sane... yes</span>
+<span id="cb29-4"><a href="gnu-autotool.html#cb29-4"></a><span class="ex">checking</span> for a thread-safe mkdir -p... /usr/bin/mkdir -p</span>
+<span id="cb29-5"><a href="gnu-autotool.html#cb29-5"></a><span class="ex">checking</span> for gawk... gawk</span>
+<span id="cb29-6"><a href="gnu-autotool.html#cb29-6"></a></span>
+<span id="cb29-7"><a href="gnu-autotool.html#cb29-7"></a><span class="ex">...</span> ... ...   ... ... ...   ... ... ...   ... ... ... </span>
+<span id="cb29-8"><a href="gnu-autotool.html#cb29-8"></a>     <span class="co"># Suppress output for breviety purposes </span></span>
+<span id="cb29-9"><a href="gnu-autotool.html#cb29-9"></a><span class="ex">...</span> ... ...   ... ... ...   ... ... ...   ... ... ... </span>
+<span id="cb29-10"><a href="gnu-autotool.html#cb29-10"></a></span>
+<span id="cb29-11"><a href="gnu-autotool.html#cb29-11"></a><span class="ex">checking</span> dependency style of g++... gcc3</span>
+<span id="cb29-12"><a href="gnu-autotool.html#cb29-12"></a><span class="ex">checking</span> that generated files are newer than configure... done</span>
+<span id="cb29-13"><a href="gnu-autotool.html#cb29-13"></a><span class="ex">configure</span>: creating ./config.status</span>
+<span id="cb29-14"><a href="gnu-autotool.html#cb29-14"></a><span class="ex">config.status</span>: creating Makefile</span>
+<span id="cb29-15"><a href="gnu-autotool.html#cb29-15"></a><span class="ex">config.status</span>: executing depfiles commands</span></code></pre></div>
+<p>Çalıştır: Clang kullanmak için <code>$ ./configure CC=clang CXX=clang++</code></p>
+<p><code>$ ./configure CC=clang CXX=clang++</code></p>
+<p>ADIM 4: Kullanıcı tarafından gerçekleştirilen kısım</p>
+<ul>
+<li>Makefile’ı çalıştırın (GNU make)</li>
+</ul>
+<p>Çalıştır: <code>$ make</code></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="gnu-autotool.html#cb30-1"></a>$ <span class="fu">make</span></span>
+<span id="cb30-2"><a href="gnu-autotool.html#cb30-2"></a></span>
+<span id="cb30-3"><a href="gnu-autotool.html#cb30-3"></a><span class="ex">g++</span> -DPACKAGE_NAME=<span class="dt">\&quot;</span>app<span class="dt">\&quot;</span> -DPACKAGE_TARNAME=<span class="dt">\&quot;</span>app<span class="dt">\&quot;</span> -DPACKAGE_VERSION=<span class="dt">\&quot;</span>0.1<span class="dt">\&quot;</span>  \</span>
+<span id="cb30-4"><a href="gnu-autotool.html#cb30-4"></a>    -DPACKAGE_STRING=<span class="dt">\&quot;</span>app<span class="dt">\ </span>0.1<span class="dt">\&quot;</span> -DPACKAGE_BUGREPORT=<span class="dt">\&quot;\&quot;</span> -DPACKAGE_URL=<span class="dt">\&quot;\&quot;</span>   \</span>
+<span id="cb30-5"><a href="gnu-autotool.html#cb30-5"></a>     -DPACKAGE=<span class="dt">\&quot;</span>app<span class="dt">\&quot;</span> -DVERSION=<span class="dt">\&quot;</span>0.1<span class="dt">\&quot;</span> -I.     -g -O2 -MT app.o -MD -MP -MF   \</span>
+<span id="cb30-6"><a href="gnu-autotool.html#cb30-6"></a>    .deps/app.Tpo -c -o app.o app.cpp \</span>
+<span id="cb30-7"><a href="gnu-autotool.html#cb30-7"></a>    mv -f .deps/app.Tpo .deps/app.Po \</span>
+<span id="cb30-8"><a href="gnu-autotool.html#cb30-8"></a></span>
+<span id="cb30-9"><a href="gnu-autotool.html#cb30-9"></a> <span class="ex">g++</span>  -g -O2   -o app app.o  </span></code></pre></div>
+<p>Çalıştır: <code>$ make install</code></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="gnu-autotool.html#cb31-1"></a>$ <span class="fu">make</span> install</span>
+<span id="cb31-2"><a href="gnu-autotool.html#cb31-2"></a><span class="ex">make</span>[1]: Entering directory <span class="st">&#39;/home/archbox/projects/autools1&#39;</span></span>
+<span id="cb31-3"><a href="gnu-autotool.html#cb31-3"></a> <span class="ex">/usr/bin/mkdir</span> -p <span class="st">&#39;/usr/local/bin&#39;</span></span>
+<span id="cb31-4"><a href="gnu-autotool.html#cb31-4"></a>  <span class="ex">/usr/bin/install</span> -c app <span class="st">&#39;/usr/local/bin&#39;</span></span>
+<span id="cb31-5"><a href="gnu-autotool.html#cb31-5"></a><span class="ex">/usr/bin</span>/install: <span class="ex">cannot</span> create regular file <span class="st">&#39;/usr/local/bin/app&#39;</span>: Permission denied</span>
+<span id="cb31-6"><a href="gnu-autotool.html#cb31-6"></a><span class="ex">make</span>[1]: *** [Makefile:313: install-binPROGRAMS] Error 1</span>
+<span id="cb31-7"><a href="gnu-autotool.html#cb31-7"></a><span class="ex">make</span>[1]: Leaving directory <span class="st">&#39;/home/archbox/projects/autools1&#39;</span></span>
+<span id="cb31-8"><a href="gnu-autotool.html#cb31-8"></a><span class="ex">make</span>: *** [Makefile:615: install-am] Error 2</span></code></pre></div>
+<p>Çalıştır: <code>$ make dist</code> =&gt; Bir tarball dağılımı oluşturun.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="gnu-autotool.html#cb32-1"></a>$ <span class="fu">make</span> dist</span>
+<span id="cb32-2"><a href="gnu-autotool.html#cb32-2"></a><span class="fu">make</span>  dist-gzip am__post_remove_distdir=<span class="st">&#39;@:&#39;</span></span>
+<span id="cb32-3"><a href="gnu-autotool.html#cb32-3"></a><span class="ex">make</span>[1]: Entering directory <span class="st">&#39;/home/archbox/projects/autools1&#39;</span></span>
+<span id="cb32-4"><a href="gnu-autotool.html#cb32-4"></a><span class="kw">if</span> <span class="bu">test</span> -d <span class="st">&quot;app-0.1&quot;</span><span class="kw">;</span> <span class="kw">then</span> <span class="fu">find</span> <span class="st">&quot;app-0.1&quot;</span> -type d ! -perm -200 -exec chmod u+w {} <span class="ex">...</span> ... </span>
+<span id="cb32-5"><a href="gnu-autotool.html#cb32-5"></a><span class="bu">test</span> -d <span class="st">&quot;app-0.1&quot;</span> <span class="kw">||</span> <span class="fu">mkdir</span> <span class="st">&quot;app-0.1&quot;</span></span>
+<span id="cb32-6"><a href="gnu-autotool.html#cb32-6"></a></span>
+<span id="cb32-7"><a href="gnu-autotool.html#cb32-7"></a>  <span class="ex">..</span> ... ... ... ... ... ... </span>
+<span id="cb32-8"><a href="gnu-autotool.html#cb32-8"></a><span class="fu">rm</span> -rf <span class="st">&quot;app-0.1&quot;</span> <span class="kw">||</span> <span class="kw">{</span> <span class="fu">sleep</span> 5 <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> -rf <span class="st">&quot;app-0.1&quot;</span><span class="kw">;</span> <span class="kw">}</span>; <span class="kw">else</span> <span class="bu">:</span><span class="kw">;</span> <span class="kw">fi</span></span></code></pre></div>
+<p>Tarball dosyasını kontrol edin:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="gnu-autotool.html#cb33-1"></a>    $ <span class="fu">tar</span> -tzvf app-0.1.tar.gz </span>
+<span id="cb33-2"><a href="gnu-autotool.html#cb33-2"></a><span class="ex">drwxrwxr-x</span> 1000/1000         0 2019-10-21 15:23 app-0.1/</span>
+<span id="cb33-3"><a href="gnu-autotool.html#cb33-3"></a><span class="ex">-rw-rw-r--</span> 1000/1000     42147 2019-10-21 15:22 app-0.1/aclocal.m4</span>
+<span id="cb33-4"><a href="gnu-autotool.html#cb33-4"></a><span class="ex">-rwxrwxr-x</span> 1000/1000    154043 2019-10-21 15:22 app-0.1/configure</span>
+<span id="cb33-5"><a href="gnu-autotool.html#cb33-5"></a><span class="ex">-rw-rw-r--</span> 1000/1000       546 2019-10-21 15:01 app-0.1/configure.ac</span>
+<span id="cb33-6"><a href="gnu-autotool.html#cb33-6"></a><span class="ex">-rw-rw-r--</span> 1000/1000       101 2019-10-21 14:28 app-0.1/app.cpp</span>
+<span id="cb33-7"><a href="gnu-autotool.html#cb33-7"></a><span class="ex">-rwxr-xr-x</span> 1000/1000     14676 2019-10-21 15:22 app-0.1/install-sh</span>
+<span id="cb33-8"><a href="gnu-autotool.html#cb33-8"></a><span class="ex">-rw-rw-r--</span> 1000/1000         0 2019-10-21 15:02 app-0.1/ChangeLog</span>
+<span id="cb33-9"><a href="gnu-autotool.html#cb33-9"></a><span class="ex">-rwxr-xr-x</span> 1000/1000      6872 2019-10-21 15:22 app-0.1/missing</span>
+<span id="cb33-10"><a href="gnu-autotool.html#cb33-10"></a><span class="ex">-rwxr-xr-x</span> 1000/1000     23566 2019-10-21 15:22 app-0.1/depcomp</span>
+<span id="cb33-11"><a href="gnu-autotool.html#cb33-11"></a><span class="ex">-rw-rw-r--</span> 1000/1000         0 2019-10-21 15:02 app-0.1/AUTHORS</span>
+<span id="cb33-12"><a href="gnu-autotool.html#cb33-12"></a><span class="ex">-rw-r--r--</span> 1000/1000     35147 2019-10-21 15:01 app-0.1/COPYING</span>
+<span id="cb33-13"><a href="gnu-autotool.html#cb33-13"></a><span class="ex">-rw-r--r--</span> 1000/1000     15756 2019-10-21 15:01 app-0.1/INSTALL</span>
+<span id="cb33-14"><a href="gnu-autotool.html#cb33-14"></a><span class="ex">-rwxr-xr-x</span> 1000/1000      7381 2019-10-21 15:22 app-0.1/compile</span>
+<span id="cb33-15"><a href="gnu-autotool.html#cb33-15"></a><span class="ex">-rw-rw-r--</span> 1000/1000       117 2019-10-21 14:52 app-0.1/Makefile.am</span>
+<span id="cb33-16"><a href="gnu-autotool.html#cb33-16"></a><span class="ex">-rw-rw-r--</span> 1000/1000         0 2019-10-21 15:02 app-0.1/README</span>
+<span id="cb33-17"><a href="gnu-autotool.html#cb33-17"></a><span class="ex">-rw-rw-r--</span> 1000/1000         0 2019-10-21 15:02 app-0.1/NEWS</span>
+<span id="cb33-18"><a href="gnu-autotool.html#cb33-18"></a><span class="ex">-rw-rw-r--</span> 1000/1000     23477 2019-10-21 15:22 app-0.1/Makefile.in</span></code></pre></div>
+<p>ADIM 5:</p>
+<ul>
+<li>Uygulamayı test edin.</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="gnu-autotool.html#cb34-1"></a><span class="co"># Check executable file </span></span>
+<span id="cb34-2"><a href="gnu-autotool.html#cb34-2"></a>$ <span class="fu">file</span> app</span>
+<span id="cb34-3"><a href="gnu-autotool.html#cb34-3"></a><span class="ex">app</span>: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), <span class="ex">dynamically</span> linked, interpreter </span>
+<span id="cb34-4"><a href="gnu-autotool.html#cb34-4"></a><span class="ex">/lib64</span>/<span class="ex">l</span>, for GNU/Linux 3.2.0, BuildID[sha1]=29f5b104ac648c3286ed616ea4cf4007a6b51ae2, </span>
+<span id="cb34-5"><a href="gnu-autotool.html#cb34-5"></a><span class="ex">with</span> debug_info, not stripped</span>
+<span id="cb34-6"><a href="gnu-autotool.html#cb34-6"></a></span>
+<span id="cb34-7"><a href="gnu-autotool.html#cb34-7"></a><span class="co"># Run native executable </span></span>
+<span id="cb34-8"><a href="gnu-autotool.html#cb34-8"></a>$ <span class="ex">./app</span></span>
+<span id="cb34-9"><a href="gnu-autotool.html#cb34-9"></a><span class="ex">Hello</span> world autotools</span></code></pre></div>
+<div id="uygulamayı-yeni-bir-konuma-oluşturun-ve-yükleyin" class="section level4">
+<h4><span class="header-section-number">3.3.2.1</span> Uygulamayı yeni bir konuma oluşturun ve yükleyin</h4>
+<p>Configure betiğini çalıştırın.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="gnu-autotool.html#cb35-1"></a><span class="co"># Build with clang and install at ~/opt/app-test </span></span>
+<span id="cb35-2"><a href="gnu-autotool.html#cb35-2"></a>$ <span class="ex">./configure</span> CC=clang CXX=clang++ --prefix=<span class="va">$HOME</span>/opt/app-test</span></code></pre></div>
+<p>Make ve make install komutlarını çalıştırın</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="gnu-autotool.html#cb36-1"></a>$ <span class="fu">make</span> install</span>
+<span id="cb36-2"><a href="gnu-autotool.html#cb36-2"></a><span class="ex">make</span>[1]: Entering directory <span class="st">&#39;/home/archbox/projects/autools1&#39;</span></span>
+<span id="cb36-3"><a href="gnu-autotool.html#cb36-3"></a> <span class="ex">/usr/bin/mkdir</span> -p <span class="st">&#39;/home/archbox/opt/app-test/bin&#39;</span></span>
+<span id="cb36-4"><a href="gnu-autotool.html#cb36-4"></a>  <span class="ex">/usr/bin/install</span> -c app <span class="st">&#39;/home/archbox/opt/app-test/bin&#39;</span></span>
+<span id="cb36-5"><a href="gnu-autotool.html#cb36-5"></a><span class="ex">make</span>[1]: Nothing to be done for <span class="st">&#39;install-data-am&#39;</span>.</span>
+<span id="cb36-6"><a href="gnu-autotool.html#cb36-6"></a><span class="ex">make</span>[1]: Leaving directory <span class="st">&#39;/home/archbox/projects/autools1&#39;</span></span></code></pre></div>
+<p>Test kurulumu:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="gnu-autotool.html#cb37-1"></a>$ <span class="ex">tree</span> /home/archbox/opt/app-test</span>
+<span id="cb37-2"><a href="gnu-autotool.html#cb37-2"></a><span class="ex">/home/archbox/opt/app-test</span></span>
+<span id="cb37-3"><a href="gnu-autotool.html#cb37-3"></a>└── <span class="ex">bin</span></span>
+<span id="cb37-4"><a href="gnu-autotool.html#cb37-4"></a>    └── <span class="ex">app</span></span>
+<span id="cb37-5"><a href="gnu-autotool.html#cb37-5"></a></span>
+<span id="cb37-6"><a href="gnu-autotool.html#cb37-6"></a><span class="ex">1</span> directory, 1 file</span></code></pre></div>
+<p>Uygulamayı çalıştırın:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="gnu-autotool.html#cb38-1"></a>$ <span class="ex">/home/archbox/opt/app-test/bin/app</span> </span>
+<span id="cb38-2"><a href="gnu-autotool.html#cb38-2"></a><span class="ex">Hello</span> world autotools</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="ileri-düzey-tavsiye-kaynaklar" class="section level2">
+<h2><span class="header-section-number">3.4</span> İleri düzey tavsiye kaynaklar</h2>
+<ul>
+<li><a href="https://eklitzke.org/how-to-autotools">Autotools Nasıl Kullanılır</a></li>
+<li><a href="https://www.star.bnl.gov/~liuzx/autobook.html">GNU Autotools Kitabı</a></li>
+<li><a href="https://elinux.org/images/4/43/Petazzoni.pdf">Gömülü Linux Konferansı 2016 - GNU Autotools Eğitimi</a></li>
+<li><a href="http://freesoftwaremagazine.com/articles/brief_introduction_to_gnu_autotools/">Bölüm 1: GNU Otomobillerine Kısa Bir Giriş</a></li>
+<li><a href="https://stackoverflow.com/questions/10999549/how-do-i-create-a-configure-script">Nasıl yapılandırma betiği oluştururum?</a></li>
+<li><a href="https://developer.fedoraproject.org/tech/languages/c/autotools.html">Autotools — Fedora Geliştirici Portalı</a></li>
+<li><a href="http://thegreyblog.blogspot.com/2013/09/cc-project-built-with-gnu-build-system.html">GNU Derleme Sistemi (A.K.A. GNU Autotools) ile Üretilen C / C ++ Projesi: NetBeans vs. Eclipse CDT</a></li>
+</ul>
 
 </div>
 </div>

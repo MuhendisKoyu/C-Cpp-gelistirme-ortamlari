@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>C/C++ Geliştirme Ortamları</title>
   <meta name="description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
-  <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="C/C++ Geliştirme Ortamları" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Mühendis Köyü" />
 
 
-<meta name="date" content="2020-10-07" />
+<meta name="date" content="2020-09-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="kbuild.html"/>
-<link rel="next" href="xmake.html"/>
+<link rel="prev" href="bazel.html"/>
+<link rel="next" href="conan.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,6 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -168,15 +166,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="cmake.html"><a href="cmake.html#cmake-avantajları"><i class="fa fa-check"></i><b>2.2</b> Cmake Avantajları</a></li>
 <li class="chapter" data-level="2.3" data-path="cmake.html"><a href="cmake.html#cmake-dezavantajları"><i class="fa fa-check"></i><b>2.3</b> Cmake Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="gnu-autotools.html"><a href="gnu-autotools.html"><i class="fa fa-check"></i><b>3</b> GNU Autotools</a><ul>
-<li class="chapter" data-level="3.1" data-path="gnu-autotools.html"><a href="gnu-autotools.html#açıklama"><i class="fa fa-check"></i><b>3.1</b> Açıklama</a></li>
-<li class="chapter" data-level="3.2" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-kullanımı"><i class="fa fa-check"></i><b>3.2</b> GNU Autotools Kullanımı</a><ul>
-<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#c-projesi-ve-gerekli-dosyalar"><i class="fa fa-check"></i>1. C++ Projesi ve Gerekli Dosyalar</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#makefile.am-dosyası"><i class="fa fa-check"></i>2. “Makefile.am” dosyası</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#configure.ac-dosyası"><i class="fa fa-check"></i>3. “configure.ac” dosyası</a></li>
+<li class="chapter" data-level="3" data-path="gnu-autotool.html"><a href="gnu-autotool.html"><i class="fa fa-check"></i><b>3</b> GNU Autotool</a><ul>
+<li class="chapter" data-level="3.1" data-path="gnu-autotool.html"><a href="gnu-autotool.html#genel-bakış"><i class="fa fa-check"></i><b>3.1</b> Genel Bakış</a></li>
+<li class="chapter" data-level="3.2" data-path="gnu-autotool.html"><a href="gnu-autotool.html#referans-kartı"><i class="fa fa-check"></i><b>3.2</b> Referans Kartı</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="gnu-autotool.html"><a href="gnu-autotool.html#kurulum"><i class="fa fa-check"></i><b>3.2.1</b> Kurulum</a></li>
+<li class="chapter" data-level="3.2.2" data-path="gnu-autotool.html"><a href="gnu-autotool.html#gnu-autotools-için-gnu-make-komutları"><i class="fa fa-check"></i><b>3.2.2</b> GNU Autotools için GNU Make Komutları</a></li>
+<li class="chapter" data-level="3.2.3" data-path="gnu-autotool.html"><a href="gnu-autotool.html#kullanıcılar-için-autotools-iş-akışı"><i class="fa fa-check"></i><b>3.2.3</b> Kullanıcılar için Autotools iş akışı</a></li>
+<li class="chapter" data-level="3.2.4" data-path="gnu-autotool.html"><a href="gnu-autotool.html#geliştirici-worflow"><i class="fa fa-check"></i><b>3.2.4</b> Geliştirici Worflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-avantajları"><i class="fa fa-check"></i><b>3.3</b> GNU Autotools Avantajları</a></li>
-<li class="chapter" data-level="3.4" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-dezavantajları"><i class="fa fa-check"></i><b>3.4</b> GNU Autotools Dezavantajları</a></li>
+<li class="chapter" data-level="3.3" data-path="gnu-autotool.html"><a href="gnu-autotool.html#örnek-temel-gnu-autotools-projesi"><i class="fa fa-check"></i><b>3.3</b> Örnek: Temel GNU autotools projesi</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="gnu-autotool.html"><a href="gnu-autotool.html#proje-dosyaları"><i class="fa fa-check"></i><b>3.3.1</b> Proje Dosyaları</a></li>
+<li class="chapter" data-level="3.3.2" data-path="gnu-autotool.html"><a href="gnu-autotool.html#inşa-adımları"><i class="fa fa-check"></i><b>3.3.2</b> İnşa Adımları</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="gnu-autotool.html"><a href="gnu-autotool.html#ileri-düzey-tavsiye-kaynaklar"><i class="fa fa-check"></i><b>3.4</b> İleri düzey tavsiye kaynaklar</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="msbuild.html"><a href="msbuild.html"><i class="fa fa-check"></i><b>4</b> Msbuild</a><ul>
 <li class="chapter" data-level="4.1" data-path="msbuild.html"><a href="msbuild.html#msbuild-nedir"><i class="fa fa-check"></i><b>4.1</b> Msbuild Nedir</a></li>
@@ -233,14 +235,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3" data-path="bazel.html"><a href="bazel.html#bazel-avantajları"><i class="fa fa-check"></i><b>10.3</b> Bazel Avantajları</a></li>
 <li class="chapter" data-level="10.4" data-path="bazel.html"><a href="bazel.html#bazel-dezavantajları"><i class="fa fa-check"></i><b>10.4</b> Bazel Dezavantajları</a></li>
 </ul></li>
-<li class="part"><span><b>II Paket Yöneticileri</b></span></li>
-<li class="chapter" data-level="11" data-path="conan.html"><a href="conan.html"><i class="fa fa-check"></i><b>11</b> Conan</a><ul>
-<li class="chapter" data-level="11.1" data-path="conan.html"><a href="conan.html#conan-bölüm-içeriği"><i class="fa fa-check"></i><b>11.1</b> Conan Bölüm içeriği</a></li>
+<li class="chapter" data-level="11" data-path="part-paket-yöneticileri.html"><a href="part-paket-yöneticileri.html"><i class="fa fa-check"></i><b>11</b> (PART) Paket Yöneticileri</a></li>
+<li class="chapter" data-level="12" data-path="conan.html"><a href="conan.html"><i class="fa fa-check"></i><b>12</b> Conan</a><ul>
+<li class="chapter" data-level="12.1" data-path="conan.html"><a href="conan.html#conan-bölüm-içeriği"><i class="fa fa-check"></i><b>12.1</b> Conan Bölüm içeriği</a></li>
 </ul></li>
-<li class="part"><span><b>III XXXXX XXXXX</b></span></li>
-<li class="chapter" data-level="12" data-path="docker.html"><a href="docker.html"><i class="fa fa-check"></i><b>12</b> Docker</a><ul>
-<li class="chapter" data-level="12.1" data-path="docker.html"><a href="docker.html#açıklama-1"><i class="fa fa-check"></i><b>12.1</b> Açıklama</a></li>
-</ul></li>
+<li class="chapter" data-level="13" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i><b>13</b> Referanslar</a></li>
 <li class="divider"></li>
 <li><a href="https://muhendiskoyu.github.io/C-Cpp-gelistirme-ortamlari" target="blank">At Gihub Pages</a></li>
 
@@ -261,33 +260,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="build2" class="section level1">
-<h1><span class="header-section-number">Bölüm 8</span> Build2</h1>
-<div id="build2-nedir" class="section level2">
-<h2><span class="header-section-number">8.1</span> Build2 Nedir</h2>
-<p>Build2 kullanımı avantajı dezavantajı…</p>
-</div>
-<div id="build2-kullanımı" class="section level2">
-<h2><span class="header-section-number">8.2</span> Build2 Kullanımı</h2>
-<p>Build2 kullanımı avantajı dezavantajı…</p>
-</div>
-<div id="build2-avantajları" class="section level2">
-<h2><span class="header-section-number">8.3</span> Build2 Avantajları</h2>
-<p>Build2 kullanımı avantajı dezavantajı…</p>
-</div>
-<div id="build2-dezavantajları" class="section level2">
-<h2><span class="header-section-number">8.4</span> Build2 Dezavantajları</h2>
-<p>Build2 kullanımı avantajı dezavantajı…</p>
-
-</div>
+<div id="part-paket-yöneticileri" class="section level1">
+<h1><span class="header-section-number">Bölüm 11</span> (PART) Paket Yöneticileri</h1>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="kbuild.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="xmake.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bazel.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conan.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

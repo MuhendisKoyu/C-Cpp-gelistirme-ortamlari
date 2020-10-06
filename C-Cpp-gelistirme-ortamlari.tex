@@ -41,6 +41,46 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -73,7 +113,7 @@
 
 \title{C/C++ Geliştirme Ortamları}
 \author{Mühendis Köyü}
-\date{2020-06-21}
+\date{2020-10-07}
 
 \begin{document}
 \maketitle
@@ -90,25 +130,29 @@
 \section*{Önsöz}\label{uxf6nsuxf6z}}
 \addcontentsline{toc}{section}{Önsöz}
 
-C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. \emph{IDE} (\textbf{Integrated Development Environment -- Tümleşik Geliştirme Ortamı}) haricinde bir editör ve derleme/bağlama/vb. işlemler için gerekli programları çoğu aynı, bazı yerleri değişen uzun paremetrelerle kullanmak durumunda kalırız. \emph{IDE} kullanımı ise bizi \emph{IDE}'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde \emph{dâhili} (\textbf{builtin}) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirecek?
+C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. \emph{IDE} (\textbf{Integrated Development Environment -- Tümleşik Geliştirme Ortamı}) ortamı dışında geliştirdiğimiz yazılımlarda derleme, bağlama vb. işlemler sırasında projelere göre farklılık gösteren uzun paremetrelerle kullanmak durumunda kalırız. \emph{IDE} kullanımı ise bizi \emph{IDE}'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde \emph{dâhili} (\textbf{built-in}) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirmek zorundadır?
 
-İşte bu kitapla bu problemlere getirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik.
+İşte bu kitapla bahsi geçen problemler için geliştirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik.
 
-Türkçe kapsamlı bir kitap olmasını hedefleyerek başladığımız bu yolculuğumuzda türü ne olursa olsun bizlere ulaşacak her bir eleştiri sönük bir mumun alev almasına yardımcı olan yanan bir mumun ateşi olacaktır.
+Kapsamlı bir Türkçe kaynak olmasını hedefleyerek başladığımız bu yolculuğumuzda türü ne olursa olsun bizlere ulaşacak her bir eleştiri sönük bir mumun alev almasına yardımcı olan yanan bir mumun ateşi olacaktır.
 
 \hypertarget{katkux131da-bulunanlar}{%
 \section*{Katkıda Bulunanlar}\label{katkux131da-bulunanlar}}
 \addcontentsline{toc}{section}{Katkıda Bulunanlar}
 
-Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bunun ile birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
+Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bununla birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
 
 \begin{tabular}{l|l|l}
 \hline
-Ahmet B. ÖZYURT & Enes AYDIN & Erdem GÜNEŞ\\
+ &  & \\
 \hline
-Melisa CEYLAN & Muhammed E. KOCAER & Numan F. AYDIN\\
+Ahmet B. ÖZYURT & BARIŞ KIZILKAYA & Enes AYDIN\\
 \hline
-Semanur AYDINLIK & Senanur PAKSOY & Süleyman E. IŞIK\\
+Erdem GÜNEŞ & Muhammed E. KOCAER & Numan F. AYDIN\\
+\hline
+Salih MARANGOZ & Semanur AYDINLIK & Senanur PAKSOY\\
+\hline
+Süleyman E. IŞIK &  & \\
 \hline
 \end{tabular}
 
@@ -142,6 +186,148 @@ Bu kısımda önsözde kısaca bahsettiğimiz problemlerin çıkış noktaları 
 \section*{Editör + Derleyici Kullanımı}\label{edituxf6r-derleyici-kullanux131mux131}}
 \addcontentsline{toc}{section}{Editör + Derleyici Kullanımı}
 
+Bir çok yazılım dilinde olduğu gibi programlarımızı IDE'ler olmadan da geliştirme imkanımız bulunmaktadır. IDE'ler güçlü bir geliştirme imkanı sunmasına rağmen yeni başlayanlar için karmaşık bir hal alabilmektedir. Aynı zamanda kaynak tüketimi editörlere göre daha yüksektir. Bu bölümde C yazılımları geliştirebileceğiniz en temel seviyeli editör olan \textbf{Vim}'e değinip, programlarınızı nasıl manuel olarak derleyebileceğinizden bahsedeceğiz.
+
+Bu başlık altında VIM editörü hakkında anlatılacak bilgiler \href{https://missing-semester-tr.github.io/}{MIT \textbar{} The Missing Semester of Your CS Education TR}'den alınmıştır. VIM dahil diğer dersleri kaynak linkinden inceleyebilirsiniz.
+
+\hypertarget{vim}{%
+\subsection*{VIM}\label{vim}}
+\addcontentsline{toc}{subsection}{VIM}
+
+\hypertarget{vimin-felsefesi}{%
+\subsubsection*{Vim'in Felsefesi}\label{vimin-felsefesi}}
+\addcontentsline{toc}{subsubsection}{Vim'in Felsefesi}
+
+Programlama yaparken zamanınızın çoğunu yazmaya değil okumaya/düzenlemeye harcarsınız. Bu yüzden Vim farklı modlara sahip bir editördür: metin eklemek veya metin işlemek için farklı modlara sahiptir. Vim programlanabilir (Vimscript ve Python gibi diğer diller ile) ve Vim'in arayüzünün kendisi bir programlama dilidir. Vim, fare kullanımından kaçınır, çünkü çok yavaştır; Vim, çok fazla hareket gerektirdiği için ok tuşlarını kullanmaktan bile kaçınır.
+
+Sonuç olarak Vim, düşündüğünüz kadar hızlı olan bir editördür.
+
+\textbf{Modal Düzenleme}
+Vim'in tasarımı, uzun metin akışları yazmak yerine, çok sayıda programcının zamanını; okumak, gezinmek ve küçük düzenlemeler yapmak için harcandığı fikrine dayanır. Bu nedenle Vim'in birden fazla çalışma modu vardır.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Normal:} dosyanın içerisinde gezinmek ve değişiklikler yapmak için,
+\item
+  \textbf{Insert:} metin eklemek için,
+\item
+  \textbf{Replace:} metni değiştirmek için,
+\item
+  \textbf{Visual (Plain, Line or Block):} metin bloklarını seçmek için,
+\item
+  \textbf{Command-line:} bir komut çalıştırmak için
+\end{itemize}
+
+Klayve tuşlarının farklı çalışma modlarında farklı anlamları vardır. Örnek olarak, \textbf{Insert} modunda iken \texttt{x} harfine basarsak o harfi ekleyecektir ama Normal modda iken \texttt{x} harfi imlecin altındaki karakteri siler ve Visual modda ise seçili olanı siler.
+
+Varsayılan ayarlarda Vim, o anki çalışma modunu sol altta gösterir. Başlangıç modu/varsayılan mod Normal moddur. Genellikle zamanının çoğunu Normal mod ve Insert mod arasında geçireceksin. Herhangi bir moddan Normal moda geri dönmek için \texttt{\textless{}ESC\textgreater{}} tuşuna basarak modları değiştirebilirsiniz. Normal moddan \texttt{i} ile Insert moduna, \texttt{R} ile Replace moduna, \texttt{v} ile Visual moduna, \texttt{V} ile Visual Line moduna, \texttt{\textless{}C-v\textgreater{}} ile Visual Block moduna, \texttt{:} ile Command-line moduna girebilirsin.
+
+\hypertarget{temel-uxf6ux11feler}{%
+\subsection*{Temel Öğeler}\label{temel-uxf6ux11feler}}
+\addcontentsline{toc}{subsection}{Temel Öğeler}
+
+\hypertarget{metin-ekleme}{%
+\subsubsection*{Metin Ekleme}\label{metin-ekleme}}
+\addcontentsline{toc}{subsubsection}{Metin Ekleme}
+
+Normal modda iken Insert moduna girmek için \texttt{i} tuşuna basın. Şimdi Vim, Normal moda geri dönmek için \texttt{\textless{}ESC\textgreater{}} tuşuna basana kadar diğer metin editörleri gibi çalışır. Bu bilgi ve yukarıda açıklanan temel bilgilerle birlikte, Vim'i kullanarak dosyaları düzenlemeye başlamak için ihtiyacınız olan tek şeydir (eğer bütün zamanınızı Insert Modundan düzenleme için harcıyorsanız çok da verimli değil).
+
+\hypertarget{command-line}{%
+\subsubsection*{Command-line}\label{command-line}}
+\addcontentsline{toc}{subsubsection}{Command-line}
+
+Command moduna Normal modda iken \texttt{:} yazarak giriş yapabiliriz. \texttt{:} Tuşuna bastığınızda bilgisayarınızın imleci ekranın altındaki komut satırına atlayacaktır. Bu mod, dosyaları açma, kaydetme, kapatma ve \href{https://twitter.com/iamdevloper/status/435555976687923200}{Vim'den çıkış} yapma gibi birçok işleve sahiptir.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{:q} çıkış (pencereyi kapatır)
+\item
+  \texttt{:w} kayıt (``yaz'')
+\item
+  \texttt{:wq} kaydet ve çık
+\item
+  \texttt{:e\ \{dosyanın\ adı\}} düzenlemek için dosyayı açar
+\item
+  \texttt{:ls} açık bufferları gösterir
+\item
+  \texttt{:help\ \{konu\}} yardımı açar
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{:help\ :w} \texttt{:w} komutu için yardımı açar
+  \item
+    \texttt{:help\ w} \texttt{w} tuşu için yardımı açar
+  \end{itemize}
+\end{itemize}
+
+Dersin devamına ve konunun detayına \href{https://missing-semester-tr.github.io/}{Missing Semester TR} kaynağından devam edebilirsiniz. Bunun yanı sıra eğer pratik yapmak istiyorsanız terminale \texttt{vimtutor} yazarak Vim ile birlikte gelen eğitimi tamamlayabilirsiniz.
+
+\hypertarget{vimde-c-programux131-geliux15ftirme}{%
+\subsection*{VIM'de C Programı Geliştirme}\label{vimde-c-programux131-geliux15ftirme}}
+\addcontentsline{toc}{subsection}{VIM'de C Programı Geliştirme}
+
+\texttt{vim\ merhaba.c} ile merhaba isimli C dosyamızı açıp \texttt{i} harfi ile Insert moduna geçerek geleneksel uygulamamızı yazmaya başlayabiliriz.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#include }\ImportTok{<stdio.h>}
+\DataTypeTok{int}\NormalTok{ main()}
+\NormalTok{\{}
+\NormalTok{  printf(}\StringTok{"Merhaba Mühendis Köyü!"}\NormalTok{);}
+  \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Kodu tamamladıktan sonra \texttt{\textless{}ESC\textgreater{}} tuşu ile komut moduna geçip \texttt{:wq} yazarak kaydedip çıkış yapıyoruz. Yazdığımız kodu gcc ile derlemek için (clang kullanıyorsanız gcc yerine clang yazmanız yeterlidir):
+
+\texttt{gcc\ merhaba.c\ //derlenmiş\ kodu\ a.out\ olarak\ çıktı\ verir.}
+
+\texttt{gcc\ merhaba.c\ -o\ merhaba\ //derlenmiş\ kodu\ merhaba\ olarak\ çıktı\ verir.}
+
+Derlenen kodu çalıştırmak için \texttt{./a.out} veya \texttt{./merhaba} komutunu çalıştırmanız yeterlidir.
+
+Editör kullanarak yazdığımız kodlarda, programımızı derlerken dahil ettiğimiz kütüphaneleri manuel olarak bağlantılamamız (kullandığımız kütüphaneyi derleyiciye belirtmemiz) gerekmektedir. Buna örnek bir kod örneği vermemiz gerekirse:
+
+\texttt{vim\ us\_alma.c}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#include }\ImportTok{<stdio.h>}
+\PreprocessorTok{\#include }\ImportTok{<math.h>}
+
+\DataTypeTok{int}\NormalTok{ main()}
+\NormalTok{\{}
+    \DataTypeTok{int}\NormalTok{ taban, us; }
+  
+\NormalTok{    printf(}\StringTok{"Taban sayısını giriniz: "}\NormalTok{);}
+\NormalTok{    scanf(}\StringTok{"\%i"}\NormalTok{, \&taban);}
+  
+\NormalTok{    printf(}\StringTok{"Üs sayısını giriniz: "}\NormalTok{);}
+\NormalTok{    scanf(}\StringTok{"\%i"}\NormalTok{, \&us);}
+
+\NormalTok{    printf(}\StringTok{"\%1.f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, pow((}\DataTypeTok{double}\NormalTok{)taban,(}\DataTypeTok{double}\NormalTok{)us));}
+
+    \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Yazdığımız kodu kaydedip kapattıktan sonra derleme işlemini aşağıdaki şekilde gerçekleştirirseniz derleyici bilinmeyen referans hatası verecektir.
+
+\texttt{gcc\ us\_alma.c\ -o\ us\_alma}
+
+Math kütüphanesini dahil ettiğimiz kodumuzu belirtmiş olduğumuz şekilde ekli kütüphaneye bağlantı vererek derlemek için derleme komutuna -lm komutunu dahil etmemiz gerekmektedir. \texttt{-l} komutu bağlantılama (linkleme) komutu olup kendisinden sonra gelen argümandaki kütüphaneyi derleme işlemine dahil eder.
+
+\texttt{gcc\ us\_alma.c\ -o\ us\_alma\ -lm}
+
+Bu şekilde kodumuz uygun bir biçimde derlenecektir. \texttt{./us\_alma} yazarak kodumuzu çalıştırabiliriz.
+
+Vim ile temel seviyede C kodu yazılması ve derlenmesi bu şekilde özetlenebilir. Vim veya başka bir editör (VS Code, SublimeText vb.) kullanarak yazdığımız programları manuel olarak derlememiz gerekmektedir. Programlarımızın kapsamı genişledikçe bağlantılamamız gereken kütüphane sayısı artmakta ve bunu sürekli olarak yapmak zor bir hal almaktadır. Bu durumları hızlandırmak için ise makefile dediğimiz linkleme işlemlerini bizim için gerçekleştiren programların yazılmasına bu dokümanın ileriki bölümlerinde değineceğiz.
+
 \hypertarget{cc-iuxe7in-inux15fa-sistemleri}{%
 \section*{C/C++ için İnşa Sistemleri}\label{cc-iuxe7in-inux15fa-sistemleri}}
 \addcontentsline{toc}{section}{C/C++ için İnşa Sistemleri}
@@ -154,282 +340,1119 @@ Bu kısımda önsözde kısaca bahsettiğimiz problemlerin çıkış noktaları 
 \part{İnşa Sistemleri}\label{part-inux15fa-sistemleri}}
 
 \hypertarget{makefile}{%
-\chapter*{Makefile}\label{makefile}}
-\addcontentsline{toc}{chapter}{Makefile}
+\chapter{Makefile}\label{makefile}}
 
-\hypertarget{nedir}{%
-\section*{Nedir}\label{nedir}}
-\addcontentsline{toc}{section}{Nedir}
+\hypertarget{makefile-nedir}{%
+\section{Makefile Nedir}\label{makefile-nedir}}
 
 Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 
-\hypertarget{kullanux131mux131}{%
-\section*{Kullanımı}\label{kullanux131mux131}}
-\addcontentsline{toc}{section}{Kullanımı}
+\hypertarget{makefile-kullanux131mux131}{%
+\section{Makefile Kullanımı}\label{makefile-kullanux131mux131}}
 
 Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 
-\hypertarget{avantajlarux131}{%
-\section*{Avantajları}\label{avantajlarux131}}
-\addcontentsline{toc}{section}{Avantajları}
+\hypertarget{makefile-avantajlarux131}{%
+\section{Makefile Avantajları}\label{makefile-avantajlarux131}}
 
 Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 
-\hypertarget{dezavantajlarux131}{%
-\section*{Dezavantajları}\label{dezavantajlarux131}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\hypertarget{makefile-dezavantajlarux131}{%
+\section{Makefile Dezavantajları}\label{makefile-dezavantajlarux131}}
 
 Makefile kullanımı, GNU Make, BSD Make and NMake varyasyonlarına ve arasındaki farklara değinilecektir.
 
 \hypertarget{cmake}{%
-\chapter*{Cmake}\label{cmake}}
-\addcontentsline{toc}{chapter}{Cmake}
+\chapter{Cmake}\label{cmake}}
 
-\hypertarget{nedir-1}{%
-\section*{Nedir}\label{nedir-1}}
-\addcontentsline{toc}{section}{Nedir}
+Herhangi bir programlama dili ile yazılan kodun çalıştırılabilir olması için derlenmesi gerekir.Derleme işlemi sırasında derleyiciye uygun parametrelerin eklenmesi, gerekli kütüphanelerin dahil edilmesi, birim testlerin çalıştırılması gibi işlemler yapılır. Tüm bu işlemler için IDE kullanılır ancak IDE ayarları birbirinden farklıdır ve bir IDE tüm işletim sistemlerinde yer almayabilir.
+C ve C++ bu işlemler için make adında bir araca sahiptir ancak bu araç sadece Linux/Unix tabanlı işletim sistemlerinde çalışır.
 
-CMake kullanımı avantajı dezavantajı\ldots{}
+İşte bu durumda Cmake yardımcı oluyor.
 
-\hypertarget{kullanux131mux131-1}{%
-\section*{Kullanımı}\label{kullanux131mux131-1}}
-\addcontentsline{toc}{section}{Kullanımı}
+CMake C++ program oluşturma sürecini işletim sisteminden ve derleyiciden bağımsız bir şekilde gerçekleştirmemize olanak sağlayan açık kaynak kodlu ve çapraz platformlu bir sistemdir.
 
-CMake kullanımı avantajı dezavantajı\ldots{}
+\hypertarget{cmake-kullanux131mux131}{%
+\section{Cmake Kullanımı}\label{cmake-kullanux131mux131}}
 
-\hypertarget{avantajlarux131-1}{%
-\section*{Avantajları}\label{avantajlarux131-1}}
-\addcontentsline{toc}{section}{Avantajları}
+\hypertarget{windowsta-kurulum}{%
+\subsection{Windows'ta Kurulum}\label{windowsta-kurulum}}
 
-CMake kullanımı avantajı dezavantajı\ldots{}
+Cmake.org sayfasından kurulum yapılabilir.
 
-\hypertarget{dezavantajlarux131-1}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-1}}
-\addcontentsline{toc}{section}{Dezavantajları}
+Alternatif olarak;
 
-CMake kullanımı avantajı dezavantajı\ldots{}
+\begin{itemize}
+\tightlist
+\item
+  \url{https://chocolatey.org/packages/cmake}
+\item
+  \url{https://packages.msys2.org/base/mingw-w64-cmake}
+\end{itemize}
 
-\hypertarget{gnu-autotool}{%
-\chapter*{GNU Autotool}\label{gnu-autotool}}
-\addcontentsline{toc}{chapter}{GNU Autotool}
+\hypertarget{linuxta-kurulum}{%
+\subsection{Linux'ta Kurulum}\label{linuxta-kurulum}}
 
-\hypertarget{nedir-2}{%
-\section*{Nedir}\label{nedir-2}}
-\addcontentsline{toc}{section}{Nedir}
+\begin{itemize}
+\tightlist
+\item
+  Ubuntu için:
+\end{itemize}
 
-GNU Autotool kullanımı avantajı dezavantajı\ldots{}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sudo}\NormalTok{ apt update }
 
-\hypertarget{kullanux131mux131-2}{%
-\section*{Kullanımı}\label{kullanux131mux131-2}}
-\addcontentsline{toc}{section}{Kullanımı}
+\FunctionTok{sudo}\NormalTok{ apt{-}get install cmake }
+\end{Highlighting}
+\end{Shaded}
 
-GNU Autotool kullanımı avantajı dezavantajı\ldots{}
+\begin{itemize}
+\tightlist
+\item
+  Fedora için:
+\end{itemize}
 
-\hypertarget{avantajlarux131-2}{%
-\section*{Avantajları}\label{avantajlarux131-2}}
-\addcontentsline{toc}{section}{Avantajları}
+\texttt{sudo\ dnf\ install\ snapd} -\textgreater{} Snap kurulu değilse kurulur.
 
-GNU Autotool kullanımı avantajı dezavantajı\ldots{}
+\texttt{sudo\ ln\ -s\ /var/lib/snapd/snap\ /snap}
 
-\hypertarget{dezavantajlarux131-2}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-2}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\texttt{sudo\ snap\ install\ cmake\ -\/-classic}
 
-GNU Autotool kullanımı avantajı dezavantajı\ldots{}
+\hypertarget{projenin-oluux15fturulmasux131}{%
+\subsection{Projenin oluşturulması}\label{projenin-oluux15fturulmasux131}}
+
+Geliştirilen ve geliştirilmiş bir projede Cmake ayarlarının yapılması için CMakeLists.txt dosyasının oluşturulması gerekir.
+Bu dosya içerisinde aşağıdaki gibi temel ayarlar yer alır.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{cmake\_minimum\_required}\NormalTok{(VERSION 3.16.3) }
+
+\ExtensionTok{project}\NormalTok{(projeAdı)}
+
+\ExtensionTok{add\_executable}\NormalTok{(proje proje.cpp) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  cmake\_minimum\_required(VERSION 3.16.3) -\textgreater{} Proje için gerekli olan Cmake sürümünü
+  ifade eder.
+\item
+  add\_executable -\textgreater{} Çalıştırılabilir dosyanın hangi dosyalarla oluşturulacağını ifade eder.
+\item
+  Dahil edilecek dosyaların aranacağı yolları eklemek için (include path):
+
+  \texttt{include\_directories(include\_dir)}
+\item
+  Kütüphane eklemek için:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+   \ExtensionTok{add\_library}\NormalTok{(Cfile STATIC FxParser) }\ExtensionTok{{-}}\OperatorTok{>}\NormalTok{ statik kütüphane}
+   \ExtensionTok{add\_library}\NormalTok{(Cfile SHARED FxParser) }\ExtensionTok{{-}}\OperatorTok{>}\NormalTok{ paylaşılan kütüphane}
+   \ExtensionTok{add\_library}\NormalTok{(Cfile MODULE FxParser) }\ExtensionTok{{-}}\OperatorTok{>}\NormalTok{ modül kütüphane }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Static} yalnızca derleme zamanında doğrudan gömülebilen kütüphanedir.
+\item
+  \texttt{Shared} derleme zamanında linklenebilen ve çalışma zamanında yüklenebilen kütüphanedir.
+\item
+  \texttt{Module} derleme zamanında linkleme olmaksızın, çalışma zamanında ihtiyaç hâlinde yüklenebilen kütüphanedir.
+\end{itemize}
+
+CMakeLists.txt dosyamıza çeşitli seçenekler ekleyip bunları kullanabiliriz. Örnek olarak doxygen ile dokümantasyon oluşturulması ve testlerin derlenmesi seçenekler olsun.
+
+Seçenekler için syntax şu şekildedir:
+
+\texttt{option(ayar\_adı\ "ayarın\ açıklaması"\ varsayılan\_durum{[}ON/OFF{]})}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+   \ExtensionTok{option}\NormalTok{(BUILD\_DOXYGEN }\StringTok{"Insa dokumentasyonu"}\NormalTok{ OFF)}
+   \ExtensionTok{option}\NormalTok{(BUILD\_TESTS }\StringTok{"Insa testleri"}\NormalTok{ OFF)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Alt Proje Dizini Oluşturma
+\end{itemize}
+
+Oluşturulan kütüphaneyi kullanmak için \texttt{add\_subdirectory} ile kütüphane için oluşturulan CMakeLists.txt projeye eklenir.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+   \ExtensionTok{add\_subdirectory}\NormalTok{(kutuphaneAdı)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Mantıksal Operatörler
+\end{itemize}
+
+CMakeLists.txt dosyasına mantıksal operatörler gibi alt dizinler ekleyebiliriz.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \ExtensionTok{if}\NormalTok{(BUILD\_TESTS)}
+    \ExtensionTok{add\_subdirectory}\NormalTok{(test)}
+  \ExtensionTok{endif}\NormalTok{(BUILD\_TESTS)}
+
+  \ExtensionTok{if}\NormalTok{(BUILD\_DOXYGEN)}
+    \ExtensionTok{add\_subdirectory}\NormalTok{(docs)}
+  \ExtensionTok{endif}\NormalTok{(BUILD\_DOXYGEN)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Değişken Atama
+\end{itemize}
+
+CMake ile değişken atamak için set komutunu kullanmamız yeterlidir. Bu komut ile hem CMake'in global değişkenlerini atayabiliriz hem de yeni değişkenler oluşturup değer atayabiliriz.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+   \KeywordTok{set(}\ExtensionTok{Cfile\_VERSION\_MAJOR}\NormalTok{ 1}\KeywordTok{)} \ExtensionTok{{-}}\OperatorTok{>}\NormalTok{ versiyon atama}
+   \KeywordTok{set(}\ExtensionTok{Cfile\_VERSION\_MINOR}\NormalTok{ 0}\KeywordTok{)} \ExtensionTok{{-}}\OperatorTok{>}\NormalTok{ versiyon atama}
+   \KeywordTok{set(}\ExtensionTok{disable\_derivative}\NormalTok{ on}\KeywordTok{)} \ExtensionTok{{-}}\OperatorTok{>}\NormalTok{ değişken oluşturma }\KeywordTok{\&} \ExtensionTok{de}\NormalTok{ğer atama}
+   \KeywordTok{set(}\ExtensionTok{CMAKE\_RUNTIME\_OUTPUT\_DIRECTORY} \VariableTok{$\{CMAKE\_SOURCE\_DIR\}}\NormalTok{/bin}\KeywordTok{)} \ExtensionTok{{-}}\OperatorTok{>}\NormalTok{ global değişkene değer atama {-}çalışma dizini yolu gösteriyor{-}}
+   
+\end{Highlighting}
+\end{Shaded}
+
+Tüm anlatılanları toplama açısından bir CMakeLists.txt örneği aşağıdadır.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ 
+ \ExtensionTok{project}\NormalTok{(Cfile)}
+ 
+ \ExtensionTok{cmake\_minimum\_required}\NormalTok{(VERSION 3.16.3)}
+
+ \ExtensionTok{option}\NormalTok{(BUILD\_DOXYGEN }\StringTok{"Insa dokumentasyonu"}\NormalTok{ OFF)}
+ \ExtensionTok{option}\NormalTok{(BUILD\_TESTS }\StringTok{"Insa testleri"}\NormalTok{ OFF)}
+
+ \KeywordTok{set(}\ExtensionTok{disable\_derivative}\NormalTok{ on}\KeywordTok{)}
+ \KeywordTok{set(}\ExtensionTok{CMAKE\_RUNTIME\_OUTPUT\_DIRECTORY} \VariableTok{$\{CMAKE\_SOURCE\_DIR\}}\NormalTok{/bin}\KeywordTok{)}
+
+ \ExtensionTok{add\_subdirectory}\NormalTok{(kutuphaneAdı)}
+
+ \ExtensionTok{if}\NormalTok{(BUILD\_TESTS)}
+    \ExtensionTok{add\_subdirectory}\NormalTok{(test)}
+\ExtensionTok{endif}\NormalTok{(BUILD\_TESTS)}
+
+\ExtensionTok{if}\NormalTok{(BUILD\_DOXYGEN)}
+    \ExtensionTok{add\_subdirectory}\NormalTok{(docs)}
+ \ExtensionTok{endif}\NormalTok{(BUILD\_DOXYGEN)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  Bazı Önemli Cmake Değişkenleri
+
+  \begin{itemize}
+  \tightlist
+  \item
+    CMAKE\_SOURCE\_DIR -\textgreater{} CMakeLists.txt dosyasının bulunduğu üst seviye klasör.
+  \item
+    PROJECT\_NAME -\textgreater{} Proje adı. project() komutuyla belirlenebilir.
+  \item
+    PROJECT\_SOURCE\_DIR -\textgreater{} Proje kaynak klasörünün tam yolu.
+  \item
+    CMAKE\_MAJOR\_VERSION -\textgreater{} Majör Cmake sürüm numarası
+  \item
+    CMAKE\_MINOR\_VERSION -\textgreater{} Minör Cmake sürüm numarası
+  \end{itemize}
+\item
+  Derleyiciye Parametre Eklemek
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \KeywordTok{set(}\ExtensionTok{CMAKE\_CXX\_FLAGS} \StringTok{"Hello World"}\NormalTok{ {-}}\OperatorTok{>}\NormalTok{ derleyicinin tek parametresi}
+  \KeywordTok{set(}\ExtensionTok{CMAKE\_CXX\_FLAGS} \StringTok{"}\VariableTok{$\{CMAKE\_CXX\_FLAGS\}}\StringTok{ Hello World"}\KeywordTok{)} \ExtensionTok{{-}}\OperatorTok{>}\NormalTok{ mevcut parametrelerin sonuna ekleme yapar.}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Include Klasörü Eklemek
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \ExtensionTok{include\_directories}\NormalTok{(}\StringTok{"inc"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+  Kütüphane proje eklendikten sonra \texttt{target\_link\_libraries} ile kütüphane projeye bağlanır.
+\item
+  Kütüphaneleri Bağlamak
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \ExtensionTok{target\_link\_libraries}\NormalTok{(Cfile }\VariableTok{$\{Boost\_LIBRARIES\}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Örnek olması açısından Ubuntu terminal üzerinden Cmake kullanarak ``Hello World'' yazdıralım.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+     \ExtensionTok{\textasciitilde{}/Desktop}\NormalTok{                                                            ✔ ─╮}
+\NormalTok{╰─ }\FunctionTok{mkdir}\NormalTok{ helloworld   {-}}\OperatorTok{>}\NormalTok{ helloworld klasörü oluşturduk.                     ─╯}
+\NormalTok{╭─ }\ExtensionTok{\textasciitilde{}/Desktop}\NormalTok{                                                              ✔ ─╮}
+\NormalTok{╰─ }\BuiltInTok{cd}\NormalTok{ helloworld                                                            ─╯}
+\NormalTok{╭─ }\ExtensionTok{\textasciitilde{}/Desktop/helloworld}\NormalTok{                                                   ✔ ─╮}
+\NormalTok{╰─ }\ExtensionTok{vim}\NormalTok{ main.cpp                                                             ─╯}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  main.cpp şu şekildedir.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+   \PreprocessorTok{\#include }\ImportTok{<iostream>}
+   \KeywordTok{using} \KeywordTok{namespace}\NormalTok{ std;}
+   \DataTypeTok{int}\NormalTok{ main() \{}
+\NormalTok{        cout << }\StringTok{"Hello World!"}\NormalTok{ << endl;}
+        \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{   \}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{╭─ }\ExtensionTok{\textasciitilde{}/Desktop/helloworld}\NormalTok{                                                   ✔ ─╮}
+\NormalTok{╰─ }\ExtensionTok{vim}\NormalTok{ CMakeLists.txt                                                       ─╯}
+   \CommentTok{\#CMakeLists.txt şu şekildedir.}
+   \ExtensionTok{cmake\_minimum\_required}\NormalTok{(VERSION 3.16.3)}
+   \ExtensionTok{project}\NormalTok{(helloworld)}
+   \ExtensionTok{add\_executable}\NormalTok{(}
+       \ExtensionTok{helloworld}
+        \ExtensionTok{main.cpp}
+\NormalTok{   )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{╭─ }\ExtensionTok{\textasciitilde{}/Desktop/helloworld}\NormalTok{                                                   ✔ ─╮}
+\NormalTok{╰─ }\FunctionTok{cmake}\NormalTok{ .  {-}}\OperatorTok{>}\NormalTok{ cmake derliyoruz.                                            ─╯}
+\ExtensionTok{{-}{-}}\NormalTok{ The C compiler identification is GNU 9.3.0}
+\ExtensionTok{{-}{-}}\NormalTok{ The CXX compiler identification is GNU 9.3.0}
+\ExtensionTok{{-}{-}}\NormalTok{ Check for working C compiler: /usr/bin/cc}
+\ExtensionTok{{-}{-}}\NormalTok{ Check for working C compiler: /usr/bin/cc {-}{-} works}
+\ExtensionTok{{-}{-}}\NormalTok{ Detecting C compiler ABI info}
+\ExtensionTok{{-}{-}}\NormalTok{ Detecting C compiler ABI info {-} done}
+\ExtensionTok{{-}{-}}\NormalTok{ Detecting C compile features}
+\ExtensionTok{{-}{-}}\NormalTok{ Detecting C compile features {-} done}
+\ExtensionTok{{-}{-}}\NormalTok{ Check for working CXX compiler: /usr/bin/c++}
+\ExtensionTok{{-}{-}}\NormalTok{ Check for working CXX compiler: /usr/bin/c++ {-}{-} works}
+\ExtensionTok{{-}{-}}\NormalTok{ Detecting CXX compiler ABI info}
+\ExtensionTok{{-}{-}}\NormalTok{ Detecting CXX compiler ABI info {-} done}
+\ExtensionTok{{-}{-}}\NormalTok{ Detecting CXX compile features}
+\ExtensionTok{{-}{-}}\NormalTok{ Detecting CXX compile features {-} done}
+\ExtensionTok{{-}{-}}\NormalTok{ Configuring done}
+\ExtensionTok{{-}{-}}\NormalTok{ Generating done}
+\ExtensionTok{{-}{-}}\NormalTok{ Build files have been written to: /home/saturn/Desktop/helloworld}
+\NormalTok{╭─ }\ExtensionTok{\textasciitilde{}/Desktop/helloworld}\NormalTok{                                                   ✔ ─╮}
+\NormalTok{╰─ }\FunctionTok{make}\NormalTok{                                                                     ─╯}
+\ExtensionTok{Scanning}\NormalTok{ dependencies of target helloworld}
+\BuiltInTok{[}\NormalTok{ 50\%] Building CXX object CMakeFiles/helloworld.dir/main.cpp.o}
+\NormalTok{[100\%] Linking CXX executable helloworld}
+\NormalTok{[100\%] Built target helloworld}
+\NormalTok{╭─ \textasciitilde{}/Desktop/helloworld                                                   ✔ ─╮}
+\NormalTok{╰─ ./helloworld {-}}\OtherTok{>}\NormalTok{ dosyamızı derleyip çalıştırıyoruz.                       ─╯}
+\NormalTok{Hello World!}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{cmake-avantajlarux131}{%
+\section{Cmake Avantajları}\label{cmake-avantajlarux131}}
+
+\begin{itemize}
+\tightlist
+\item
+  Verimlidir.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Uzun süreli kod yazma, düşük süreli inşa sistemi çözme.
+  \item
+    Her proje için açık kaynaklı ve ücretsizdir.
+  \end{itemize}
+\item
+  Güçlü bir yapısı vardır.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Cmake çoklu geliştirme ortamlarını destekler ve aynı projede derler.
+  \item
+    C/C++/CUDA/Fortran/Python gibi birçok programlama dilini destekler.
+  \item
+    Cmake ile üçüncü parti kütüphaneleri projelerinize entegre edebilirsiniz.
+  \end{itemize}
+\item
+  Karmaşık işleri basite indirger.
+\item
+  Kolay öğrenilir.
+\item
+  Çapraz platformdur.
+\item
+  Evrenseldir.
+\item
+  Makefile dosyalarını Cmake yazar.
+\item
+  Organizasyonu sağlar.
+\end{itemize}
+
+\hypertarget{cmake-dezavantajlarux131}{%
+\section{Cmake Dezavantajları}\label{cmake-dezavantajlarux131}}
+
+\begin{itemize}
+\tightlist
+\item
+  Dili/Söz dizimi
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Cmake dili önceden kullandığınız dillerle karşılaştırılmamalıdır. Çünkü sınıf(class), eşleme(map) ve sanal bir fonksiyon ya da lambda içermez. Yeni başlayanlar için giriş argümanlarını çözümlemek ve bir fonksiyonun sonuç döndürmesini anlamak karmaşıktır. Sezgisel olduğu halde Cmake betik dilini öğrenmek gereklidir.
+  \end{itemize}
+\item
+  İş akışına etkisi
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Cmake kullanırken projenin inşa konfigürasyonunu doğrudan IDE üzerinden güncelleştirilemez. CMakeLists.txt dosyasına eklenen ya da değiştirilen her target dosyası yazılmalı. Aksi halde IDE üzerinden yapılan güncellemeler ve değişiklikler Cmake çalıştırıldığında kaybolacaktır.
+  \item
+    Cmake'de inşa betik dilini(script) çalıştırmak için en az bir araç gereklidir.
+  \item
+    Sınırlı dokümantasyonu vardır.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{gnu-autotools}{%
+\chapter{GNU Autotools}\label{gnu-autotools}}
+
+\hypertarget{auxe7ux131klama}{%
+\section{Açıklama}\label{auxe7ux131klama}}
+
+\emph{GNU İnşa Sistemi} (\textbf{GNU Build System}) olarak da bilinen GNU Autotools, kaynak kod ile program kurulumlarını ve programların birçok \emph{Unix benzeri} (\textbf{Unix-like}) sisteme taşınabilir hale getirilmesine yardımcı olmak için tasarlanmış bir programlama araçları bütünüdür. Autotools, \emph{GNU araç zincirinin} (\textbf{GNU toolchain}) bir parçasıdır ve birçok özgür yazılım ve açık kaynak projelerinde yaygın olarak kullanılmaktadır. GNU İnşa Sistemi çoğunlukla Unix benzeri veya \emph{POSIX benzeri} (\textbf{POSIX-like}) işletim sistemlerinde, özellikle Linux'ta ve Gömülü Linux projelerinde kullanılır. Linux, MacOSX, FreeBSD, OpenBSD, NetBSD vb. işletim sistemlerinde kullanılabilir. Windows ortamında iyi bir şekilde çalışmamaktadır. GNU İnşa Sistemi kullanılarak birçok programlama dili (C, C++, Objective C, Fortran, Fortran77, Erlang) ile program paketleri oluşturabilirsiniz.
+
+\begin{itemize}
+\tightlist
+\item
+  GNU Autotools Kullanan Bazı Projeler
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://github.com/emacs-mirror/emacs}{GNU Emacs}
+    Oldukça popüler gelişmiş metin düzenleyici ve daha fazlası\ldots{}
+  \item
+    \href{https://github.com/bminor/glibc}{Glibc}
+    GNU C Standart Kütüphanesi
+  \item
+    \href{https://github.com/gcc-mirror/gcc}{GCC}
+    Çeşitli programlama dilleri için bir derleyici sistemidir. GNU araç zincirinin bir parçasıdır.
+  \item
+    \href{https://gitlab.freedesktop.org/NetworkManager/NetworkManager}{NetworkManager}
+    Linux ağ yöneticisi arka plan programı
+  \item
+    \href{https://github.com/nghttp2/nghttp2}{Nhttp2}
+    HTTP 2'nin C'de uyarlanması
+  \end{itemize}
+\item
+  Destekleyen bazı IDE'ler
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Eclipse
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \href{https://www.eclipse.org/linuxtools/}{Linux Araçları Eklentisi}
+    \item
+      \href{https://wiki.eclipse.org/CDT/Autotools/User_Guide}{Eclipse CDT Autotools Kullanım Kılavuzu}
+    \end{itemize}
+  \item
+    NetBeans
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \href{http://plugins.netbeans.org/plugin/51647/cppgnuautotools}{CppGnuAutoTools Eklentisi}
+    \end{itemize}
+  \item
+    QTCreator
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \href{https://doc.qt.io/qtcreator/creator-projects-autotools.html}{Autotools Proje Yöneticisi Eklentisi}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+GNU İnşa Sisteminin kullanıldığı projelerde şu dosyalar bulunmalıdır : ``configure.ac'' ve ``Makefine.am''. Genellikle bu projeleri yüklerken şu komut dizisi çalıştırılır : ./configure \&\& make \&\& make install.
+
+\hypertarget{gnu-autotools-kullanux131mux131}{%
+\section{GNU Autotools Kullanımı}\label{gnu-autotools-kullanux131mux131}}
+
+Basit bir GNU Autotools projesi ile kullanımı göstermiş olacağız. Detaylı bilgiler ve ileri seviye kullanım için yazının sonunda paylaşılan belgelere bakabilirsiniz.
+
+Öncelikle GNU Autotools için iki aracın sisteminize yüklü olması gerekmektedir. Bunlar : autoconf automake. Eğer bunlar sisteminizde yoksa aşağıdaki yapı genellikle kuracaktır.
+
+\texttt{\$\ \textless{}package\_manager\ dnf,\ apt-get\textgreater{}\ install\ autoconf\ automake}
+
+Sisteminizde kullandığınız dil ile alakalı araçların bulunduğunu varsayıyoruz.
+
+\begin{itemize}
+\item
+  Adımlara geçmeden önce ne yapacağımız ile ilgili açıklayıcı maddeleri verelim.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Basit bir C++ projesi için bir tane kaynak dosyası oluşturacağız ve içine ekrana ``Merhaba Dünya'' çıktısını verecek kodu yazacağız. ``NEWS, INSTALL, README, COPYING, AUTHORS, ChangeLog'' dosyalarını oluşturacağız. GNU kodlama standartlarına göre bu dosyalarının da bu dizinde bulunması gereklidir.
+  \item
+    ``Makefile.am'' dosyası oluşturacağız. Bu dosyayı automake aracı kullanacak. Bu dosya proje içindeki klasör yapısını, derlenecek programlar için bilgileri, projemiz için oluşturacağımız paket içeriğinde olmasını istediğimiz başlık dosyalarını, man sayfalarını, veri (resim, video vb.) dosyalarını gibi bilgileri içerebilir. İşlem sonunda ``Makefile.in'' dosyası oluşur.
+  \item
+    ``configure.ac'' dosyası oluşturacağız. Bu dosyayı autoconf aracı kullanacak. ``configure.ac'' yerine ``configure.in'' dosyası da olabilirdi. Lakin yeni paketler için artık önerilen ``configure.ac'' dosya ismidir. Bu dosyaya bu autoconf'un anlayabileceği yazı kuralında (Bash betik diline benzer) proje ile alakalı bilgileri yazacağız. Bu bilgiler derleyici bilgisi, bazı kütüphanelerin ve kütüphane yollarınının bulunması, bazı başlık dosyalarının varlığının kontrolü gibi ayarlamalar olabilir. Örneğin ``AC\_PROG\_CC'' isimli autoconf makrosunu bu dosyada kullandığımızda autoconf bu dosyayı okurken CC isimli değişkene C derleyicisini atayacaktır. ``AC\_PROG\_CXX'' de C++ için kullanılır. İşlem sonunda ``configure'' programı oluşur.
+  \end{itemize}
+\end{itemize}
+
+C/C++ projelerinde derleme aşamasında derleyiciye -D parametresi ile bazı makro değerleri verilerek derleme aşamasının yönlendirilmesi sağlanabilmektedir. Bunun ise burada çözümü ``config.h'' kullanmaktır. ``autoheader'' programı ``configure.ac'' içeriğine bakarak ilgili derleyici parametre ayarlamaları (başlık dosyasını kullanmak için) yapmaktadır.
+
+GNU Autotools araçları birbirinden bağımsız araçlar değildir ve 2 tane de değillerdir (autoheader, aclocal, autoconf ve automake). Tek tek de biz çağırmayacağız zaten, bizim yerimize bir komut (autoreconf) ile işlemler kendi başına doğru sırayla çalışacak. İkinci ve üçüncü aşama için daha detaylı açıklamaları yukarıda bahsettiğim gibi yazının sonundaki linklerden bulabilirsiniz. Kısaca açıklamak gerekirse, autoconf programı ``configure.ac'' içindeki eski bir şablon dili olan M4 makrolarını okuyarak shell programı üretir. ``configure'' programının amacı sisteme özgü ``config.h'' ve Makefile dosyalarını oluşturmaktır. ``automake'' ise ``Makefile.am'' içindeki mantıksal öbeklere göre ``Makefile.in'' dosyasını (dizinler varsa dosyalarını) oluşturur. ``automake'' programının amacı ise ``configure'' programı için gerekli ``Makefile.in'' dosyasını oluşturmaktır.
+
+\begin{itemize}
+\tightlist
+\item
+  Geliştirici :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``Makefile.am'' ve ``configure.ac'' dosyalarını yazar.
+  \item
+    ``autoreconf --install'' komutunu çalıştırır. (Alternatif yöntemlerde var.)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      ``Makefile.am'' -\textgreater{} ``Makefile.in''
+    \item
+      ``configure.ac'' -\textgreater{} ``configure''
+    \end{itemize}
+  \end{itemize}
+\item
+  Kullanıcı :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ./configure
+
+    \begin{itemize}
+    \tightlist
+    \item
+      ``config.h'' ve Makefile
+    \end{itemize}
+  \item
+    make \&\& make install.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Çıktı
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{c-projesi-ve-gerekli-dosyalar}{%
+\subsection*{1. C++ Projesi ve Gerekli Dosyalar}\label{c-projesi-ve-gerekli-dosyalar}}
+\addcontentsline{toc}{subsection}{1. C++ Projesi ve Gerekli Dosyalar}
+
+``test\_app'' klasörü altında ``app.cpp'' isimli bir C++ kaynak dosyası oluşturalım ve içine aşağıdaki kodu kopyalayalım.
+Dosya ismi : main.cpp
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#include }\ImportTok{<iostream>}
+
+\DataTypeTok{int}\NormalTok{ main()}
+\NormalTok{\{}
+  \BuiltInTok{std::}\NormalTok{cout << }\StringTok{"Hello world autotools"}\NormalTok{ << }\CharTok{\textquotesingle{}}\SpecialCharTok{\textbackslash{}n}\CharTok{\textquotesingle{}}\NormalTok{;}
+  \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+``NEWS, INSTALL, README, COPYING, AUTHORS, ChangeLog'' dosyalarını oluşturalım.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{$ }\FunctionTok{touch}\NormalTok{ NEWS INSTALL README COPYING AUTHORS ChangeLog}
+\end{Highlighting}
+\end{Shaded}
+
+``configure.ac'' dosyasına eğer AM\_INIT\_AUTOMAKE({[}foreign{]}) eklenirse, ``foreign'' den ötürü bu dosyaların şartı kalkacaktır. Lakin bunu es geçiyoruz.
+
+\hypertarget{makefile.am-dosyasux131}{%
+\subsection*{2. ``Makefile.am'' dosyası}\label{makefile.am-dosyasux131}}
+\addcontentsline{toc}{subsection}{2. ``Makefile.am'' dosyası}
+
+Kaynak kodları genelde birden fazla dizinlerde tutarız Ancak her bir dizin için ``Makefile'' ile uğraşmamız gerekecektir. Buna yönelik çözüm olan ``mantıksal bir dil'' tarzında ``Makefile.am'' dosyaları oluşturuyoruz.
+
+\begin{verbatim}
+bin_PROGRAMS = TestApp
+TestApp_SOURCES = app.cpp
+\end{verbatim}
+
+``bin\_PROGRAMS = TestApp'' sanki bir atama işlemi gibi gelebilir ama aslında burada 3 farklı bilgi mevcut. ``bin\_'', ``PROGRAMS'', ``TestApp''. Açıklaması ise şu, oluşacak program (PROGRAMS) ``TestApp'' isminde bin klasöründe oluşsun. ``bin\_'' öneki yerine ``lib, include, data'' gibi tanımlı değerler kullanabiliriz. ``PROGRAMS'' yerine ise `LIBRARIES', `LTLIBRARIES', `LISP', `PYTHON', `JAVA', `SCRIPTS', `DATA', `HEADERS', `MANS', ve `TEXINFOS' hedef türlerinden birini yazabiliriz. Şimdi ise bir gereklilik var. TestApp dedik ama TestApp hangi kaynak kodlara bağlı yazmadık. İşte ``PROGRAMS'' ile hedef türünü belirttiğimiz isimlerin "\_SOURCES" ile bağlı olduğu kaynak kodları vermemiz gerekmektedir. Yani ``TestApp\_SOURCES = app.cpp'' bu kadar.
+
+TestApp eğer bir kütüphaneye bağımlı ise örneğin ``TestApp\_LDADD = -lm'' diyerek linker için bilgi ekleyebiliriz. ``PROGRAMS'' için belirtilen isim için "\_SOURCES" ve "\_LDADD" yanında "\_LDFLAGS" ve "\_DEPENDENCIES" tanımlamarı da vardır. Burada sadece bahsederek geçiyoruz.
+
+\hypertarget{configure.ac-dosyasux131}{%
+\subsection*{3. ``configure.ac'' dosyası}\label{configure.ac-dosyasux131}}
+\addcontentsline{toc}{subsection}{3. ``configure.ac'' dosyası}
+
+``Makefile.am'' dosyasında ne derleyiciyi ayarı vardı ne de kurulum ile alakalı adımlar. İşte bu dosyanın amacı da bu. Öncelikle ne yazacağımıza, sonra da açıklamalarına bakalım.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{AC\_INIT}\NormalTok{( [TestApp], [0.1], [email@email.com])}
+\ExtensionTok{AC\_PREREQ}\NormalTok{([2.69])  }
+\ExtensionTok{AM\_INIT\_AUTOMAKE}\NormalTok{([{-}Wall {-}Wextra])}
+\ExtensionTok{AC\_CONFIG\_FILES}\NormalTok{([Makefile])}
+\ExtensionTok{AC\_PROG\_CXX} 
+\ExtensionTok{AC\_OUTPUT} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  AC\_INIT : AC\_INIT makrosu, 2'si zorunlu olmak üzere 5 argümana sahiptir. ``configure'' programı için ayarlamalar yapar, ``configure'' çalıştırılırken gönderilecek parametreleri işler. Zorunlu ilk iki parametre Paket İsmi ile Versiyon bilgisidir.
+\item
+  AC\_PREREQ : ``autoconf'' programının olması gereken minumum versiyonunu parametre olarak alır.
+\item
+  AM\_INIT\_AUTOMAKE : ``automake'' programına parametreler yollar.
+\item
+  AC\_CONFIG\_FILES : ``configure'' programının oluşturacağı dosya parametre olarak geçilir. ``config.h'' başlık dosyası oluştursaydı AC\_CONFIG\_HEADERS({[}config.h{]}) eklenmeliydi.
+\item
+  AC\_PROG\_CXX : Sistemdeki C++ derleyicisini bulur.
+\item
+  AC\_OUTPUT : Bu makro kullanılmalıdır. ``config.status'' isminde bir kabul program oluşturup çalıştıracaktır. Bunun amacı ``config.h'' ve Makefile dosyalarını oluşumu içindir.
+\end{itemize}
+
+Evet şimdi sadece bu komutu çalıştırmak yetecektir:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{$ }\ExtensionTok{autoreconf}\NormalTok{ {-}{-}install}
+\end{Highlighting}
+\end{Shaded}
+
+İşlemlerimiz bitti şimdi aşağıdaki işlemleri uygulayarak hem test etmiş olacağız hem de bir tarball oluşturmuş olacağız. ``make distcheck'' komutu bir tar.gz dosyası oluşturacaktır.
+
+\begin{itemize}
+\tightlist
+\item
+  Genel ./configure kullanım örneği.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{$ }\ExtensionTok{./configure}  
+\NormalTok{$ }\FunctionTok{make} 
+\NormalTok{$ }\FunctionTok{make}\NormalTok{ distcheck}
+\end{Highlighting}
+\end{Shaded}
+
+Bu arada programımızın çıktısını ./TestApp diyerek gözlemleyebilirsiniz. ``configure'' programınıza aşağıdaki gibi parametre yollayabilirsiniz.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{$ }\ExtensionTok{./configure}\NormalTok{ CC=clang CXX=clang++ {-}{-}prefix=}\VariableTok{$HOME}\NormalTok{/opt/test\_app}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  Belgeler
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{http://www.belgeler.org/howto/makefile-nasil-autoconf_automake.html}{Autoconf ve Automake Kullanımı}
+  \item
+    \href{https://ysar.net/yazilim-dunyasi/autotools.html}{Autotools Gizemini Çözüyoruz}
+  \item
+    \href{https://demirten.gitbooks.io/gomulu-linux/content/gnubuild/autoconf.html}{autoconf, automake Kullanımı}
+  \item
+    \href{https://caiorss.github.io/C-Cpp-Notes/building-systems.html}{CPP / C++ - Building Systems and Build Automation}
+  \item
+    \href{https://eklitzke.org/how-to-autotools}{How To Use Autotools}
+  \item
+    \href{https://www.gnu.org/software/autoconf/}{GNU Autoconf}
+  \item
+    \href{https://www.gnu.org/software/automake/automake.html}{GNU Automake}
+  \item
+    \href{https://www.gnu.org/software/libtool/libtool.html}{GNU Libtool}
+  \item
+    \href{https://www.gnu.org/software/autoconf/manual}{GNU Autotools Kitabı}
+  \item
+    \href{https://elinux.org/images/4/43/Petazzoni.pdf}{Embedded Linux Conference 2016 - GNU Autotools Tutorial}
+  \item
+    \href{http://freesoftwaremagazine.com/articles/brief_introduction_to_gnu_autotools/}{Chapter 1: A brief introduction to the GNU Autotools}
+  \item
+    \href{https://developer.fedoraproject.org/tech/languages/c/autotools.html}{Autotools - Fedora Developers}
+  \item
+    \href{http://thegreyblog.blogspot.com/2013/09/cc-project-built-with-gnu-build-system.html}{C/C++ Project Built with GNU Build System (A.K.A. GNU Autotools): NetBeans vs.~Eclipse CDT}
+  \end{itemize}
+\item
+  Terminal Belgeleri:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{\$\ info\ automake}
+  \item
+    \texttt{\$\ info\ autoconf}
+  \item
+    \texttt{\$\ info\ libtool}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{gnu-autotools-avantajlarux131}{%
+\section{GNU Autotools Avantajları}\label{gnu-autotools-avantajlarux131}}
+
+GNU Autotools bir nevi kendi derleme sistemini oluşturarak, bir yazılımın her hangi bir sistemde 2-3 komut ile çalışabilir hale gelmesini sağlayabilir.
+
+\hypertarget{gnu-autotools-dezavantajlarux131}{%
+\section{GNU Autotools Dezavantajları}\label{gnu-autotools-dezavantajlarux131}}
+
+GNU Autotools yapımcıları tarafından kullanımı basit şeklinde ifade ediliyor ama kullanımı biraz uğraştırıcıdır.
 
 \hypertarget{msbuild}{%
-\chapter*{Msbuild}\label{msbuild}}
-\addcontentsline{toc}{chapter}{Msbuild}
+\chapter{Msbuild}\label{msbuild}}
 
-\hypertarget{nedir-3}{%
-\section*{Nedir}\label{nedir-3}}
-\addcontentsline{toc}{section}{Nedir}
+\hypertarget{msbuild-nedir}{%
+\section{Msbuild Nedir}\label{msbuild-nedir}}
 
 Msbuild kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{kullanux131mux131-3}{%
-\section*{Kullanımı}\label{kullanux131mux131-3}}
-\addcontentsline{toc}{section}{Kullanımı}
+\hypertarget{msbuild-kullanux131mux131}{%
+\section{Msbuild Kullanımı}\label{msbuild-kullanux131mux131}}
 
 Msbuild kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{avantajlarux131-3}{%
-\section*{Avantajları}\label{avantajlarux131-3}}
-\addcontentsline{toc}{section}{Avantajları}
+\hypertarget{msbuild-avantajlarux131}{%
+\section{Msbuild Avantajları}\label{msbuild-avantajlarux131}}
 
 Msbuild kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{dezavantajlarux131-3}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-3}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\hypertarget{msbuild-dezavantajlarux131}{%
+\section{Msbuild Dezavantajları}\label{msbuild-dezavantajlarux131}}
 
 Msbuild kullanımı avantajı dezavantajı\ldots{}
 
 \hypertarget{meson}{%
-\chapter*{Meson}\label{meson}}
-\addcontentsline{toc}{chapter}{Meson}
+\chapter{Meson}\label{meson}}
 
-\hypertarget{nedir-4}{%
-\section*{Nedir}\label{nedir-4}}
-\addcontentsline{toc}{section}{Nedir}
+\hypertarget{meson-nedir}{%
+\section{Meson Nedir}\label{meson-nedir}}
 
-Meson kullanımı avantajı dezavantajı\ldots{}
+\begin{itemize}
+\item
+  Meson, yazılımın oluşturulmasını (derlenmesini) otomatikleştirmek için bir yazılım aracıdır. Meson'un genel amacı programcı verimliliğini arttırmaktır. Meson, Apache 2.0 Lisansı altında Python ile yazılmış ücretsiz ve açık kaynaklı bir yazılımdır.
+\item
+  Meson'un belirtilen bir diğer amacı, modern programlama araçları ve en iyi uygulamalar için birinci sınıf destek sağlamaktı. Bunlar, birim testi, kod kapsamı raporlaması, önceden derlenmiş başlıklar ve benzerleri gibi çeşitli özellikleri içerir. Bu özelliklerin tümü Meson kullanan herhangi bir projeye anında ulaşılabilir olmalıdır. Kullanıcının bu özellikleri alabilmesi için üçüncü taraf makroları araması veya kabuk komut dosyaları yazması gerekmez.Meson bunları kullanıcıların yerine yapar.
+\end{itemize}
 
-\hypertarget{kullanux131mux131-4}{%
-\section*{Kullanımı}\label{kullanux131mux131-4}}
-\addcontentsline{toc}{section}{Kullanımı}
+\hypertarget{uxf6zellikleri}{%
+\subsection{Özellikleri}\label{uxf6zellikleri}}
 
-Meson kullanımı avantajı dezavantajı\ldots{}
+\textbf{--\textgreater{}} Meson, MacOS,Windows ve diğer işletim sistemleri de dahil olmak üzere Unix benzeri işletim sistemlerinde yerel olarak çalışır.
 
-\hypertarget{avantajlarux131-4}{%
-\section*{Avantajları}\label{avantajlarux131-4}}
-\addcontentsline{toc}{section}{Avantajları}
+\textbf{--\textgreater{}} Meson, C, C++, CUDA, D, Objective-C, Fortran, Java, C\#, Rust ve Vala dillerini destekler.
 
-Meson kullanımı avantajı dezavantajı\ldots{}
+\textbf{--\textgreater{}} Wrap adı verilen bağımlılıkları işlemek için bir mekanizmaya sahiptir.
 
-\hypertarget{dezavantajlarux131-4}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-4}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\textbf{--\textgreater{}} Meson, Ninja, GNU derleyici Koleksiyonu, Clang, Microsoft Visual Studio ve isteğe bağlı olarak diğer derleme sistemlerini destekler.
 
-Meson kullanımı avantajı dezavantajı\ldots{}
+\textbf{--\textgreater{}} Çok okunabilir ve kullanıcı dostu Turing olmayan eksiksiz bir DSL'de tanımlar oluşturur.
+
+\textbf{--\textgreater{}} Meson, Meson ve CMake alt projelerini destekler. Bir Meson derleme dosyası WrapDB hizmetine de başvurabilir.
+
+\hypertarget{meson-kullanux131mux131}{%
+\section{Meson Kullanımı}\label{meson-kullanux131mux131}}
+
+Meson, kullanımı olabildiğince basit olacak şekilde tasarlanmıştır.
+Meson, Python 3'te uygulanmaktadır ve 3.5 veya daha yenisini gerektirir. İşletim sisteminiz bir paket yöneticisi sağlıyorsa, onunla birlikte yüklemelisiniz. Paket yöneticisi olmayan platformlar için,
+\href{https://www.python.org/downloads/}{Python'un ana sayfasından} indirmeniz gerekir.
+
+\hypertarget{meson-yuxfckleme}{%
+\subsection{Meson Yükleme}\label{meson-yuxfckleme}}
+
+Meson sürümleri \href{https://github.com/mesonbuild/meson/releases}{GitHub sürüm sayfasından} indirilebilir ve özel bir şey yapmadan \texttt{./meson.py}'yi bir sürümden veya git deposundan çalıştırabilirsiniz.
+
+Windows'ta, Python'u Python komut dosyalarını çalıştırılabilir yapan yükleyici seçenekleriyle kurmadıysanız, \texttt{python\ /path/to/meson.py} çalıştırmanız gerekir; burada \texttt{python} Python 3.5 veya daha yeni sürümüdür.
+
+En yeni geliştirme kodunu doğrudan \href{https://github.com/mesonbuild/meson}{Git}'ten alabilirsiniz.
+
+\hypertarget{gereksinimler}{%
+\subsection{Gereksinimler}\label{gereksinimler}}
+
+\begin{itemize}
+\tightlist
+\item
+  Python 3
+\item
+  Ninja
+\end{itemize}
+
+\hypertarget{baux11fux131mlux131lux131klar}{%
+\subsection{Bağımlılıklar}\label{baux11fux131mlux131lux131klar}}
+
+En yaygın durumda, Meson'da varsayılan olan \texttt{ninja} arka ucunu kullanmak için \href{https://ninja-build.org/}{Ninja yürütülebilir dosyasına} ihtiyacınız olacaktır. Bu arka uç, GCC, Clang, Visual Studio, Mingw, ICC, ARMCC vb.dahil olmak üzere tüm platformlarda ve tüm toolchains zincirlerinde kullanılabilir.
+
+Mümkünse paket yöneticiniz tarafından sağlanan sürümü kullanabilirsiniz, aksi takdirde çalıştırılabilir ikili dosyayı \href{https://github.com/ninja-build/ninja/releases}{Ninja projesinin yayın sayfasından} indirebilirsiniz.
+
+Windows'ta Visual Studio çözümleri oluşturmak için yalnızca Visual Studio arka ucunu (\texttt{-\/-backend\ =\ vs}) veya macOS'ta XCode projeleri oluşturmak için XCode arka ucunu (\texttt{-\/-backend\ =\ xcode}) kullanmalısınız, Ninja'ya ihtiyacınız yoktur.
+
+\hypertarget{meson-pip-ile-kurulum}{%
+\subsection{Meson Pip İle Kurulum}\label{meson-pip-ile-kurulum}}
+
+Meson, \href{https://pypi.org/project/meson/}{Python Paket} Dizininde mevcuttur ve kök gerektiren ve sistem genelinde yükleyecek olan \texttt{pip3\ install\ meson} ile kurulabilir.
+
+Alternatif olarak(önerilir), kullanıcınız için kuracak ve herhangi bir özel ayrıcalık gerektirmeyen \texttt{pip3\ install\ -\/-user\ meson}'u kullanabilirsiniz. Bu, paketi \texttt{\textasciitilde{}/.local/} dizinine yükleyecektir, dolayısıyla \texttt{path}'inize \texttt{\textasciitilde{}/.local/bin} eklemeniz gerekecektir.
+
+\hypertarget{paket-yuxf6neticisi-kullanarak-kurulum}{%
+\subsection{Paket Yöneticisi Kullanarak Kurulum}\label{paket-yuxf6neticisi-kullanarak-kurulum}}
+
+Ubuntu:
+
+\begin{verbatim}
+$ sudo apt-get install python3 python3-pip python3-setuptools \
+                       python3-wheel ninja-build
+\end{verbatim}
+
+! Distro paketli yazılım hızla modası geçmiş olabilir.
+
+\hypertarget{sorun-giderme}{%
+\subsection{Sorun Giderme}\label{sorun-giderme}}
+
+Ortak sorunlar:
+
+\begin{verbatim}
+$ meson builddir
+$ bash: /usr/bin/meson: No such file or directory
+\end{verbatim}
+
+Açıklama: Python pip modülü kurulumu için varsayılan kurulum ön eki, kabuk ortamınız path içerisine dahil değildir.Python pip kurulum modülleri için varsayılan ön ek \texttt{/\ usr\ /\ local} altında bulunur.
+
+** Çözüm: Bu sorun, varsayılan kabuk ortamı path'i \texttt{/\ usr\ /\ local\ /\ bin}içerecek şekilde değiştirilerek çözülebilir.
+
+Not: Bu sorunu çözmenin sembolik bağları kullanmak veya ikili dosyaları varsayılan bir yola kopyalamak gibi başka yolları da vardır. Bu yöntemler, paket yönetiminin birlikte çalışabilirliğini bozabileceği için önerilmez veya desteklenmez.
+
+\hypertarget{meson-projesi-derleme}{%
+\subsection{Meson Projesi Derleme}\label{meson-projesi-derleme}}
+
+Meson'un en yaygın kullanım durumu, üzerinde çalıştığınız bir kod tabanında kod derlemektir. Atılacak adımlar çok basit.
+
+\begin{verbatim}
+$ cd /path/to/source/root
+$ meson builddir && cd builddir
+$ meson compile
+$ meson test
+\end{verbatim}
+
+Unutulmaması gereken tek şey, ayrı bir yapı dizini oluşturmanız gerektiğidir. Meson, kaynak ağacınızın içinde kaynak kodu oluşturmanıza izin vermez. Tüm yapı eserleri, yapı dizininde saklanır. Bu, aynı anda farklı konfigürasyonlara(yapılandırmalara) sahip birden fazla yapı ağacına sahip olmanızı sağlar. Bu şekilde oluşturulan dosyalar kazara revizyon kontrolüne eklenmez.
+
+Kod değişikliklerinden sonra yeniden derlemek için \texttt{meson\ compile} yazmanız yeterlidir. Build (yapı) komutu her zaman aynıdır. Kaynak kodunda rastgele değişiklikler yapabilir ve sistem dosyalarını oluşturabilirsiniz . Meson bunları algılar ve doğru olanı yapar. Optimize edilmiş ikili dosyalar oluşturmak istiyorsanız, Meson'u çalıştırırken \texttt{-\/-buildtype\ =\ debugoptimized} argümanını kullanın. Optimize edilmemiş yapılar için bir yapı dizini ve optimize edilmiş yapılar için de bir tane yapı dizini tutmanız önerilir. Herhangi bir yapılandırmayı derlemek için, ilgili yapı dizinine gidin ve \texttt{meson\ compile}'i çalıştırın.
+
+Meson, hata ayıklama bilgilerini ve derleyici uyarılarını (yani \texttt{-g} ve \texttt{-Wall}) etkinleştirmek için otomatik olarak derleyici bayrakları ekleyecektir.Bu, kullanıcının onlarla uğraşmak zorunda olmadığı ve bunun yerine kodlamaya odaklanabileceği anlamına gelir.
+
+\hypertarget{mesonu-daux11fux131tux131m-paketleyici-olarak-kullanma}{%
+\subsection{Meson'u Dağıtım Paketleyici Olarak Kullanma}\label{mesonu-daux11fux131tux131m-paketleyici-olarak-kullanma}}
+
+Dağıtım paketleyicileri genellikle kullanılan derleme bayrakları üzerinde tam kontrol isterler. Meson bu kullanım durumunu yerel olarak desteklemektedir. Meson projelerini oluşturmak ve kurmak için gereken komutlar aşağıdadır:
+
+\begin{verbatim}
+$ cd /path/to/source/root
+$ meson --prefix /usr --buildtype=plain builddir -Dc_args=... -Dcpp_args=... -Dc_link_args=... -Dcpp_link_args=...
+$ meson compile -C builddir
+$ meson test -C builddir
+$ DESTDIR=/path/to/staging/root meson install -C builddir
+\end{verbatim}
+
+Komut satırı anahtarı \texttt{-\/-buildtype=plain} Meson'a komut satırına kendi bayraklarını eklememesini söyler. Bu, paketleyiciye kullanılan işaretler üzerinde tam kontrol sağlar.
+
+Bu, diğer yapı sistemlerine çok benzer.Tek fark, \texttt{DESTDIR} değişkeninin \texttt{meson\ kurulumuna} bir argüman olarak değil, bir ortam değişkeni olarak geçirilmesidir.
+
+Dağıtım derlemeleri her zaman sıfırdan gerçekleştiği için, daha hızlı olduklarından ve daha iyi kod ürettiklerinden paketlerinizin üzerinde \href{https://mesonbuild.com/Unity-builds.html}{unity oluşturmayı} etkinleştirmeyi düşünebilirsiniz. Bununla birlikte, unity yapıları etkinleştirilmiş olarak oluşturulmayan birçok proje vardır, bu nedenle unity yapılarını kullanma kararı, paketleyici tarafından duruma göre yapılmalıdır.
+
+\hypertarget{include-kullanux131mux131}{%
+\subsection{Include Kullanımı}\label{include-kullanux131mux131}}
+
+Çoğu C / C ++ projesinin kaynaklardan farklı dizinlerde başlıkları vardır. Bu nedenle, içerme dizinlerini belirtmeniz gerekir. Bir alt dizinde olduğumuzu ve bunun \texttt{include} alt dizinini bazı hedefin arama yoluna eklemek istediğimizi varsayalım. Bir dahil etme dizini nesnesi oluşturmak için şunu yapıyoruz:
+
+\begin{verbatim}
+incdir = include_directories('include')
+\end{verbatim}
+
+\texttt{İncdir} değişkeni artık \texttt{include} alt dizine bir başvuru tutar. Şimdi bunu bir yapı hedefine argüman olarak aktarıyoruz:
+
+\begin{verbatim}
+executable('someprog', 'someprog.c', include_directories : incdir)
+\end{verbatim}
+
+Bu iki komutun herhangi bir alt dizinde verilebileceğini ve yine de çalışacağını unutmayın. Meson, konumları takip edecek ve hepsinin çalışması için uygun derleyici bayrakları oluşturacaktır.
+
+Unutulmaması gereken bir diğer nokta da \texttt{include\_directories}'in hem kaynak dizini hem de ilgili yapı dizinini path'ı içerecek şekilde eklemesidir, bu yüzden dikkat etmeniz gerekmez.
+
+\hypertarget{hello-world-yazux131mux131}{%
+\subsection{Hello World Yazımı}\label{hello-world-yazux131mux131}}
+
+Önce kaynağı tutan bir main.c dosyası oluşturuyoruz. Şuna benziyor:
+
+\begin{verbatim}
+#include<stdio.h>
+
+int main(int argc, char **argv) {
+  printf("Hello world!\n");
+  return 0;
+}
+\end{verbatim}
+
+Daha sonra bir Meson build (yapı) açıklaması oluşturup aynı dizindeki \texttt{meson.build} adlı bir dosyaya koyuyoruz. İçeriği aşağıdaki gibidir:
+
+\begin{verbatim}
+project('tutorial', 'c')
+executable('demo', 'main.c')
+\end{verbatim}
+
+Hepsi bu. Autotools'tan farklı olarak, kaynaklar listesine herhangi bir kaynak başlığı eklemenize gerek olmadığını unutmayınız.
+
+Artık uygulamamızı oluşturmaya hazırız. Öncelikle kaynak dizine girip aşağıdaki komutu yazarak yapıyı başlatmamız gerekiyor:
+
+\begin{verbatim}
+$ meson builddir
+\end{verbatim}
+
+Tüm derleyici çıktısını tutmak için ayrı bir yapı dizini oluşturuyoruz. Meson, kaynak içi derlemelere izin vermediği için diğer bazı derleme sistemlerinden farklıdır. Her zaman ayrı bir yapı dizini oluşturmanız gerekir. Genel kural, varsayılan yapı dizinini en üst düzey kaynak dizininizin bir alt dizinine koymaktır.
+
+Meson çalıştırıldığında aşağıdaki çıktıyı yazdırır:
+
+\begin{verbatim}
+The Meson build system
+ version: 0.13.0-research
+Source dir: /home/jpakkane/mesontutorial
+Build dir: /home/jpakkane/mesontutorial/builddir
+Build type: native build
+Project name is "tutorial".
+Using native c compiler "ccache cc". (gcc 4.8.2)
+Creating build target "demo" with 1 files.
+\end{verbatim}
+
+Artık kodumuzu oluşturmaya hazırız.
+
+\begin{verbatim}
+$ cd builddir
+
+$ meson compile
+\end{verbatim}
+
+Bunu yaptıktan sonra ortaya çıkan ikiliyi çalıştırabiliriz.
+
+\begin{verbatim}
+$ ./demo
+\end{verbatim}
+
+Bu beklenen çıktıyı üretir.
+
+\begin{verbatim}
+Hello world!
+\end{verbatim}
+
+\hypertarget{meson-avantajlarux131}{%
+\section{Meson Avantajları}\label{meson-avantajlarux131}}
+
+Meson kullanımının avantajları:
+
+1-Meson'a başlamak kolaydır.
+
+2-Meson, CMake ile karşılaştırılabilir ve kendi kriterlerine göre diğer build (yapı) sistemlere kıyasla en hızlısıdır.
+
+3-Cmake'e kıyasla sadece zaman kazandırmaz. Aynı zamanda daha net ayırma, daha iyi bir iş akışı, okunabilir seçenekler, dosyalar oluşturma,önceden derlenmiş başlıklar ve Unity gibi daha fazla hedef bulundurur.
+Ayrıca, Meson bu kullanım durumu için baştan tasarlandığından, diğer dillerle karıştırmak daha kolaydır. Alt projeler ve çapraz derleme tamamen desteklenir ve sonradan düşünülmüş gibi hissetirmez.
+
+4-Meson dili güçlü* bir şekilde yazılmıştır, öyle ki kütüphane, yürütülebilir, dize ve bunların listeleri gibi yerleşik türler birbirinin yerine kullanılamaz. Özellikle, Make'dan farklı olarak, liste türü boşluktaki dizeleri ayırmaz. Böylece, dosya adlarındaki ve program argümanlarındaki boşluk ve diğer karakterler temiz bir şekilde işlenir.
+(*Güçlü bir şekilde yazılan bir dilin derleme zamanında zayıf yazıma göre daha katı yazma kuralları vardır.)
+
+5-Çoklu platform özelliği vardır.
+
+6-Birçok desteklenen dil bulunmaktadır.
+
+7-Ağaç dışı yapıya sahiptir.
+
+8-x86\_64 Unix'te doğru kütüphane kurulum dizinini ayarlama otomatiktir.
+
+9-Pkg-config dosya üreticisi vardır.
+
+\hypertarget{meson-dezavantajlarux131}{%
+\section{Meson Dezavantajları}\label{meson-dezavantajlarux131}}
+
+Meson kullanımının dezavantajları:
+
+1-Meson, projeleri kaynaktan entegre etmek için kendi indirme hizmetini destekliyor, ancak şu anda çok fazla paketi yok.
+
+2-Statik bağlantı desteğinin olmaması ve (işlevlerin olmaması nedeniyle) genişletilecek herhangi bir yeteneğin olmaması meson için bir dezavantajdır.
+
+3-Pkg-config olmadan kütüphane bağımlılıkları bulamamaktadır.
+
+4-Özel fonksiyonlar ile genişletilemez.
+
+5-Hata ayıklama yapıları varsayılan olarak en iyi duruma getirilmemiştir.
+
+\textbf{--\textgreater\textgreater{}} Avantaj ve dezavantaj bölümünde bulunan bazı maddeler \href{https://www.slant.co/topics/4263/viewpoints/14/~open-source-build-systems-for-c-c~meson}{slant} sitesinde bulunan kullanıcı yorumlarıdır.
 
 \hypertarget{qmake}{%
-\chapter*{Qmake}\label{qmake}}
-\addcontentsline{toc}{chapter}{Qmake}
+\chapter{Qmake}\label{qmake}}
 
-\hypertarget{nedir-5}{%
-\section*{Nedir}\label{nedir-5}}
-\addcontentsline{toc}{section}{Nedir}
+\hypertarget{qmake-nedir}{%
+\section{Qmake Nedir}\label{qmake-nedir}}
 
 Qmake kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{kullanux131mux131-5}{%
-\section*{Kullanımı}\label{kullanux131mux131-5}}
-\addcontentsline{toc}{section}{Kullanımı}
+\hypertarget{qmake-kullanux131mux131}{%
+\section{Qmake Kullanımı}\label{qmake-kullanux131mux131}}
 
 Qmake kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{avantajlarux131-5}{%
-\section*{Avantajları}\label{avantajlarux131-5}}
-\addcontentsline{toc}{section}{Avantajları}
+\hypertarget{qmake-avantajlarux131}{%
+\section{Qmake Avantajları}\label{qmake-avantajlarux131}}
 
 Qmake kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{dezavantajlarux131-5}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-5}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\hypertarget{qmake-dezavantajlarux131}{%
+\section{Qmake Dezavantajları}\label{qmake-dezavantajlarux131}}
 
 Qmake kullanımı avantajı dezavantajı\ldots{}
 
 \hypertarget{kbuild}{%
-\chapter*{Kbuild}\label{kbuild}}
-\addcontentsline{toc}{chapter}{Kbuild}
+\chapter{Kbuild}\label{kbuild}}
 
-\hypertarget{nedir-6}{%
-\section*{Nedir}\label{nedir-6}}
-\addcontentsline{toc}{section}{Nedir}
+\hypertarget{kbuild-nedir}{%
+\section{Kbuild Nedir}\label{kbuild-nedir}}
 
 Kbuild kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{kullanux131mux131-6}{%
-\section*{Kullanımı}\label{kullanux131mux131-6}}
-\addcontentsline{toc}{section}{Kullanımı}
+\hypertarget{kbuild-kullanux131mux131}{%
+\section{Kbuild Kullanımı}\label{kbuild-kullanux131mux131}}
 
 Kbuild kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{avantajlarux131-6}{%
-\section*{Avantajları}\label{avantajlarux131-6}}
-\addcontentsline{toc}{section}{Avantajları}
+\hypertarget{kbuild-avantajlarux131}{%
+\section{Kbuild Avantajları}\label{kbuild-avantajlarux131}}
 
 Kbuild kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{dezavantajlarux131-6}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-6}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\hypertarget{kbuild-dezavantajlarux131}{%
+\section{Kbuild Dezavantajları}\label{kbuild-dezavantajlarux131}}
 
 Kbuild kullanımı avantajı dezavantajı\ldots{}
 
 \hypertarget{build2}{%
-\chapter*{Build2}\label{build2}}
-\addcontentsline{toc}{chapter}{Build2}
+\chapter{Build2}\label{build2}}
 
-\hypertarget{nedir-7}{%
-\section*{Nedir}\label{nedir-7}}
-\addcontentsline{toc}{section}{Nedir}
+\hypertarget{build2-nedir}{%
+\section{Build2 Nedir}\label{build2-nedir}}
 
 Build2 kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{kullanux131mux131-7}{%
-\section*{Kullanımı}\label{kullanux131mux131-7}}
-\addcontentsline{toc}{section}{Kullanımı}
+\hypertarget{build2-kullanux131mux131}{%
+\section{Build2 Kullanımı}\label{build2-kullanux131mux131}}
 
 Build2 kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{avantajlarux131-7}{%
-\section*{Avantajları}\label{avantajlarux131-7}}
-\addcontentsline{toc}{section}{Avantajları}
+\hypertarget{build2-avantajlarux131}{%
+\section{Build2 Avantajları}\label{build2-avantajlarux131}}
 
 Build2 kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{dezavantajlarux131-7}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-7}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\hypertarget{build2-dezavantajlarux131}{%
+\section{Build2 Dezavantajları}\label{build2-dezavantajlarux131}}
 
 Build2 kullanımı avantajı dezavantajı\ldots{}
 
 \hypertarget{xmake}{%
-\chapter*{Xmake}\label{xmake}}
-\addcontentsline{toc}{chapter}{Xmake}
+\chapter{Xmake}\label{xmake}}
 
-\hypertarget{nedir-8}{%
-\section*{Nedir}\label{nedir-8}}
-\addcontentsline{toc}{section}{Nedir}
+\hypertarget{xmake-nedir}{%
+\section{Xmake Nedir}\label{xmake-nedir}}
 
 Xmake kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{kullanux131mux131-8}{%
-\section*{Kullanımı}\label{kullanux131mux131-8}}
-\addcontentsline{toc}{section}{Kullanımı}
+\hypertarget{xmake-kullanux131mux131}{%
+\section{Xmake Kullanımı}\label{xmake-kullanux131mux131}}
 
 Xmake kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{avantajlarux131-8}{%
-\section*{Avantajları}\label{avantajlarux131-8}}
-\addcontentsline{toc}{section}{Avantajları}
+\hypertarget{xmake-avantajlarux131}{%
+\section{Xmake Avantajları}\label{xmake-avantajlarux131}}
 
 Xmake kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{dezavantajlarux131-8}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-8}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\hypertarget{xmake-dezavantajlarux131}{%
+\section{Xmake Dezavantajları}\label{xmake-dezavantajlarux131}}
 
 Xmake kullanımı avantajı dezavantajı\ldots{}
 
 \hypertarget{bazel}{%
-\chapter*{Bazel}\label{bazel}}
-\addcontentsline{toc}{chapter}{Bazel}
+\chapter{Bazel}\label{bazel}}
 
-\hypertarget{nedir-9}{%
-\section*{Nedir}\label{nedir-9}}
-\addcontentsline{toc}{section}{Nedir}
+\hypertarget{bazel-nedir}{%
+\section{Bazel Nedir}\label{bazel-nedir}}
 
 Bazel kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{kullanux131mux131-9}{%
-\section*{Kullanımı}\label{kullanux131mux131-9}}
-\addcontentsline{toc}{section}{Kullanımı}
+\hypertarget{bazel-kullanux131mux131}{%
+\section{Bazel Kullanımı}\label{bazel-kullanux131mux131}}
 
 Bazel kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{avantajlarux131-9}{%
-\section*{Avantajları}\label{avantajlarux131-9}}
-\addcontentsline{toc}{section}{Avantajları}
+\hypertarget{bazel-avantajlarux131}{%
+\section{Bazel Avantajları}\label{bazel-avantajlarux131}}
 
 Bazel kullanımı avantajı dezavantajı\ldots{}
 
-\hypertarget{dezavantajlarux131-9}{%
-\section*{Dezavantajları}\label{dezavantajlarux131-9}}
-\addcontentsline{toc}{section}{Dezavantajları}
+\hypertarget{bazel-dezavantajlarux131}{%
+\section{Bazel Dezavantajları}\label{bazel-dezavantajlarux131}}
 
 Bazel kullanımı avantajı dezavantajı\ldots{}
 
@@ -437,12 +1460,21 @@ Bazel kullanımı avantajı dezavantajı\ldots{}
 \part{Paket Yöneticileri}\label{part-paket-yuxf6neticileri}}
 
 \hypertarget{conan}{%
-\chapter*{Conan}\label{conan}}
-\addcontentsline{toc}{chapter}{Conan}
+\chapter{Conan}\label{conan}}
 
-\hypertarget{buxf6luxfcm-iuxe7eriux11fi-1}{%
-\section*{Bölüm içeriği}\label{buxf6luxfcm-iuxe7eriux11fi-1}}
-\addcontentsline{toc}{section}{Bölüm içeriği}
+\hypertarget{conan-buxf6luxfcm-iuxe7eriux11fi}{%
+\section{Conan Bölüm içeriği}\label{conan-buxf6luxfcm-iuxe7eriux11fi}}
+
+Conan kullanımı avantajı dezavantajı\ldots{}
+
+\hypertarget{part-xxxxx-xxxxx}{%
+\part{XXXXX XXXXX}\label{part-xxxxx-xxxxx}}
+
+\hypertarget{docker}{%
+\chapter{Docker}\label{docker}}
+
+\hypertarget{auxe7ux131klama-1}{%
+\section{Açıklama}\label{auxe7ux131klama-1}}
 
 Conan kullanımı avantajı dezavantajı\ldots{}
 

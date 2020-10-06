@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Cmake | C/C++ Geliştirme Ortamları</title>
+  <title>C/C++ Geliştirme Ortamları</title>
   <meta name="description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Cmake | C/C++ Geliştirme Ortamları" />
+  <meta property="og:title" content="C/C++ Geliştirme Ortamları" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/" />
   <meta property="og:image" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/images/muhendis_koyu.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MuhendisKoyu/C-Cpp-gelistirme-ortamlari" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Cmake | C/C++ Geliştirme Ortamları" />
+  <meta name="twitter:title" content="C/C++ Geliştirme Ortamları" />
   
   <meta name="twitter:description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
   <meta name="twitter:image" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/images/muhendis_koyu.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Mühendis Köyü" />
 
 
-<meta name="date" content="2020-06-21" />
+<meta name="date" content="2020-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="makefile.html"/>
-<link rel="next" href="gnu-autotool.html"/>
+<link rel="next" href="gnu-autotools.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,8 +50,74 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -75,79 +141,106 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#lisans"><i class="fa fa-check"></i>Lisans</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#bu-kitap-nasıl-geliştiriliyor"><i class="fa fa-check"></i>Bu Kitap Nasıl Geliştiriliyor</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html"><i class="fa fa-check"></i>Giriş</a><ul>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#bölüm-içeriği"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#ide-kullanımı"><i class="fa fa-check"></i>IDE Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#editör-derleyici-kullanımı"><i class="fa fa-check"></i>Editör + Derleyici Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#cc-için-inşa-sistemleri"><i class="fa fa-check"></i>C/C++ için İnşa Sistemleri</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#cc-için-paket-yöneticileri"><i class="fa fa-check"></i>C/C++ için Paket Yöneticileri</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html"><i class="fa fa-check"></i>Giriş</a><ul>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#bölüm-içeriği"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#ide-kullanımı"><i class="fa fa-check"></i>IDE Kullanımı</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#editör-derleyici-kullanımı"><i class="fa fa-check"></i>Editör + Derleyici Kullanımı</a><ul>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#vim"><i class="fa fa-check"></i>VIM</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#temel-öğeler"><i class="fa fa-check"></i>Temel Öğeler</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#vimde-c-programı-geliştirme"><i class="fa fa-check"></i>VIM’de C Programı Geliştirme</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#cc-için-inşa-sistemleri"><i class="fa fa-check"></i>C/C++ için İnşa Sistemleri</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#cc-için-paket-yöneticileri"><i class="fa fa-check"></i>C/C++ için Paket Yöneticileri</a></li>
 </ul></li>
 <li class="part"><span><b>I İnşa Sistemleri</b></span></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html"><i class="fa fa-check"></i>Makefile</a><ul>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#nedir"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#kullanımı"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#avantajları"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#dezavantajları"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="1" data-path="makefile.html"><a href="makefile.html"><i class="fa fa-check"></i><b>1</b> Makefile</a><ul>
+<li class="chapter" data-level="1.1" data-path="makefile.html"><a href="makefile.html#makefile-nedir"><i class="fa fa-check"></i><b>1.1</b> Makefile Nedir</a></li>
+<li class="chapter" data-level="1.2" data-path="makefile.html"><a href="makefile.html#makefile-kullanımı"><i class="fa fa-check"></i><b>1.2</b> Makefile Kullanımı</a></li>
+<li class="chapter" data-level="1.3" data-path="makefile.html"><a href="makefile.html#makefile-avantajları"><i class="fa fa-check"></i><b>1.3</b> Makefile Avantajları</a></li>
+<li class="chapter" data-level="1.4" data-path="makefile.html"><a href="makefile.html#makefile-dezavantajları"><i class="fa fa-check"></i><b>1.4</b> Makefile Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html"><i class="fa fa-check"></i>Cmake</a><ul>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#nedir-1"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#kullanımı-1"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#avantajları-1"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#dezavantajları-1"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="2" data-path="cmake.html"><a href="cmake.html"><i class="fa fa-check"></i><b>2</b> Cmake</a><ul>
+<li class="chapter" data-level="2.1" data-path="cmake.html"><a href="cmake.html#cmake-kullanımı"><i class="fa fa-check"></i><b>2.1</b> Cmake Kullanımı</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="cmake.html"><a href="cmake.html#windowsta-kurulum"><i class="fa fa-check"></i><b>2.1.1</b> Windows’ta Kurulum</a></li>
+<li class="chapter" data-level="2.1.2" data-path="cmake.html"><a href="cmake.html#linuxta-kurulum"><i class="fa fa-check"></i><b>2.1.2</b> Linux’ta Kurulum</a></li>
+<li class="chapter" data-level="2.1.3" data-path="cmake.html"><a href="cmake.html#projenin-oluşturulması"><i class="fa fa-check"></i><b>2.1.3</b> Projenin oluşturulması</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html"><i class="fa fa-check"></i>GNU Autotool</a><ul>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#nedir-2"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#kullanımı-2"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#avantajları-2"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#dezavantajları-2"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="2.2" data-path="cmake.html"><a href="cmake.html#cmake-avantajları"><i class="fa fa-check"></i><b>2.2</b> Cmake Avantajları</a></li>
+<li class="chapter" data-level="2.3" data-path="cmake.html"><a href="cmake.html#cmake-dezavantajları"><i class="fa fa-check"></i><b>2.3</b> Cmake Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html"><i class="fa fa-check"></i>Msbuild</a><ul>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#nedir-3"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#kullanımı-3"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#avantajları-3"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#dezavantajları-3"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="3" data-path="gnu-autotools.html"><a href="gnu-autotools.html"><i class="fa fa-check"></i><b>3</b> GNU Autotools</a><ul>
+<li class="chapter" data-level="3.1" data-path="gnu-autotools.html"><a href="gnu-autotools.html#açıklama"><i class="fa fa-check"></i><b>3.1</b> Açıklama</a></li>
+<li class="chapter" data-level="3.2" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-kullanımı"><i class="fa fa-check"></i><b>3.2</b> GNU Autotools Kullanımı</a><ul>
+<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#c-projesi-ve-gerekli-dosyalar"><i class="fa fa-check"></i>1. C++ Projesi ve Gerekli Dosyalar</a></li>
+<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#makefile.am-dosyası"><i class="fa fa-check"></i>2. “Makefile.am” dosyası</a></li>
+<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#configure.ac-dosyası"><i class="fa fa-check"></i>3. “configure.ac” dosyası</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html"><i class="fa fa-check"></i>Meson</a><ul>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#nedir-4"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#kullanımı-4"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#avantajları-4"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#dezavantajları-4"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="3.3" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-avantajları"><i class="fa fa-check"></i><b>3.3</b> GNU Autotools Avantajları</a></li>
+<li class="chapter" data-level="3.4" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-dezavantajları"><i class="fa fa-check"></i><b>3.4</b> GNU Autotools Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html"><i class="fa fa-check"></i>Qmake</a><ul>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#nedir-5"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#kullanımı-5"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#avantajları-5"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#dezavantajları-5"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="4" data-path="msbuild.html"><a href="msbuild.html"><i class="fa fa-check"></i><b>4</b> Msbuild</a><ul>
+<li class="chapter" data-level="4.1" data-path="msbuild.html"><a href="msbuild.html#msbuild-nedir"><i class="fa fa-check"></i><b>4.1</b> Msbuild Nedir</a></li>
+<li class="chapter" data-level="4.2" data-path="msbuild.html"><a href="msbuild.html#msbuild-kullanımı"><i class="fa fa-check"></i><b>4.2</b> Msbuild Kullanımı</a></li>
+<li class="chapter" data-level="4.3" data-path="msbuild.html"><a href="msbuild.html#msbuild-avantajları"><i class="fa fa-check"></i><b>4.3</b> Msbuild Avantajları</a></li>
+<li class="chapter" data-level="4.4" data-path="msbuild.html"><a href="msbuild.html#msbuild-dezavantajları"><i class="fa fa-check"></i><b>4.4</b> Msbuild Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html"><i class="fa fa-check"></i>Kbuild</a><ul>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#nedir-6"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#kullanımı-6"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#avantajları-6"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#dezavantajları-6"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5" data-path="meson.html"><a href="meson.html"><i class="fa fa-check"></i><b>5</b> Meson</a><ul>
+<li class="chapter" data-level="5.1" data-path="meson.html"><a href="meson.html#meson-nedir"><i class="fa fa-check"></i><b>5.1</b> Meson Nedir</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="meson.html"><a href="meson.html#özellikleri"><i class="fa fa-check"></i><b>5.1.1</b> Özellikleri</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html"><i class="fa fa-check"></i>Build2</a><ul>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#nedir-7"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#kullanımı-7"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#avantajları-7"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#dezavantajları-7"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5.2" data-path="meson.html"><a href="meson.html#meson-kullanımı"><i class="fa fa-check"></i><b>5.2</b> Meson Kullanımı</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="meson.html"><a href="meson.html#meson-yükleme"><i class="fa fa-check"></i><b>5.2.1</b> Meson Yükleme</a></li>
+<li class="chapter" data-level="5.2.2" data-path="meson.html"><a href="meson.html#gereksinimler"><i class="fa fa-check"></i><b>5.2.2</b> Gereksinimler</a></li>
+<li class="chapter" data-level="5.2.3" data-path="meson.html"><a href="meson.html#bağımlılıklar"><i class="fa fa-check"></i><b>5.2.3</b> Bağımlılıklar</a></li>
+<li class="chapter" data-level="5.2.4" data-path="meson.html"><a href="meson.html#meson-pip-ile-kurulum"><i class="fa fa-check"></i><b>5.2.4</b> Meson Pip İle Kurulum</a></li>
+<li class="chapter" data-level="5.2.5" data-path="meson.html"><a href="meson.html#paket-yöneticisi-kullanarak-kurulum"><i class="fa fa-check"></i><b>5.2.5</b> Paket Yöneticisi Kullanarak Kurulum</a></li>
+<li class="chapter" data-level="5.2.6" data-path="meson.html"><a href="meson.html#sorun-giderme"><i class="fa fa-check"></i><b>5.2.6</b> Sorun Giderme</a></li>
+<li class="chapter" data-level="5.2.7" data-path="meson.html"><a href="meson.html#meson-projesi-derleme"><i class="fa fa-check"></i><b>5.2.7</b> Meson Projesi Derleme</a></li>
+<li class="chapter" data-level="5.2.8" data-path="meson.html"><a href="meson.html#mesonu-dağıtım-paketleyici-olarak-kullanma"><i class="fa fa-check"></i><b>5.2.8</b> Meson’u Dağıtım Paketleyici Olarak Kullanma</a></li>
+<li class="chapter" data-level="5.2.9" data-path="meson.html"><a href="meson.html#include-kullanımı"><i class="fa fa-check"></i><b>5.2.9</b> Include Kullanımı</a></li>
+<li class="chapter" data-level="5.2.10" data-path="meson.html"><a href="meson.html#hello-world-yazımı"><i class="fa fa-check"></i><b>5.2.10</b> Hello World Yazımı</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html"><i class="fa fa-check"></i>Xmake</a><ul>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#nedir-8"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#kullanımı-8"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#avantajları-8"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#dezavantajları-8"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5.3" data-path="meson.html"><a href="meson.html#meson-avantajları"><i class="fa fa-check"></i><b>5.3</b> Meson Avantajları</a></li>
+<li class="chapter" data-level="5.4" data-path="meson.html"><a href="meson.html#meson-dezavantajları"><i class="fa fa-check"></i><b>5.4</b> Meson Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html"><i class="fa fa-check"></i>Bazel</a><ul>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#nedir-9"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#kullanımı-9"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#avantajları-9"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#dezavantajları-9"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="6" data-path="qmake.html"><a href="qmake.html"><i class="fa fa-check"></i><b>6</b> Qmake</a><ul>
+<li class="chapter" data-level="6.1" data-path="qmake.html"><a href="qmake.html#qmake-nedir"><i class="fa fa-check"></i><b>6.1</b> Qmake Nedir</a></li>
+<li class="chapter" data-level="6.2" data-path="qmake.html"><a href="qmake.html#qmake-kullanımı"><i class="fa fa-check"></i><b>6.2</b> Qmake Kullanımı</a></li>
+<li class="chapter" data-level="6.3" data-path="qmake.html"><a href="qmake.html#qmake-avantajları"><i class="fa fa-check"></i><b>6.3</b> Qmake Avantajları</a></li>
+<li class="chapter" data-level="6.4" data-path="qmake.html"><a href="qmake.html#qmake-dezavantajları"><i class="fa fa-check"></i><b>6.4</b> Qmake Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="kbuild.html"><a href="kbuild.html"><i class="fa fa-check"></i><b>7</b> Kbuild</a><ul>
+<li class="chapter" data-level="7.1" data-path="kbuild.html"><a href="kbuild.html#kbuild-nedir"><i class="fa fa-check"></i><b>7.1</b> Kbuild Nedir</a></li>
+<li class="chapter" data-level="7.2" data-path="kbuild.html"><a href="kbuild.html#kbuild-kullanımı"><i class="fa fa-check"></i><b>7.2</b> Kbuild Kullanımı</a></li>
+<li class="chapter" data-level="7.3" data-path="kbuild.html"><a href="kbuild.html#kbuild-avantajları"><i class="fa fa-check"></i><b>7.3</b> Kbuild Avantajları</a></li>
+<li class="chapter" data-level="7.4" data-path="kbuild.html"><a href="kbuild.html#kbuild-dezavantajları"><i class="fa fa-check"></i><b>7.4</b> Kbuild Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="build2.html"><a href="build2.html"><i class="fa fa-check"></i><b>8</b> Build2</a><ul>
+<li class="chapter" data-level="8.1" data-path="build2.html"><a href="build2.html#build2-nedir"><i class="fa fa-check"></i><b>8.1</b> Build2 Nedir</a></li>
+<li class="chapter" data-level="8.2" data-path="build2.html"><a href="build2.html#build2-kullanımı"><i class="fa fa-check"></i><b>8.2</b> Build2 Kullanımı</a></li>
+<li class="chapter" data-level="8.3" data-path="build2.html"><a href="build2.html#build2-avantajları"><i class="fa fa-check"></i><b>8.3</b> Build2 Avantajları</a></li>
+<li class="chapter" data-level="8.4" data-path="build2.html"><a href="build2.html#build2-dezavantajları"><i class="fa fa-check"></i><b>8.4</b> Build2 Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="xmake.html"><a href="xmake.html"><i class="fa fa-check"></i><b>9</b> Xmake</a><ul>
+<li class="chapter" data-level="9.1" data-path="xmake.html"><a href="xmake.html#xmake-nedir"><i class="fa fa-check"></i><b>9.1</b> Xmake Nedir</a></li>
+<li class="chapter" data-level="9.2" data-path="xmake.html"><a href="xmake.html#xmake-kullanımı"><i class="fa fa-check"></i><b>9.2</b> Xmake Kullanımı</a></li>
+<li class="chapter" data-level="9.3" data-path="xmake.html"><a href="xmake.html#xmake-avantajları"><i class="fa fa-check"></i><b>9.3</b> Xmake Avantajları</a></li>
+<li class="chapter" data-level="9.4" data-path="xmake.html"><a href="xmake.html#xmake-dezavantajları"><i class="fa fa-check"></i><b>9.4</b> Xmake Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="bazel.html"><a href="bazel.html"><i class="fa fa-check"></i><b>10</b> Bazel</a><ul>
+<li class="chapter" data-level="10.1" data-path="bazel.html"><a href="bazel.html#bazel-nedir"><i class="fa fa-check"></i><b>10.1</b> Bazel Nedir</a></li>
+<li class="chapter" data-level="10.2" data-path="bazel.html"><a href="bazel.html#bazel-kullanımı"><i class="fa fa-check"></i><b>10.2</b> Bazel Kullanımı</a></li>
+<li class="chapter" data-level="10.3" data-path="bazel.html"><a href="bazel.html#bazel-avantajları"><i class="fa fa-check"></i><b>10.3</b> Bazel Avantajları</a></li>
+<li class="chapter" data-level="10.4" data-path="bazel.html"><a href="bazel.html#bazel-dezavantajları"><i class="fa fa-check"></i><b>10.4</b> Bazel Dezavantajları</a></li>
 </ul></li>
 <li class="part"><span><b>II Paket Yöneticileri</b></span></li>
-<li class="chapter" data-level="" data-path="conan.html"><a href="conan.html"><i class="fa fa-check"></i>Conan</a><ul>
-<li class="chapter" data-level="" data-path="conan.html"><a href="conan.html#bölüm-içeriği-1"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
+<li class="chapter" data-level="11" data-path="conan.html"><a href="conan.html"><i class="fa fa-check"></i><b>11</b> Conan</a><ul>
+<li class="chapter" data-level="11.1" data-path="conan.html"><a href="conan.html#conan-bölüm-içeriği"><i class="fa fa-check"></i><b>11.1</b> Conan Bölüm içeriği</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i>Referanslar</a></li>
+<li class="part"><span><b>III XXXXX XXXXX</b></span></li>
+<li class="chapter" data-level="12" data-path="docker.html"><a href="docker.html"><i class="fa fa-check"></i><b>12</b> Docker</a><ul>
+<li class="chapter" data-level="12.1" data-path="docker.html"><a href="docker.html#açıklama-1"><i class="fa fa-check"></i><b>12.1</b> Açıklama</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://muhendiskoyu.github.io/C-Cpp-gelistirme-ortamlari" target="blank">At Gihub Pages</a></li>
 
@@ -168,23 +261,223 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="cmake" class="section level1 unnumbered">
-<h1>Cmake</h1>
-<div id="nedir-1" class="section level2 unnumbered">
-<h2>Nedir</h2>
-<p>CMake kullanımı avantajı dezavantajı…</p>
+<div id="cmake" class="section level1">
+<h1><span class="header-section-number">Bölüm 2</span> Cmake</h1>
+<p>Herhangi bir programlama dili ile yazılan kodun çalıştırılabilir olması için derlenmesi gerekir.Derleme işlemi sırasında derleyiciye uygun parametrelerin eklenmesi, gerekli kütüphanelerin dahil edilmesi, birim testlerin çalıştırılması gibi işlemler yapılır. Tüm bu işlemler için IDE kullanılır ancak IDE ayarları birbirinden farklıdır ve bir IDE tüm işletim sistemlerinde yer almayabilir.
+C ve C++ bu işlemler için make adında bir araca sahiptir ancak bu araç sadece Linux/Unix tabanlı işletim sistemlerinde çalışır.</p>
+<p>İşte bu durumda Cmake yardımcı oluyor.</p>
+<p>CMake C++ program oluşturma sürecini işletim sisteminden ve derleyiciden bağımsız bir şekilde gerçekleştirmemize olanak sağlayan açık kaynak kodlu ve çapraz platformlu bir sistemdir.</p>
+<div id="cmake-kullanımı" class="section level2">
+<h2><span class="header-section-number">2.1</span> Cmake Kullanımı</h2>
+<div id="windowsta-kurulum" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Windows’ta Kurulum</h3>
+<p>Cmake.org sayfasından kurulum yapılabilir.</p>
+<p>Alternatif olarak;</p>
+<ul>
+<li><a href="https://chocolatey.org/packages/cmake" class="uri">https://chocolatey.org/packages/cmake</a></li>
+<li><a href="https://packages.msys2.org/base/mingw-w64-cmake" class="uri">https://packages.msys2.org/base/mingw-w64-cmake</a></li>
+</ul>
 </div>
-<div id="kullanımı-1" class="section level2 unnumbered">
-<h2>Kullanımı</h2>
-<p>CMake kullanımı avantajı dezavantajı…</p>
+<div id="linuxta-kurulum" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Linux’ta Kurulum</h3>
+<ul>
+<li>Ubuntu için:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="cmake.html#cb3-1"></a><span class="fu">sudo</span> apt update </span>
+<span id="cb3-2"><a href="cmake.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="cmake.html#cb3-3"></a><span class="fu">sudo</span> apt-get install cmake </span></code></pre></div>
+<ul>
+<li>Fedora için:</li>
+</ul>
+<p><code>sudo dnf install snapd</code> -&gt; Snap kurulu değilse kurulur.</p>
+<p><code>sudo ln -s /var/lib/snapd/snap /snap</code></p>
+<p><code>sudo snap install cmake --classic</code></p>
 </div>
-<div id="avantajları-1" class="section level2 unnumbered">
-<h2>Avantajları</h2>
-<p>CMake kullanımı avantajı dezavantajı…</p>
+<div id="projenin-oluşturulması" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Projenin oluşturulması</h3>
+<p>Geliştirilen ve geliştirilmiş bir projede Cmake ayarlarının yapılması için CMakeLists.txt dosyasının oluşturulması gerekir.
+Bu dosya içerisinde aşağıdaki gibi temel ayarlar yer alır.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="cmake.html#cb4-1"></a><span class="ex">cmake_minimum_required</span>(VERSION 3.16.3) </span>
+<span id="cb4-2"><a href="cmake.html#cb4-2"></a></span>
+<span id="cb4-3"><a href="cmake.html#cb4-3"></a><span class="ex">project</span>(projeAdı)</span>
+<span id="cb4-4"><a href="cmake.html#cb4-4"></a></span>
+<span id="cb4-5"><a href="cmake.html#cb4-5"></a><span class="ex">add_executable</span>(proje proje.cpp) </span></code></pre></div>
+<ul>
+<li><p>cmake_minimum_required(VERSION 3.16.3) -&gt; Proje için gerekli olan Cmake sürümünü
+ifade eder.</p></li>
+<li><p>add_executable -&gt; Çalıştırılabilir dosyanın hangi dosyalarla oluşturulacağını ifade eder.</p></li>
+<li><p>Dahil edilecek dosyaların aranacağı yolları eklemek için (include path):</p>
+<p><code>include_directories(include_dir)</code></p></li>
+<li><p>Kütüphane eklemek için:</p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="cmake.html#cb5-1"></a>   <span class="ex">add_library</span>(Cfile STATIC FxParser) <span class="ex">-</span><span class="op">&gt;</span> statik kütüphane</span>
+<span id="cb5-2"><a href="cmake.html#cb5-2"></a>   <span class="ex">add_library</span>(Cfile SHARED FxParser) <span class="ex">-</span><span class="op">&gt;</span> paylaşılan kütüphane</span>
+<span id="cb5-3"><a href="cmake.html#cb5-3"></a>   <span class="ex">add_library</span>(Cfile MODULE FxParser) <span class="ex">-</span><span class="op">&gt;</span> modül kütüphane </span></code></pre></div>
+<ul>
+<li><code>Static</code> yalnızca derleme zamanında doğrudan gömülebilen kütüphanedir.</li>
+<li><code>Shared</code> derleme zamanında linklenebilen ve çalışma zamanında yüklenebilen kütüphanedir.</li>
+<li><code>Module</code> derleme zamanında linkleme olmaksızın, çalışma zamanında ihtiyaç hâlinde yüklenebilen kütüphanedir.</li>
+</ul>
+<p>CMakeLists.txt dosyamıza çeşitli seçenekler ekleyip bunları kullanabiliriz. Örnek olarak doxygen ile dokümantasyon oluşturulması ve testlerin derlenmesi seçenekler olsun.</p>
+<p>Seçenekler için syntax şu şekildedir:</p>
+<p><code>option(ayar_adı "ayarın açıklaması" varsayılan_durum[ON/OFF])</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="cmake.html#cb6-1"></a>   <span class="ex">option</span>(BUILD_DOXYGEN <span class="st">&quot;Insa dokumentasyonu&quot;</span> OFF)</span>
+<span id="cb6-2"><a href="cmake.html#cb6-2"></a>   <span class="ex">option</span>(BUILD_TESTS <span class="st">&quot;Insa testleri&quot;</span> OFF)</span></code></pre></div>
+<ul>
+<li>Alt Proje Dizini Oluşturma</li>
+</ul>
+<p>Oluşturulan kütüphaneyi kullanmak için <code>add_subdirectory</code> ile kütüphane için oluşturulan CMakeLists.txt projeye eklenir.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="cmake.html#cb7-1"></a>   <span class="ex">add_subdirectory</span>(kutuphaneAdı)</span></code></pre></div>
+<ul>
+<li>Mantıksal Operatörler</li>
+</ul>
+<p>CMakeLists.txt dosyasına mantıksal operatörler gibi alt dizinler ekleyebiliriz.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="cmake.html#cb8-1"></a>  <span class="ex">if</span>(BUILD_TESTS)</span>
+<span id="cb8-2"><a href="cmake.html#cb8-2"></a>    <span class="ex">add_subdirectory</span>(test)</span>
+<span id="cb8-3"><a href="cmake.html#cb8-3"></a>  <span class="ex">endif</span>(BUILD_TESTS)</span>
+<span id="cb8-4"><a href="cmake.html#cb8-4"></a></span>
+<span id="cb8-5"><a href="cmake.html#cb8-5"></a>  <span class="ex">if</span>(BUILD_DOXYGEN)</span>
+<span id="cb8-6"><a href="cmake.html#cb8-6"></a>    <span class="ex">add_subdirectory</span>(docs)</span>
+<span id="cb8-7"><a href="cmake.html#cb8-7"></a>  <span class="ex">endif</span>(BUILD_DOXYGEN)</span></code></pre></div>
+<ul>
+<li>Değişken Atama</li>
+</ul>
+<p>CMake ile değişken atamak için set komutunu kullanmamız yeterlidir. Bu komut ile hem CMake’in global değişkenlerini atayabiliriz hem de yeni değişkenler oluşturup değer atayabiliriz.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="cmake.html#cb9-1"></a>   <span class="kw">set(</span><span class="ex">Cfile_VERSION_MAJOR</span> 1<span class="kw">)</span> <span class="ex">-</span><span class="op">&gt;</span> versiyon atama</span>
+<span id="cb9-2"><a href="cmake.html#cb9-2"></a>   <span class="kw">set(</span><span class="ex">Cfile_VERSION_MINOR</span> 0<span class="kw">)</span> <span class="ex">-</span><span class="op">&gt;</span> versiyon atama</span>
+<span id="cb9-3"><a href="cmake.html#cb9-3"></a>   <span class="kw">set(</span><span class="ex">disable_derivative</span> on<span class="kw">)</span> <span class="ex">-</span><span class="op">&gt;</span> değişken oluşturma <span class="kw">&amp;</span> <span class="ex">de</span>ğer atama</span>
+<span id="cb9-4"><a href="cmake.html#cb9-4"></a>   <span class="kw">set(</span><span class="ex">CMAKE_RUNTIME_OUTPUT_DIRECTORY</span> <span class="va">${CMAKE_SOURCE_DIR}</span>/bin<span class="kw">)</span> <span class="ex">-</span><span class="op">&gt;</span> global değişkene değer atama -çalışma dizini yolu gösteriyor-</span>
+<span id="cb9-5"><a href="cmake.html#cb9-5"></a>   </span></code></pre></div>
+<p>Tüm anlatılanları toplama açısından bir CMakeLists.txt örneği aşağıdadır.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="cmake.html#cb10-1"></a> </span>
+<span id="cb10-2"><a href="cmake.html#cb10-2"></a> <span class="ex">project</span>(Cfile)</span>
+<span id="cb10-3"><a href="cmake.html#cb10-3"></a> </span>
+<span id="cb10-4"><a href="cmake.html#cb10-4"></a> <span class="ex">cmake_minimum_required</span>(VERSION 3.16.3)</span>
+<span id="cb10-5"><a href="cmake.html#cb10-5"></a></span>
+<span id="cb10-6"><a href="cmake.html#cb10-6"></a> <span class="ex">option</span>(BUILD_DOXYGEN <span class="st">&quot;Insa dokumentasyonu&quot;</span> OFF)</span>
+<span id="cb10-7"><a href="cmake.html#cb10-7"></a> <span class="ex">option</span>(BUILD_TESTS <span class="st">&quot;Insa testleri&quot;</span> OFF)</span>
+<span id="cb10-8"><a href="cmake.html#cb10-8"></a></span>
+<span id="cb10-9"><a href="cmake.html#cb10-9"></a> <span class="kw">set(</span><span class="ex">disable_derivative</span> on<span class="kw">)</span></span>
+<span id="cb10-10"><a href="cmake.html#cb10-10"></a> <span class="kw">set(</span><span class="ex">CMAKE_RUNTIME_OUTPUT_DIRECTORY</span> <span class="va">${CMAKE_SOURCE_DIR}</span>/bin<span class="kw">)</span></span>
+<span id="cb10-11"><a href="cmake.html#cb10-11"></a></span>
+<span id="cb10-12"><a href="cmake.html#cb10-12"></a> <span class="ex">add_subdirectory</span>(kutuphaneAdı)</span>
+<span id="cb10-13"><a href="cmake.html#cb10-13"></a></span>
+<span id="cb10-14"><a href="cmake.html#cb10-14"></a> <span class="ex">if</span>(BUILD_TESTS)</span>
+<span id="cb10-15"><a href="cmake.html#cb10-15"></a>    <span class="ex">add_subdirectory</span>(test)</span>
+<span id="cb10-16"><a href="cmake.html#cb10-16"></a><span class="ex">endif</span>(BUILD_TESTS)</span>
+<span id="cb10-17"><a href="cmake.html#cb10-17"></a></span>
+<span id="cb10-18"><a href="cmake.html#cb10-18"></a><span class="ex">if</span>(BUILD_DOXYGEN)</span>
+<span id="cb10-19"><a href="cmake.html#cb10-19"></a>    <span class="ex">add_subdirectory</span>(docs)</span>
+<span id="cb10-20"><a href="cmake.html#cb10-20"></a> <span class="ex">endif</span>(BUILD_DOXYGEN)</span></code></pre></div>
+<ul>
+<li><p>Bazı Önemli Cmake Değişkenleri</p>
+<ul>
+<li>CMAKE_SOURCE_DIR -&gt; CMakeLists.txt dosyasının bulunduğu üst seviye klasör.</li>
+<li>PROJECT_NAME -&gt; Proje adı. project() komutuyla belirlenebilir.</li>
+<li>PROJECT_SOURCE_DIR -&gt; Proje kaynak klasörünün tam yolu.</li>
+<li>CMAKE_MAJOR_VERSION -&gt; Majör Cmake sürüm numarası</li>
+<li>CMAKE_MINOR_VERSION -&gt; Minör Cmake sürüm numarası</li>
+</ul></li>
+<li><p>Derleyiciye Parametre Eklemek</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="cmake.html#cb11-1"></a>  <span class="kw">set(</span><span class="ex">CMAKE_CXX_FLAGS</span> <span class="st">&quot;Hello World&quot;</span> -<span class="op">&gt;</span> derleyicinin tek parametresi</span>
+<span id="cb11-2"><a href="cmake.html#cb11-2"></a>  <span class="kw">set(</span><span class="ex">CMAKE_CXX_FLAGS</span> <span class="st">&quot;</span><span class="va">${CMAKE_CXX_FLAGS}</span><span class="st"> Hello World&quot;</span><span class="kw">)</span> <span class="ex">-</span><span class="op">&gt;</span> mevcut parametrelerin sonuna ekleme yapar.</span></code></pre></div></li>
+<li><p>Include Klasörü Eklemek</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="cmake.html#cb12-1"></a> <span class="ex">include_directories</span>(<span class="st">&quot;inc&quot;</span>)</span></code></pre></div>
+<p>Kütüphane proje eklendikten sonra <code>target_link_libraries</code> ile kütüphane projeye bağlanır.</p></li>
+<li><p>Kütüphaneleri Bağlamak</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="cmake.html#cb13-1"></a> <span class="ex">target_link_libraries</span>(Cfile <span class="va">${Boost_LIBRARIES}</span>)</span></code></pre></div></li>
+<li><p>Örnek olması açısından Ubuntu terminal üzerinden Cmake kullanarak “Hello World” yazdıralım.</p></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="cmake.html#cb14-1"></a>     <span class="ex">~/Desktop</span>                                                            ✔ ─╮</span>
+<span id="cb14-2"><a href="cmake.html#cb14-2"></a>╰─ <span class="fu">mkdir</span> helloworld   -<span class="op">&gt;</span> helloworld klasörü oluşturduk.                     ─╯</span>
+<span id="cb14-3"><a href="cmake.html#cb14-3"></a>╭─ <span class="ex">~/Desktop</span>                                                              ✔ ─╮</span>
+<span id="cb14-4"><a href="cmake.html#cb14-4"></a>╰─ <span class="bu">cd</span> helloworld                                                            ─╯</span>
+<span id="cb14-5"><a href="cmake.html#cb14-5"></a>╭─ <span class="ex">~/Desktop/helloworld</span>                                                   ✔ ─╮</span>
+<span id="cb14-6"><a href="cmake.html#cb14-6"></a>╰─ <span class="ex">vim</span> main.cpp                                                             ─╯</span></code></pre></div>
+<ul>
+<li>main.cpp şu şekildedir.</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="cmake.html#cb15-1"></a>   <span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb15-2"><a href="cmake.html#cb15-2"></a>   <span class="kw">using</span> <span class="kw">namespace</span> std;</span>
+<span id="cb15-3"><a href="cmake.html#cb15-3"></a>   <span class="dt">int</span> main() {</span>
+<span id="cb15-4"><a href="cmake.html#cb15-4"></a>        cout &lt;&lt; <span class="st">&quot;Hello World!&quot;</span> &lt;&lt; endl;</span>
+<span id="cb15-5"><a href="cmake.html#cb15-5"></a>        <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb15-6"><a href="cmake.html#cb15-6"></a>   }</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="cmake.html#cb16-1"></a>╭─ <span class="ex">~/Desktop/helloworld</span>                                                   ✔ ─╮</span>
+<span id="cb16-2"><a href="cmake.html#cb16-2"></a>╰─ <span class="ex">vim</span> CMakeLists.txt                                                       ─╯</span>
+<span id="cb16-3"><a href="cmake.html#cb16-3"></a>   <span class="co">#CMakeLists.txt şu şekildedir.</span></span>
+<span id="cb16-4"><a href="cmake.html#cb16-4"></a>   <span class="ex">cmake_minimum_required</span>(VERSION 3.16.3)</span>
+<span id="cb16-5"><a href="cmake.html#cb16-5"></a>   <span class="ex">project</span>(helloworld)</span>
+<span id="cb16-6"><a href="cmake.html#cb16-6"></a>   <span class="ex">add_executable</span>(</span>
+<span id="cb16-7"><a href="cmake.html#cb16-7"></a>       <span class="ex">helloworld</span></span>
+<span id="cb16-8"><a href="cmake.html#cb16-8"></a>        <span class="ex">main.cpp</span></span>
+<span id="cb16-9"><a href="cmake.html#cb16-9"></a>   )</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="cmake.html#cb17-1"></a>╭─ <span class="ex">~/Desktop/helloworld</span>                                                   ✔ ─╮</span>
+<span id="cb17-2"><a href="cmake.html#cb17-2"></a>╰─ <span class="fu">cmake</span> .  -<span class="op">&gt;</span> cmake derliyoruz.                                            ─╯</span>
+<span id="cb17-3"><a href="cmake.html#cb17-3"></a><span class="ex">--</span> The C compiler identification is GNU 9.3.0</span>
+<span id="cb17-4"><a href="cmake.html#cb17-4"></a><span class="ex">--</span> The CXX compiler identification is GNU 9.3.0</span>
+<span id="cb17-5"><a href="cmake.html#cb17-5"></a><span class="ex">--</span> Check for working C compiler: /usr/bin/cc</span>
+<span id="cb17-6"><a href="cmake.html#cb17-6"></a><span class="ex">--</span> Check for working C compiler: /usr/bin/cc -- works</span>
+<span id="cb17-7"><a href="cmake.html#cb17-7"></a><span class="ex">--</span> Detecting C compiler ABI info</span>
+<span id="cb17-8"><a href="cmake.html#cb17-8"></a><span class="ex">--</span> Detecting C compiler ABI info - done</span>
+<span id="cb17-9"><a href="cmake.html#cb17-9"></a><span class="ex">--</span> Detecting C compile features</span>
+<span id="cb17-10"><a href="cmake.html#cb17-10"></a><span class="ex">--</span> Detecting C compile features - done</span>
+<span id="cb17-11"><a href="cmake.html#cb17-11"></a><span class="ex">--</span> Check for working CXX compiler: /usr/bin/c++</span>
+<span id="cb17-12"><a href="cmake.html#cb17-12"></a><span class="ex">--</span> Check for working CXX compiler: /usr/bin/c++ -- works</span>
+<span id="cb17-13"><a href="cmake.html#cb17-13"></a><span class="ex">--</span> Detecting CXX compiler ABI info</span>
+<span id="cb17-14"><a href="cmake.html#cb17-14"></a><span class="ex">--</span> Detecting CXX compiler ABI info - done</span>
+<span id="cb17-15"><a href="cmake.html#cb17-15"></a><span class="ex">--</span> Detecting CXX compile features</span>
+<span id="cb17-16"><a href="cmake.html#cb17-16"></a><span class="ex">--</span> Detecting CXX compile features - done</span>
+<span id="cb17-17"><a href="cmake.html#cb17-17"></a><span class="ex">--</span> Configuring done</span>
+<span id="cb17-18"><a href="cmake.html#cb17-18"></a><span class="ex">--</span> Generating done</span>
+<span id="cb17-19"><a href="cmake.html#cb17-19"></a><span class="ex">--</span> Build files have been written to: /home/saturn/Desktop/helloworld</span>
+<span id="cb17-20"><a href="cmake.html#cb17-20"></a>╭─ <span class="ex">~/Desktop/helloworld</span>                                                   ✔ ─╮</span>
+<span id="cb17-21"><a href="cmake.html#cb17-21"></a>╰─ <span class="fu">make</span>                                                                     ─╯</span>
+<span id="cb17-22"><a href="cmake.html#cb17-22"></a><span class="ex">Scanning</span> dependencies of target helloworld</span>
+<span id="cb17-23"><a href="cmake.html#cb17-23"></a><span class="bu">[</span> 50%] Building CXX object CMakeFiles/helloworld.dir/main.cpp.o</span>
+<span id="cb17-24"><a href="cmake.html#cb17-24"></a>[100%] Linking CXX executable helloworld</span>
+<span id="cb17-25"><a href="cmake.html#cb17-25"></a>[100%] Built target helloworld</span>
+<span id="cb17-26"><a href="cmake.html#cb17-26"></a>╭─ ~/Desktop/helloworld                                                   ✔ ─╮</span>
+<span id="cb17-27"><a href="cmake.html#cb17-27"></a>╰─ ./helloworld -<span class="ot">&gt;</span> dosyamızı derleyip çalıştırıyoruz.                       ─╯</span>
+<span id="cb17-28"><a href="cmake.html#cb17-28"></a>Hello World!</span></code></pre></div>
 </div>
-<div id="dezavantajları-1" class="section level2 unnumbered">
-<h2>Dezavantajları</h2>
-<p>CMake kullanımı avantajı dezavantajı…</p>
+</div>
+<div id="cmake-avantajları" class="section level2">
+<h2><span class="header-section-number">2.2</span> Cmake Avantajları</h2>
+<ul>
+<li>Verimlidir.
+<ul>
+<li>Uzun süreli kod yazma, düşük süreli inşa sistemi çözme.</li>
+<li>Her proje için açık kaynaklı ve ücretsizdir.</li>
+</ul></li>
+<li>Güçlü bir yapısı vardır.
+<ul>
+<li>Cmake çoklu geliştirme ortamlarını destekler ve aynı projede derler.</li>
+<li>C/C++/CUDA/Fortran/Python gibi birçok programlama dilini destekler.</li>
+<li>Cmake ile üçüncü parti kütüphaneleri projelerinize entegre edebilirsiniz.</li>
+</ul></li>
+<li>Karmaşık işleri basite indirger.</li>
+<li>Kolay öğrenilir.</li>
+<li>Çapraz platformdur.</li>
+<li>Evrenseldir.</li>
+<li>Makefile dosyalarını Cmake yazar.</li>
+<li>Organizasyonu sağlar.</li>
+</ul>
+</div>
+<div id="cmake-dezavantajları" class="section level2">
+<h2><span class="header-section-number">2.3</span> Cmake Dezavantajları</h2>
+<ul>
+<li>Dili/Söz dizimi
+<ul>
+<li>Cmake dili önceden kullandığınız dillerle karşılaştırılmamalıdır. Çünkü sınıf(class), eşleme(map) ve sanal bir fonksiyon ya da lambda içermez. Yeni başlayanlar için giriş argümanlarını çözümlemek ve bir fonksiyonun sonuç döndürmesini anlamak karmaşıktır. Sezgisel olduğu halde Cmake betik dilini öğrenmek gereklidir.</li>
+</ul></li>
+<li>İş akışına etkisi
+<ul>
+<li>Cmake kullanırken projenin inşa konfigürasyonunu doğrudan IDE üzerinden güncelleştirilemez. CMakeLists.txt dosyasına eklenen ya da değiştirilen her target dosyası yazılmalı. Aksi halde IDE üzerinden yapılan güncellemeler ve değişiklikler Cmake çalıştırıldığında kaybolacaktır.</li>
+<li>Cmake’de inşa betik dilini(script) çalıştırmak için en az bir araç gereklidir.</li>
+<li>Sınırlı dokümantasyonu vardır.</li>
+</ul></li>
+</ul>
 
 </div>
 </div>
@@ -194,7 +487,7 @@
         </div>
       </div>
 <a href="makefile.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="gnu-autotool.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="gnu-autotools.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

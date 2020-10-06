@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kbuild | C/C++ Geliştirme Ortamları</title>
+  <title>C/C++ Geliştirme Ortamları</title>
   <meta name="description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Kbuild | C/C++ Geliştirme Ortamları" />
+  <meta property="og:title" content="C/C++ Geliştirme Ortamları" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/" />
   <meta property="og:image" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/images/muhendis_koyu.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MuhendisKoyu/C-Cpp-gelistirme-ortamlari" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kbuild | C/C++ Geliştirme Ortamları" />
+  <meta name="twitter:title" content="C/C++ Geliştirme Ortamları" />
   
   <meta name="twitter:description" content="Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir." />
   <meta name="twitter:image" content="https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/images/muhendis_koyu.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Mühendis Köyü" />
 
 
-<meta name="date" content="2020-06-21" />
+<meta name="date" content="2020-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,8 +50,74 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -75,79 +141,106 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#lisans"><i class="fa fa-check"></i>Lisans</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#bu-kitap-nasıl-geliştiriliyor"><i class="fa fa-check"></i>Bu Kitap Nasıl Geliştiriliyor</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html"><i class="fa fa-check"></i>Giriş</a><ul>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#bölüm-içeriği"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#ide-kullanımı"><i class="fa fa-check"></i>IDE Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#editör-derleyici-kullanımı"><i class="fa fa-check"></i>Editör + Derleyici Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#cc-için-inşa-sistemleri"><i class="fa fa-check"></i>C/C++ için İnşa Sistemleri</a></li>
-<li class="chapter" data-level="" data-path="giri-.html"><a href="giri-.html#cc-için-paket-yöneticileri"><i class="fa fa-check"></i>C/C++ için Paket Yöneticileri</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html"><i class="fa fa-check"></i>Giriş</a><ul>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#bölüm-içeriği"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#ide-kullanımı"><i class="fa fa-check"></i>IDE Kullanımı</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#editör-derleyici-kullanımı"><i class="fa fa-check"></i>Editör + Derleyici Kullanımı</a><ul>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#vim"><i class="fa fa-check"></i>VIM</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#temel-öğeler"><i class="fa fa-check"></i>Temel Öğeler</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#vimde-c-programı-geliştirme"><i class="fa fa-check"></i>VIM’de C Programı Geliştirme</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#cc-için-inşa-sistemleri"><i class="fa fa-check"></i>C/C++ için İnşa Sistemleri</a></li>
+<li class="chapter" data-level="" data-path="giriş.html"><a href="giriş.html#cc-için-paket-yöneticileri"><i class="fa fa-check"></i>C/C++ için Paket Yöneticileri</a></li>
 </ul></li>
 <li class="part"><span><b>I İnşa Sistemleri</b></span></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html"><i class="fa fa-check"></i>Makefile</a><ul>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#nedir"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#kullanımı"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#avantajları"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="makefile.html"><a href="makefile.html#dezavantajları"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="1" data-path="makefile.html"><a href="makefile.html"><i class="fa fa-check"></i><b>1</b> Makefile</a><ul>
+<li class="chapter" data-level="1.1" data-path="makefile.html"><a href="makefile.html#makefile-nedir"><i class="fa fa-check"></i><b>1.1</b> Makefile Nedir</a></li>
+<li class="chapter" data-level="1.2" data-path="makefile.html"><a href="makefile.html#makefile-kullanımı"><i class="fa fa-check"></i><b>1.2</b> Makefile Kullanımı</a></li>
+<li class="chapter" data-level="1.3" data-path="makefile.html"><a href="makefile.html#makefile-avantajları"><i class="fa fa-check"></i><b>1.3</b> Makefile Avantajları</a></li>
+<li class="chapter" data-level="1.4" data-path="makefile.html"><a href="makefile.html#makefile-dezavantajları"><i class="fa fa-check"></i><b>1.4</b> Makefile Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html"><i class="fa fa-check"></i>Cmake</a><ul>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#nedir-1"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#kullanımı-1"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#avantajları-1"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="cmake.html"><a href="cmake.html#dezavantajları-1"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="2" data-path="cmake.html"><a href="cmake.html"><i class="fa fa-check"></i><b>2</b> Cmake</a><ul>
+<li class="chapter" data-level="2.1" data-path="cmake.html"><a href="cmake.html#cmake-kullanımı"><i class="fa fa-check"></i><b>2.1</b> Cmake Kullanımı</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="cmake.html"><a href="cmake.html#windowsta-kurulum"><i class="fa fa-check"></i><b>2.1.1</b> Windows’ta Kurulum</a></li>
+<li class="chapter" data-level="2.1.2" data-path="cmake.html"><a href="cmake.html#linuxta-kurulum"><i class="fa fa-check"></i><b>2.1.2</b> Linux’ta Kurulum</a></li>
+<li class="chapter" data-level="2.1.3" data-path="cmake.html"><a href="cmake.html#projenin-oluşturulması"><i class="fa fa-check"></i><b>2.1.3</b> Projenin oluşturulması</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html"><i class="fa fa-check"></i>GNU Autotool</a><ul>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#nedir-2"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#kullanımı-2"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#avantajları-2"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="gnu-autotool.html"><a href="gnu-autotool.html#dezavantajları-2"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="2.2" data-path="cmake.html"><a href="cmake.html#cmake-avantajları"><i class="fa fa-check"></i><b>2.2</b> Cmake Avantajları</a></li>
+<li class="chapter" data-level="2.3" data-path="cmake.html"><a href="cmake.html#cmake-dezavantajları"><i class="fa fa-check"></i><b>2.3</b> Cmake Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html"><i class="fa fa-check"></i>Msbuild</a><ul>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#nedir-3"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#kullanımı-3"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#avantajları-3"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="msbuild.html"><a href="msbuild.html#dezavantajları-3"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="3" data-path="gnu-autotools.html"><a href="gnu-autotools.html"><i class="fa fa-check"></i><b>3</b> GNU Autotools</a><ul>
+<li class="chapter" data-level="3.1" data-path="gnu-autotools.html"><a href="gnu-autotools.html#açıklama"><i class="fa fa-check"></i><b>3.1</b> Açıklama</a></li>
+<li class="chapter" data-level="3.2" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-kullanımı"><i class="fa fa-check"></i><b>3.2</b> GNU Autotools Kullanımı</a><ul>
+<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#c-projesi-ve-gerekli-dosyalar"><i class="fa fa-check"></i>1. C++ Projesi ve Gerekli Dosyalar</a></li>
+<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#makefile.am-dosyası"><i class="fa fa-check"></i>2. “Makefile.am” dosyası</a></li>
+<li class="chapter" data-level="" data-path="gnu-autotools.html"><a href="gnu-autotools.html#configure.ac-dosyası"><i class="fa fa-check"></i>3. “configure.ac” dosyası</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html"><i class="fa fa-check"></i>Meson</a><ul>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#nedir-4"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#kullanımı-4"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#avantajları-4"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="meson.html"><a href="meson.html#dezavantajları-4"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="3.3" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-avantajları"><i class="fa fa-check"></i><b>3.3</b> GNU Autotools Avantajları</a></li>
+<li class="chapter" data-level="3.4" data-path="gnu-autotools.html"><a href="gnu-autotools.html#gnu-autotools-dezavantajları"><i class="fa fa-check"></i><b>3.4</b> GNU Autotools Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html"><i class="fa fa-check"></i>Qmake</a><ul>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#nedir-5"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#kullanımı-5"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#avantajları-5"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="qmake.html"><a href="qmake.html#dezavantajları-5"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="4" data-path="msbuild.html"><a href="msbuild.html"><i class="fa fa-check"></i><b>4</b> Msbuild</a><ul>
+<li class="chapter" data-level="4.1" data-path="msbuild.html"><a href="msbuild.html#msbuild-nedir"><i class="fa fa-check"></i><b>4.1</b> Msbuild Nedir</a></li>
+<li class="chapter" data-level="4.2" data-path="msbuild.html"><a href="msbuild.html#msbuild-kullanımı"><i class="fa fa-check"></i><b>4.2</b> Msbuild Kullanımı</a></li>
+<li class="chapter" data-level="4.3" data-path="msbuild.html"><a href="msbuild.html#msbuild-avantajları"><i class="fa fa-check"></i><b>4.3</b> Msbuild Avantajları</a></li>
+<li class="chapter" data-level="4.4" data-path="msbuild.html"><a href="msbuild.html#msbuild-dezavantajları"><i class="fa fa-check"></i><b>4.4</b> Msbuild Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html"><i class="fa fa-check"></i>Kbuild</a><ul>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#nedir-6"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#kullanımı-6"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#avantajları-6"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="kbuild.html"><a href="kbuild.html#dezavantajları-6"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5" data-path="meson.html"><a href="meson.html"><i class="fa fa-check"></i><b>5</b> Meson</a><ul>
+<li class="chapter" data-level="5.1" data-path="meson.html"><a href="meson.html#meson-nedir"><i class="fa fa-check"></i><b>5.1</b> Meson Nedir</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="meson.html"><a href="meson.html#özellikleri"><i class="fa fa-check"></i><b>5.1.1</b> Özellikleri</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html"><i class="fa fa-check"></i>Build2</a><ul>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#nedir-7"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#kullanımı-7"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#avantajları-7"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="build2.html"><a href="build2.html#dezavantajları-7"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5.2" data-path="meson.html"><a href="meson.html#meson-kullanımı"><i class="fa fa-check"></i><b>5.2</b> Meson Kullanımı</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="meson.html"><a href="meson.html#meson-yükleme"><i class="fa fa-check"></i><b>5.2.1</b> Meson Yükleme</a></li>
+<li class="chapter" data-level="5.2.2" data-path="meson.html"><a href="meson.html#gereksinimler"><i class="fa fa-check"></i><b>5.2.2</b> Gereksinimler</a></li>
+<li class="chapter" data-level="5.2.3" data-path="meson.html"><a href="meson.html#bağımlılıklar"><i class="fa fa-check"></i><b>5.2.3</b> Bağımlılıklar</a></li>
+<li class="chapter" data-level="5.2.4" data-path="meson.html"><a href="meson.html#meson-pip-ile-kurulum"><i class="fa fa-check"></i><b>5.2.4</b> Meson Pip İle Kurulum</a></li>
+<li class="chapter" data-level="5.2.5" data-path="meson.html"><a href="meson.html#paket-yöneticisi-kullanarak-kurulum"><i class="fa fa-check"></i><b>5.2.5</b> Paket Yöneticisi Kullanarak Kurulum</a></li>
+<li class="chapter" data-level="5.2.6" data-path="meson.html"><a href="meson.html#sorun-giderme"><i class="fa fa-check"></i><b>5.2.6</b> Sorun Giderme</a></li>
+<li class="chapter" data-level="5.2.7" data-path="meson.html"><a href="meson.html#meson-projesi-derleme"><i class="fa fa-check"></i><b>5.2.7</b> Meson Projesi Derleme</a></li>
+<li class="chapter" data-level="5.2.8" data-path="meson.html"><a href="meson.html#mesonu-dağıtım-paketleyici-olarak-kullanma"><i class="fa fa-check"></i><b>5.2.8</b> Meson’u Dağıtım Paketleyici Olarak Kullanma</a></li>
+<li class="chapter" data-level="5.2.9" data-path="meson.html"><a href="meson.html#include-kullanımı"><i class="fa fa-check"></i><b>5.2.9</b> Include Kullanımı</a></li>
+<li class="chapter" data-level="5.2.10" data-path="meson.html"><a href="meson.html#hello-world-yazımı"><i class="fa fa-check"></i><b>5.2.10</b> Hello World Yazımı</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html"><i class="fa fa-check"></i>Xmake</a><ul>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#nedir-8"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#kullanımı-8"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#avantajları-8"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="xmake.html"><a href="xmake.html#dezavantajları-8"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="5.3" data-path="meson.html"><a href="meson.html#meson-avantajları"><i class="fa fa-check"></i><b>5.3</b> Meson Avantajları</a></li>
+<li class="chapter" data-level="5.4" data-path="meson.html"><a href="meson.html#meson-dezavantajları"><i class="fa fa-check"></i><b>5.4</b> Meson Dezavantajları</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html"><i class="fa fa-check"></i>Bazel</a><ul>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#nedir-9"><i class="fa fa-check"></i>Nedir</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#kullanımı-9"><i class="fa fa-check"></i>Kullanımı</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#avantajları-9"><i class="fa fa-check"></i>Avantajları</a></li>
-<li class="chapter" data-level="" data-path="bazel.html"><a href="bazel.html#dezavantajları-9"><i class="fa fa-check"></i>Dezavantajları</a></li>
+<li class="chapter" data-level="6" data-path="qmake.html"><a href="qmake.html"><i class="fa fa-check"></i><b>6</b> Qmake</a><ul>
+<li class="chapter" data-level="6.1" data-path="qmake.html"><a href="qmake.html#qmake-nedir"><i class="fa fa-check"></i><b>6.1</b> Qmake Nedir</a></li>
+<li class="chapter" data-level="6.2" data-path="qmake.html"><a href="qmake.html#qmake-kullanımı"><i class="fa fa-check"></i><b>6.2</b> Qmake Kullanımı</a></li>
+<li class="chapter" data-level="6.3" data-path="qmake.html"><a href="qmake.html#qmake-avantajları"><i class="fa fa-check"></i><b>6.3</b> Qmake Avantajları</a></li>
+<li class="chapter" data-level="6.4" data-path="qmake.html"><a href="qmake.html#qmake-dezavantajları"><i class="fa fa-check"></i><b>6.4</b> Qmake Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="kbuild.html"><a href="kbuild.html"><i class="fa fa-check"></i><b>7</b> Kbuild</a><ul>
+<li class="chapter" data-level="7.1" data-path="kbuild.html"><a href="kbuild.html#kbuild-nedir"><i class="fa fa-check"></i><b>7.1</b> Kbuild Nedir</a></li>
+<li class="chapter" data-level="7.2" data-path="kbuild.html"><a href="kbuild.html#kbuild-kullanımı"><i class="fa fa-check"></i><b>7.2</b> Kbuild Kullanımı</a></li>
+<li class="chapter" data-level="7.3" data-path="kbuild.html"><a href="kbuild.html#kbuild-avantajları"><i class="fa fa-check"></i><b>7.3</b> Kbuild Avantajları</a></li>
+<li class="chapter" data-level="7.4" data-path="kbuild.html"><a href="kbuild.html#kbuild-dezavantajları"><i class="fa fa-check"></i><b>7.4</b> Kbuild Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="build2.html"><a href="build2.html"><i class="fa fa-check"></i><b>8</b> Build2</a><ul>
+<li class="chapter" data-level="8.1" data-path="build2.html"><a href="build2.html#build2-nedir"><i class="fa fa-check"></i><b>8.1</b> Build2 Nedir</a></li>
+<li class="chapter" data-level="8.2" data-path="build2.html"><a href="build2.html#build2-kullanımı"><i class="fa fa-check"></i><b>8.2</b> Build2 Kullanımı</a></li>
+<li class="chapter" data-level="8.3" data-path="build2.html"><a href="build2.html#build2-avantajları"><i class="fa fa-check"></i><b>8.3</b> Build2 Avantajları</a></li>
+<li class="chapter" data-level="8.4" data-path="build2.html"><a href="build2.html#build2-dezavantajları"><i class="fa fa-check"></i><b>8.4</b> Build2 Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="xmake.html"><a href="xmake.html"><i class="fa fa-check"></i><b>9</b> Xmake</a><ul>
+<li class="chapter" data-level="9.1" data-path="xmake.html"><a href="xmake.html#xmake-nedir"><i class="fa fa-check"></i><b>9.1</b> Xmake Nedir</a></li>
+<li class="chapter" data-level="9.2" data-path="xmake.html"><a href="xmake.html#xmake-kullanımı"><i class="fa fa-check"></i><b>9.2</b> Xmake Kullanımı</a></li>
+<li class="chapter" data-level="9.3" data-path="xmake.html"><a href="xmake.html#xmake-avantajları"><i class="fa fa-check"></i><b>9.3</b> Xmake Avantajları</a></li>
+<li class="chapter" data-level="9.4" data-path="xmake.html"><a href="xmake.html#xmake-dezavantajları"><i class="fa fa-check"></i><b>9.4</b> Xmake Dezavantajları</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="bazel.html"><a href="bazel.html"><i class="fa fa-check"></i><b>10</b> Bazel</a><ul>
+<li class="chapter" data-level="10.1" data-path="bazel.html"><a href="bazel.html#bazel-nedir"><i class="fa fa-check"></i><b>10.1</b> Bazel Nedir</a></li>
+<li class="chapter" data-level="10.2" data-path="bazel.html"><a href="bazel.html#bazel-kullanımı"><i class="fa fa-check"></i><b>10.2</b> Bazel Kullanımı</a></li>
+<li class="chapter" data-level="10.3" data-path="bazel.html"><a href="bazel.html#bazel-avantajları"><i class="fa fa-check"></i><b>10.3</b> Bazel Avantajları</a></li>
+<li class="chapter" data-level="10.4" data-path="bazel.html"><a href="bazel.html#bazel-dezavantajları"><i class="fa fa-check"></i><b>10.4</b> Bazel Dezavantajları</a></li>
 </ul></li>
 <li class="part"><span><b>II Paket Yöneticileri</b></span></li>
-<li class="chapter" data-level="" data-path="conan.html"><a href="conan.html"><i class="fa fa-check"></i>Conan</a><ul>
-<li class="chapter" data-level="" data-path="conan.html"><a href="conan.html#bölüm-içeriği-1"><i class="fa fa-check"></i>Bölüm içeriği</a></li>
+<li class="chapter" data-level="11" data-path="conan.html"><a href="conan.html"><i class="fa fa-check"></i><b>11</b> Conan</a><ul>
+<li class="chapter" data-level="11.1" data-path="conan.html"><a href="conan.html#conan-bölüm-içeriği"><i class="fa fa-check"></i><b>11.1</b> Conan Bölüm içeriği</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referanslar.html"><a href="referanslar.html"><i class="fa fa-check"></i>Referanslar</a></li>
+<li class="part"><span><b>III XXXXX XXXXX</b></span></li>
+<li class="chapter" data-level="12" data-path="docker.html"><a href="docker.html"><i class="fa fa-check"></i><b>12</b> Docker</a><ul>
+<li class="chapter" data-level="12.1" data-path="docker.html"><a href="docker.html#açıklama-1"><i class="fa fa-check"></i><b>12.1</b> Açıklama</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://muhendiskoyu.github.io/C-Cpp-gelistirme-ortamlari" target="blank">At Gihub Pages</a></li>
 
@@ -168,22 +261,22 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="kbuild" class="section level1 unnumbered">
-<h1>Kbuild</h1>
-<div id="nedir-6" class="section level2 unnumbered">
-<h2>Nedir</h2>
+<div id="kbuild" class="section level1">
+<h1><span class="header-section-number">Bölüm 7</span> Kbuild</h1>
+<div id="kbuild-nedir" class="section level2">
+<h2><span class="header-section-number">7.1</span> Kbuild Nedir</h2>
 <p>Kbuild kullanımı avantajı dezavantajı…</p>
 </div>
-<div id="kullanımı-6" class="section level2 unnumbered">
-<h2>Kullanımı</h2>
+<div id="kbuild-kullanımı" class="section level2">
+<h2><span class="header-section-number">7.2</span> Kbuild Kullanımı</h2>
 <p>Kbuild kullanımı avantajı dezavantajı…</p>
 </div>
-<div id="avantajları-6" class="section level2 unnumbered">
-<h2>Avantajları</h2>
+<div id="kbuild-avantajları" class="section level2">
+<h2><span class="header-section-number">7.3</span> Kbuild Avantajları</h2>
 <p>Kbuild kullanımı avantajı dezavantajı…</p>
 </div>
-<div id="dezavantajları-6" class="section level2 unnumbered">
-<h2>Dezavantajları</h2>
+<div id="kbuild-dezavantajları" class="section level2">
+<h2><span class="header-section-number">7.4</span> Kbuild Dezavantajları</h2>
 <p>Kbuild kullanımı avantajı dezavantajı…</p>
 
 </div>
