@@ -1,5 +1,7 @@
 # (PART) IDE {-}
 
+# Açıklama
+
 ##  Bölüm içeriği {-}
 
 Bu kısımda önsözde kısaca bahsettiğimiz problemlerin çıkış noktaları ile C/C++ için inşa sistemleri ve paket yöneticilerine değineceğiz.
