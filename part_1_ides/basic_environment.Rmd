@@ -1,4 +1,4 @@
-# Giriş {-}
+# (PART) IDE {-}
 
 ##  Bölüm içeriği {-}
 
