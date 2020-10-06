@@ -55,7 +55,7 @@ ifade eder.
 
 * Dahil edilecek dosyaların aranacağı yolları eklemek için (include path):
 
-  ```include_directories(include_dir)```
+  ``` include_directories(include_dir) ```
 
 * Kütüphane eklemek için:
 
@@ -64,16 +64,16 @@ ifade eder.
    add_library(Cfile SHARED FxParser) -> paylaşılan kütüphane
    add_library(Cfile MODULE FxParser) -> modül kütüphane 
    ```
-* ```Static``` yalnızca derleme zamanında doğrudan gömülebilen kütüphanedir.
-* ```Shared```  derleme zamanında linklenebilen ve çalışma zamanında yüklenebilen kütüphanedir.
-* ```Module``` derleme zamanında linkleme olmaksızın, çalışma zamanında ihtiyaç hâlinde yüklenebilen kütüphanedir.
+* ``` Static ``` yalnızca derleme zamanında doğrudan gömülebilen kütüphanedir.
+* ``` Shared ```  derleme zamanında linklenebilen ve çalışma zamanında yüklenebilen kütüphanedir.
+* ``` Module ``` derleme zamanında linkleme olmaksızın, çalışma zamanında ihtiyaç hâlinde yüklenebilen kütüphanedir.
 
 
 CMakeLists.txt dosyamıza çeşitli seçenekler ekleyip bunları kullanabiliriz. Örnek olarak doxygen ile dokümantasyon oluşturulması ve testlerin derlenmesi seçenekler olsun.
 
 Seçenekler için syntax şu şekildedir:
 
-```option(ayar_adı "ayarın açıklaması" varsayılan_durum[ON/OFF])```
+``` option(ayar_adı "ayarın açıklaması" varsayılan_durum[ON/OFF]) ```
 
 ```bash
    option(BUILD_DOXYGEN "Insa dokumentasyonu" OFF)
@@ -82,16 +82,16 @@ Seçenekler için syntax şu şekildedir:
    
 * Alt Proje Dizini Oluşturma
 
-Oluşturulan kütüphaneyi kullanmak için ```add_subdirectory``` ile kütüphane için oluşturulan CMakeLists.txt projeye eklenir. 
+Oluşturulan kütüphaneyi kullanmak için ``` add_subdirectory ``` ile kütüphane için oluşturulan CMakeLists.txt projeye eklenir. 
 
 ```bash
    add_subdirectory(kutuphaneAdı)
-   ```
+```
 * Mantıksal Operatörler
 
 CMakeLists.txt dosyasına mantıksal operatörler gibi alt dizinler ekleyebiliriz.
 
-``` bash 
+```bash 
   if(BUILD_TESTS)
     add_subdirectory(test)
   endif(BUILD_TESTS)
@@ -151,7 +151,7 @@ if(BUILD_DOXYGEN)
   ```bash 
     set(CMAKE_CXX_FLAGS "Hello World" -> derleyicinin tek parametresi
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} Hello World") -> mevcut parametrelerin sonuna ekleme yapar.
-    ```
+  ```
 
 * Include Klasörü Eklemek
 
@@ -159,13 +159,13 @@ if(BUILD_DOXYGEN)
    include_directories("inc")
   ```
     
-  Kütüphane proje eklendikten sonra ```target_link_libraries``` ile kütüphane projeye bağlanır.
+  Kütüphane proje eklendikten sonra ``` target_link_libraries ``` ile kütüphane projeye bağlanır.
 
 * Kütüphaneleri Bağlamak
 
   ```bash
    target_link_libraries(Cfile ${Boost_LIBRARIES})
-   ```
+  ```
   
 * Örnek olması açısından Ubuntu terminal üzerinden Cmake kullanarak "Hello World" yazdıralım.
 
@@ -180,7 +180,7 @@ if(BUILD_DOXYGEN)
 ```
 * main.cpp şu şekildedir.
 
-```bash
+```cpp
    #include <iostream>
    using namespace std;
    int main() {

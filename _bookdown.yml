@@ -1,5 +1,20 @@
 book_filename: "C-Cpp-gelistirme-ortamlari"
 delete_merged_file: true
+rmd_files:
+  - index.Rmd
+  - part_1_ides/basic_environment.Rmd
+  - part_2_build_systems/makes.Rmd
+  - part_2_build_systems/cmake.Rmd
+  - part_2_build_systems/gnu-autotools.Rmd
+  - part_2_build_systems/msbuild.Rmd
+  - part_2_build_systems/meson.Rmd
+  - part_2_build_systems/qmake.Rmd
+  - part_2_build_systems/kbuild.Rmd
+  - part_2_build_systems/build2.Rmd
+  - part_2_build_systems/xmake.Rmd
+  - part_2_build_systems/bazel.Rmd
+  - part_3_package_managers/conan.Rmd
+  - part_4_xxxxxxx/docker.Rmd
 language:
   ui:
     chapter_name: "Bölüm "

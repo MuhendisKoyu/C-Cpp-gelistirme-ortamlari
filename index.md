@@ -1,0 +1,46 @@
+--- 
+title: "C/C++ Geliştirme Ortamları"
+author: "Mühendis Köyü"
+date: "2020-10-06"
+site: bookdown::bookdown_site
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+favicon: images/favicon.ico
+cover-image: images/muhendis_koyu.png
+url: https://MuhendisKoyu.github.io/C-Cpp-gelistirme-ortamlari/
+github-repo: MuhendisKoyu/C-Cpp-gelistirme-ortamlari
+description: "Bu kitap C/C++ geliştirme ortamları (inşa sistemleri ve paket yöneticileri) hakkında detaylı bir anlatım içermeyi hedeflemektedir."
+---
+
+# Bir Tutam Yazı {-}
+
+## Önsöz {-}
+
+<img src="images/muhendis_koyu.png" width="250" height="250" alt="Mühendis Köyü" align="right" style="margin: 0 1em 0 1em" />
+C/C++ geliştirme ortamı sadece bu diller ile kod yazmayı kapsamıyor. _IDE_ (**Integrated Development Environment – Tümleşik Geliştirme Ortamı**) ortamı dışında geliştirdiğimiz yazılımlarda derleme, bağlama vb. işlemler sırasında projelere göre farklılık gösteren uzun paremetrelerle kullanmak durumunda kalırız. _IDE_ kullanımı ise bizi _IDE_'ye bağımlı kıldığı gibi duruma göre işletim sistemine de bağımlı kılabilir. Bunun yanı sıra C/C++ projelerinde bu dillerde _dâhili_ (**built-in**) olarak gelmeyen bir çok kütüphane kullanımı mevcuttur. Peki birden fazla farklı ortamda bu kütüphanelerin o ortamlara göre varlığı, nereden indirileceği gibi problemleri geliştiriciler elle mi gerçekleştirmek zorundadır?
+
+İşte bu kitapla bahsi geçen problemler için geliştirilen çözümlere, çözümlerin oluşturduğu yeni problemlere getirilen çözümlere ve en son da hala devam etmekte olan veya daha da yeni olan problemlere değinmeyi Mühendis Köyü olarak amaç edindik. 
+
+Kapsamlı bir Türkçe kaynak olmasını hedefleyerek başladığımız bu yolculuğumuzda türü ne olursa olsun bizlere ulaşacak her bir eleştiri sönük bir mumun alev almasına yardımcı olan yanan bir mumun ateşi olacaktır.
+
+## Katkıda Bulunanlar {-}
+
+Genellikle kitabın en az bir bölümünü en fazla 1 kişi üstlenecek şekilde bir strateji belirledik. Bölüm başlarında sorumlu kişinin adı geçmektedir. Bununla birlikte kitap oluşturulurken emek vermiş kişilerinde burada geçmesini istedik.
+  
+
+|                 |                   |               |
+|:----------------|:------------------|:--------------|
+|Ahmet B. ÖZYURT  |BARIŞ KIZILKAYA    |Enes AYDIN     |
+|Erdem GÜNEŞ      |Muhammed E. KOCAER |Numan F. AYDIN |
+|Salih MARANGOZ   |Semanur AYDINLIK   |Senanur PAKSOY |
+|Süleyman E. IŞIK |                   |               |
+
+## Lisans {-}
+
+Kitabın tamamı veya bir kısmı, "kaynak gösterildiği ve değişiklik yapılmadığı" takdirde, herhangi bir izne gerek kalmadan, her türlü ortamda çoğaltılabilir, dağıtılabilir, kullanılabilir.
+
+## Bu Kitap Nasıl Geliştiriliyor {-}
+
+[Mühendis Köyü telegram](https://t.me/koyumuhendis) grubunda bulunan kişilerce gönüllülük esasına dayalı olarak bu kitaba girişilmiştir. Kitap, _R Markdown_'da _bookdown_ paketi kullanılarak yazılmaktadır. [Mühendis Köyü](https://github.com/MuhendisKoyu) _Github_ organizasyonu altında bulunan [C-Cpp-gelistirme-ortamlari](https://github.com/MuhendisKoyu/C-Cpp-gelistirme-ortamlari) reposunun **master** _dalına_ (**branch**) _CGOY_ (**C Geliştirme Ortamı Yazarları**) ekibi tarafından yapılan değişiklikler yüklenmekte, yine ekipten biri tarafından **gh-pages** dalına ise _R Markdown_ olarak yazılan projenin _HTML_ çıktısı yüklenmektedir. Kitap geliştirilirken _Trello_ üzerinden paylaşım, _telegram_ üzerinden yardımlaşma, haberleşme ve tartışma sağlanmaktadır.
+
