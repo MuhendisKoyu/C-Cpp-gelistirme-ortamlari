@@ -1,3 +1,4 @@
+açıklama
 makefile
 makefile-nedir
 makefile-kullanımı
@@ -11,7 +12,7 @@ projenin-oluşturulması
 cmake-avantajları
 cmake-dezavantajları
 gnu-autotools
-açıklama
+açıklama-1
 gnu-autotools-kullanımı
 gnu-autotools-avantajları
 gnu-autotools-dezavantajları
@@ -64,4 +65,4 @@ bazel-dezavantajları
 conan
 conan-bölüm-içeriği
 docker
-açıklama-1
+açıklama-2
