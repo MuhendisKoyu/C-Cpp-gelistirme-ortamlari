@@ -1,0 +1,167 @@
+# GNU Autotools
+
+## Açıklama
+
+_GNU İnşa Sistemi_ (**GNU Build System**) olarak da bilinen GNU Autotools, kaynak kod ile program kurulumlarını ve programların birçok _Unix benzeri_ (**Unix-like**) sisteme taşınabilir hale getirilmesine yardımcı olmak için tasarlanmış bir programlama araçları bütünüdür. Autotools, _GNU araç zincirinin_ (**GNU toolchain**) bir parçasıdır ve birçok özgür yazılım ve açık kaynak projelerinde yaygın olarak kullanılmaktadır. GNU İnşa Sistemi çoğunlukla Unix benzeri veya _POSIX benzeri_ (**POSIX-like**) işletim sistemlerinde, özellikle Linux'ta ve Gömülü Linux projelerinde kullanılır. Linux, MacOSX, FreeBSD, OpenBSD, NetBSD vb. işletim sistemlerinde kullanılabilir. Windows ortamında iyi bir şekilde çalışmamaktadır. GNU İnşa Sistemi kullanılarak birçok programlama dili (C, C++, Objective C, Fortran, Fortran77, Erlang) ile program paketleri oluşturabilirsiniz.
+
+* GNU Autotools Kullanan Bazı Projeler
+  + [GNU Emacs](https://github.com/emacs-mirror/emacs)
+  Oldukça popüler gelişmiş metin düzenleyici ve daha fazlası...
+  + [Glibc](https://github.com/bminor/glibc)
+  GNU C Standart Kütüphanesi
+  + [GCC](https://github.com/gcc-mirror/gcc)
+  Çeşitli programlama dilleri için bir derleyici sistemidir. GNU araç zincirinin bir parçasıdır.
+  + [NetworkManager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager)
+  Linux ağ yöneticisi arka plan programı
+  + [Nhttp2](https://github.com/nghttp2/nghttp2)
+  HTTP 2'nin C'de uyarlanması
+
+* Destekleyen bazı IDE'ler
+	+ Eclipse
+		- [Linux Araçları Eklentisi](https://www.eclipse.org/linuxtools/)
+		- [Eclipse CDT Autotools Kullanım Kılavuzu](https://wiki.eclipse.org/CDT/Autotools/User_Guide)
+	+ NetBeans
+		- [CppGnuAutoTools Eklentisi](http://plugins.netbeans.org/plugin/51647/cppgnuautotools)
+	+ QTCreator
+		- [Autotools Proje Yöneticisi Eklentisi](https://doc.qt.io/qtcreator/creator-projects-autotools.html)
+
+GNU İnşa Sisteminin kullanıldığı projelerde şu dosyalar bulunmalıdır : "configure.ac" ve "Makefine.am". Genellikle bu projeleri yüklerken şu komut dizisi çalıştırılır : ./configure && make && make install.
+
+## GNU Autotools Kullanımı
+
+Basit bir GNU Autotools projesi ile kullanımı göstermiş olacağız. Detaylı bilgiler ve ileri seviye kullanım için yazının sonunda paylaşılan belgelere bakabilirsiniz.
+
+Öncelikle GNU Autotools için iki aracın sisteminize yüklü olması gerekmektedir. Bunlar : autoconf automake. Eğer bunlar sisteminizde yoksa aşağıdaki yapı genellikle kuracaktır.
+
+`$ <package_manager dnf, apt-get> install autoconf automake`
+
+Sisteminizde kullandığınız dil ile alakalı araçların bulunduğunu varsayıyoruz. 
+
+* Adımlara geçmeden önce ne yapacağımız ile ilgili açıklayıcı maddeleri verelim.
+
+  + Basit bir C++ projesi için bir tane kaynak dosyası oluşturacağız ve içine ekrana "Merhaba Dünya" çıktısını verecek kodu yazacağız. "NEWS, INSTALL, README, COPYING, AUTHORS, ChangeLog" dosyalarını oluşturacağız. GNU kodlama standartlarına göre bu dosyalarının da bu dizinde bulunması gereklidir. 
+  + "Makefile.am" dosyası oluşturacağız. Bu dosyayı automake aracı kullanacak. Bu dosya proje içindeki klasör yapısını, derlenecek programlar için bilgileri, projemiz için oluşturacağımız paket içeriğinde olmasını istediğimiz başlık dosyalarını, man sayfalarını, veri (resim, video vb.) dosyalarını gibi bilgileri içerebilir. İşlem sonunda "Makefile.in" dosyası oluşur.
+  + "configure.ac" dosyası oluşturacağız. Bu dosyayı autoconf aracı kullanacak. "configure.ac" yerine "configure.in" dosyası da olabilirdi. Lakin yeni paketler için artık önerilen "configure.ac" dosya ismidir. Bu dosyaya bu autoconf'un anlayabileceği yazı kuralında (Bash betik diline benzer) proje ile alakalı bilgileri yazacağız. Bu bilgiler derleyici bilgisi, bazı kütüphanelerin ve kütüphane yollarınının bulunması, bazı başlık dosyalarının varlığının kontrolü gibi ayarlamalar olabilir. Örneğin "AC_PROG_CC" isimli autoconf makrosunu bu dosyada kullandığımızda autoconf bu dosyayı okurken CC isimli değişkene C derleyicisini atayacaktır. "AC_PROG_CXX" de C++ için kullanılır. İşlem sonunda "configure" programı oluşur.
+  
+C/C++ projelerinde derleme aşamasında derleyiciye -D parametresi ile bazı makro değerleri verilerek derleme aşamasının yönlendirilmesi sağlanabilmektedir. Bunun ise burada çözümü "config.h" kullanmaktır. "autoheader" programı "configure.ac" içeriğine bakarak ilgili derleyici parametre ayarlamaları (başlık dosyasını kullanmak için) yapmaktadır. 
+
+GNU Autotools araçları birbirinden bağımsız araçlar değildir ve 2 tane de değillerdir (autoheader, aclocal, autoconf ve automake). Tek tek de biz çağırmayacağız zaten, bizim yerimize bir komut (autoreconf) ile işlemler kendi başına doğru sırayla çalışacak. İkinci ve üçüncü aşama için daha detaylı açıklamaları yukarıda bahsettiğim gibi yazının sonundaki linklerden bulabilirsiniz. Kısaca açıklamak gerekirse, autoconf programı "configure.ac" içindeki eski bir şablon dili olan M4 makrolarını okuyarak shell programı üretir. "configure" programının amacı sisteme özgü "config.h" ve Makefile dosyalarını oluşturmaktır. "automake" ise "Makefile.am" içindeki mantıksal öbeklere göre "Makefile.in" dosyasını (dizinler varsa dosyalarını) oluşturur. "automake" programının amacı ise "configure" programı için gerekli "Makefile.in" dosyasını oluşturmaktır.
+
+* Geliştirici : 
+  + "Makefile.am" ve "configure.ac" dosyalarını yazar.
+  + "autoreconf --install" komutunu çalıştırır. (Alternatif yöntemlerde var.)
+      - "Makefile.am" -> "Makefile.in"
+      - "configure.ac" -> "configure"
+* Kullanıcı : 
+  + ./configure
+    - "config.h" ve Makefile
+  + make && make install.
+    - Çıktı
+
+### 1. C++ Projesi ve Gerekli Dosyalar {-}
+
+"test_app" klasörü altında "app.cpp" isimli bir C++ kaynak dosyası oluşturalım ve içine aşağıdaki kodu kopyalayalım.
+Dosya ismi : main.cpp
+
+```Cpp
+#include <iostream>
+
+int main()
+{
+  std::cout << "Hello world autotools" << '\n';
+  return 0;
+}
+```
+
+"NEWS, INSTALL, README, COPYING, AUTHORS, ChangeLog" dosyalarını oluşturalım.
+
+```bash
+$ touch NEWS INSTALL README COPYING AUTHORS ChangeLog
+```
+
+"configure.ac" dosyasına eğer AM_INIT_AUTOMAKE([foreign]) eklenirse, "foreign" den ötürü bu dosyaların şartı kalkacaktır. Lakin bunu es geçiyoruz.
+
+### 2. "Makefile.am" dosyası {-}
+
+Kaynak kodları genelde birden fazla dizinlerde tutarız Ancak her bir dizin için "Makefile" ile uğraşmamız gerekecektir. Buna yönelik çözüm olan "mantıksal bir dil" tarzında "Makefile.am" dosyaları oluşturuyoruz.
+
+```
+bin_PROGRAMS = TestApp
+TestApp_SOURCES = app.cpp
+```
+
+"bin_PROGRAMS = TestApp" sanki bir atama işlemi gibi gelebilir ama aslında burada 3 farklı bilgi mevcut. "bin_", "PROGRAMS", "TestApp". Açıklaması ise şu, oluşacak program (PROGRAMS) "TestApp" isminde bin klasöründe oluşsun. "bin_" öneki yerine "lib, include, data" gibi tanımlı değerler kullanabiliriz. "PROGRAMS" yerine ise ‘LIBRARIES’, ‘LTLIBRARIES’, ‘LISP’, ‘PYTHON’, ‘JAVA’, ‘SCRIPTS’, ‘DATA’, ‘HEADERS’, ‘MANS’, ve ‘TEXINFOS’ hedef türlerinden birini yazabiliriz. Şimdi ise bir gereklilik var. TestApp dedik ama TestApp hangi kaynak kodlara bağlı yazmadık. İşte "PROGRAMS" ile hedef türünü belirttiğimiz isimlerin "_SOURCES" ile bağlı olduğu kaynak kodları vermemiz gerekmektedir. Yani "TestApp_SOURCES = app.cpp" bu kadar.
+
+TestApp eğer bir kütüphaneye bağımlı ise örneğin "TestApp_LDADD = -lm" diyerek linker için bilgi ekleyebiliriz. "PROGRAMS" için belirtilen isim için "_SOURCES" ve "_LDADD" yanında "_LDFLAGS" ve "_DEPENDENCIES" tanımlamarı da vardır. Burada sadece bahsederek geçiyoruz.
+
+### 3. "configure.ac" dosyası {-}
+
+"Makefile.am" dosyasında ne derleyiciyi ayarı vardı ne de kurulum ile alakalı adımlar. İşte bu dosyanın amacı da bu. Öncelikle ne yazacağımıza, sonra da açıklamalarına bakalım.
+
+```bash
+AC_INIT( [TestApp], [0.1], [email@email.com])
+AC_PREREQ([2.69])  
+AM_INIT_AUTOMAKE([-Wall -Wextra])
+AC_CONFIG_FILES([Makefile])
+AC_PROG_CXX 
+AC_OUTPUT 
+```
+* AC_INIT : AC_INIT makrosu, 2'si zorunlu olmak üzere 5 argümana sahiptir. "configure" programı için ayarlamalar yapar, "configure" çalıştırılırken gönderilecek parametreleri işler. Zorunlu ilk iki parametre Paket İsmi ile Versiyon bilgisidir.
+* AC_PREREQ : "autoconf" programının olması gereken minumum versiyonunu parametre olarak alır.
+* AM_INIT_AUTOMAKE : "automake" programına parametreler yollar.
+* AC_CONFIG_FILES : "configure" programının oluşturacağı dosya parametre olarak geçilir. "config.h" başlık dosyası oluştursaydı AC_CONFIG_HEADERS([config.h]) eklenmeliydi.
+* AC_PROG_CXX : Sistemdeki C++ derleyicisini bulur.
+* AC_OUTPUT : Bu makro kullanılmalıdır. "config.status" isminde bir kabul program oluşturup çalıştıracaktır. Bunun amacı "config.h" ve Makefile dosyalarını oluşumu içindir.
+
+Evet şimdi sadece bu komutu çalıştırmak yetecektir:
+
+```bash
+$ autoreconf --install
+```
+
+İşlemlerimiz bitti şimdi aşağıdaki işlemleri uygulayarak hem test etmiş olacağız hem de bir tarball oluşturmuş olacağız. "make distcheck" komutu bir tar.gz dosyası oluşturacaktır.
+
+* Genel ./configure kullanım örneği.
+
+```bash
+$ ./configure  
+$ make 
+$ make distcheck
+```
+
+Bu arada programımızın çıktısını ./TestApp diyerek gözlemleyebilirsiniz. "configure" programınıza aşağıdaki gibi parametre yollayabilirsiniz.
+
+```bash
+$ ./configure CC=clang CXX=clang++ --prefix=$HOME/opt/test_app
+```
+
+* Belgeler
+  
+  + [Autoconf ve Automake Kullanımı](http://www.belgeler.org/howto/makefile-nasil-autoconf_automake.html)
+  + [Autotools Gizemini Çözüyoruz](https://ysar.net/yazilim-dunyasi/autotools.html)
+  + [autoconf, automake Kullanımı](https://demirten.gitbooks.io/gomulu-linux/content/gnubuild/autoconf.html)
+  + [CPP / C++ - Building Systems and Build Automation](https://caiorss.github.io/C-Cpp-Notes/building-systems.html)
+  + [How To Use Autotools](https://eklitzke.org/how-to-autotools)
+  + [GNU Autoconf](https://www.gnu.org/software/autoconf/)
+  + [GNU Automake](https://www.gnu.org/software/automake/automake.html)
+  + [GNU Libtool](https://www.gnu.org/software/libtool/libtool.html)
+  + [GNU Autotools Kitabı](https://www.gnu.org/software/autoconf/manual)
+  + [Embedded Linux Conference 2016 - GNU Autotools Tutorial](https://elinux.org/images/4/43/Petazzoni.pdf)
+  + [Chapter 1: A brief introduction to the GNU Autotools](http://freesoftwaremagazine.com/articles/brief_introduction_to_gnu_autotools/)
+  + [Autotools - Fedora Developers](https://developer.fedoraproject.org/tech/languages/c/autotools.html)
+  + [C/C++ Project Built with GNU Build System (A.K.A. GNU Autotools): NetBeans vs. Eclipse CDT ](http://thegreyblog.blogspot.com/2013/09/cc-project-built-with-gnu-build-system.html)
+
+* Terminal Belgeleri:
+	+ `$ info automake`
+	+ `$ info autoconf`
+	+ `$ info libtool`
+
+
+## GNU Autotools Avantajları
+
+GNU Autotools bir nevi kendi derleme sistemini oluşturarak, bir yazılımın her hangi bir sistemde 2-3 komut ile çalışabilir hale gelmesini sağlayabilir. 
+
+## GNU Autotools Dezavantajları
+
+GNU Autotools yapımcıları tarafından kullanımı basit şeklinde ifade ediliyor ama kullanımı biraz uğraştırıcıdır. 
+
