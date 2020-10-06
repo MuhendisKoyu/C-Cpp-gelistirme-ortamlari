@@ -1,19 +1,19 @@
-# Giriş
+# Giriş {-}
 
-##  Bölüm içeriği
+##  Bölüm içeriği {-}
 
 Bu kısımda önsözde kısaca bahsettiğimiz problemlerin çıkış noktaları ile C/C++ için inşa sistemleri ve paket yöneticilerine değineceğiz.
 
-## IDE Kullanımı
+## IDE Kullanımı {-}
 
-## Editör + Derleyici Kullanımı
+## Editör + Derleyici Kullanımı {-}
 Bir çok yazılım dilinde olduğu gibi programlarımızı IDE'ler olmadan da geliştirme imkanımız bulunmaktadır. IDE'ler güçlü bir geliştirme imkanı sunmasına rağmen yeni başlayanlar için karmaşık bir hal alabilmektedir. Aynı zamanda kaynak tüketimi editörlere göre daha yüksektir. Bu bölümde C yazılımları geliştirebileceğiniz en temel seviyeli editör olan **Vim**'e değinip, programlarınızı nasıl manuel olarak derleyebileceğinizden bahsedeceğiz.
 
 Bu başlık altında VIM editörü hakkında anlatılacak bilgiler [MIT | The Missing Semester of Your CS Education TR](https://missing-semester-tr.github.io/)'den alınmıştır. VIM dahil diğer dersleri kaynak linkinden inceleyebilirsiniz.
 
-### VIM
+### VIM {-}
 
-#### Vim’in Felsefesi
+#### Vim’in Felsefesi {-}
 Programlama yaparken zamanınızın çoğunu yazmaya değil okumaya/düzenlemeye harcarsınız. Bu yüzden Vim farklı modlara sahip bir editördür: metin eklemek veya metin işlemek için farklı modlara sahiptir. Vim programlanabilir (Vimscript ve Python gibi diğer diller ile) ve Vim’in arayüzünün kendisi bir programlama dilidir. Vim, fare kullanımından kaçınır, çünkü çok yavaştır; Vim, çok fazla hareket gerektirdiği için ok tuşlarını kullanmaktan bile kaçınır.
 
 Sonuç olarak Vim, düşündüğünüz kadar hızlı olan bir editördür.
@@ -31,11 +31,11 @@ Klayve tuşlarının farklı çalışma modlarında farklı anlamları vardır. 
 
 Varsayılan ayarlarda Vim, o anki çalışma modunu sol altta gösterir. Başlangıç modu/varsayılan mod Normal moddur. Genellikle zamanının çoğunu Normal mod ve Insert mod arasında geçireceksin. Herhangi bir moddan Normal moda geri dönmek için `<ESC>` tuşuna basarak modları değiştirebilirsiniz. Normal moddan `i` ile Insert moduna, `R` ile Replace moduna, `v` ile Visual moduna, `V` ile Visual Line moduna, `<C-v>` ile Visual Block moduna, `:` ile Command-line moduna girebilirsin.
 
-### Temel Öğeler
-#### Metin Ekleme
+### Temel Öğeler {-}
+#### Metin Ekleme {-}
 Normal modda iken Insert moduna girmek için `i` tuşuna basın. Şimdi Vim, Normal moda geri dönmek için `<ESC>` tuşuna basana kadar diğer metin editörleri gibi çalışır. Bu bilgi ve yukarıda açıklanan temel bilgilerle birlikte, Vim’i kullanarak dosyaları düzenlemeye başlamak için ihtiyacınız olan tek şeydir (eğer bütün zamanınızı Insert Modundan düzenleme için harcıyorsanız çok da verimli değil).
 
-#### Command-line
+#### Command-line {-}
 Command moduna Normal modda iken `:` yazarak giriş yapabiliriz. `:` Tuşuna bastığınızda bilgisayarınızın imleci ekranın altındaki komut satırına atlayacaktır. Bu mod, dosyaları açma, kaydetme, kapatma ve [Vim’den çıkış](https://twitter.com/iamdevloper/status/435555976687923200) yapma gibi birçok işleve sahiptir.
 
 - `:q` çıkış (pencereyi kapatır)
@@ -49,7 +49,7 @@ Command moduna Normal modda iken `:` yazarak giriş yapabiliriz. `:` Tuşuna bas
 
 Dersin devamına ve konunun detayına [Missing Semester TR](https://missing-semester-tr.github.io/) kaynağından devam edebilirsiniz. Bunun yanı sıra eğer pratik yapmak istiyorsanız terminale `vimtutor` yazarak Vim ile birlikte gelen eğitimi tamamlayabilirsiniz.
 
-### VIM'de C Programı Geliştirme
+### VIM'de C Programı Geliştirme {-}
 
 `vim merhaba.c` ile merhaba isimli C dosyamızı açıp `i` harfi ile Insert moduna geçerek geleneksel uygulamamızı yazmaya başlayabiliriz.
 
@@ -109,7 +109,6 @@ Bu şekilde kodumuz uygun bir biçimde derlenecektir. `./us_alma` yazarak kodumu
 
 Vim ile temel seviyede C kodu yazılması ve derlenmesi bu şekilde özetlenebilir. Vim veya başka bir editör (VS Code, SublimeText vb.) kullanarak yazdığımız programları manuel olarak derlememiz gerekmektedir. Programlarımızın kapsamı genişledikçe bağlantılamamız gereken kütüphane sayısı artmakta ve bunu sürekli olarak yapmak zor bir hal almaktadır. Bu durumları hızlandırmak için ise makefile dediğimiz linkleme işlemlerini bizim için gerçekleştiren programların yazılmasına bu dokümanın ileriki bölümlerinde değineceğiz.
 
-## C/C++ için İnşa Sistemleri
+## C/C++ için İnşa Sistemleri {-}
 
-## C/C++ için Paket Yöneticileri
-
+## C/C++ için Paket Yöneticileri {-}

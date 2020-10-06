@@ -1,4 +1,4 @@
-# (PART) İnşa Sistemleri
+# (PART) İnşa Sistemleri {-}
 
 # Makefile
 
