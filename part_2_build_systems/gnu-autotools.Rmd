@@ -1,6 +1,6 @@
-# GNU Autotools
+# GNU Autotools {-}
 
-## Açıklama
+## Açıklama {-}
 
 _GNU İnşa Sistemi_ (**GNU Build System**) olarak da bilinen GNU Autotools, kaynak kod ile program kurulumlarını ve programların birçok _Unix benzeri_ (**Unix-like**) sisteme taşınabilir hale getirilmesine yardımcı olmak için tasarlanmış bir programlama araçları bütünüdür. Autotools, _GNU araç zincirinin_ (**GNU toolchain**) bir parçasıdır ve birçok özgür yazılım ve açık kaynak projelerinde yaygın olarak kullanılmaktadır. GNU İnşa Sistemi çoğunlukla Unix benzeri veya _POSIX benzeri_ (**POSIX-like**) işletim sistemlerinde, özellikle Linux'ta ve Gömülü Linux projelerinde kullanılır. Linux, MacOSX, FreeBSD, OpenBSD, NetBSD vb. işletim sistemlerinde kullanılabilir. Windows ortamında iyi bir şekilde çalışmamaktadır. GNU İnşa Sistemi kullanılarak birçok programlama dili (C, C++, Objective C, Fortran, Fortran77, Erlang) ile program paketleri oluşturabilirsiniz.
 
@@ -27,11 +27,11 @@ _GNU İnşa Sistemi_ (**GNU Build System**) olarak da bilinen GNU Autotools, kay
 
 GNU İnşa Sisteminin kullanıldığı projelerde şu dosyalar bulunmalıdır : "configure.ac" ve "Makefine.am". Genellikle bu projeleri yüklerken şu komut dizisi çalıştırılır : ./configure && make && make install.
 
-## GNU Autotools Kullanımı
+## Kullanım {-}
 
 Basit bir GNU Autotools projesi ile kullanımı göstermiş olacağız. Detaylı bilgiler ve ileri seviye kullanım için yazının sonunda paylaşılan belgelere bakabilirsiniz.
 
-Öncelikle GNU Autotools için iki aracın sisteminize yüklü olması gerekmektedir. Bunlar : autoconf automake. Eğer bunlar sisteminizde yoksa aşağıdaki yapı genellikle kuracaktır.
+Öncelikle GNU Autotools için iki aracın Linux sisteminize yüklü olması gerekmektedir. Bunlar : autoconf automake. Eğer bunlar sisteminizde yoksa genellikle aşağıdaki formatta kurabilirsiniz.
 
 `$ <package_manager dnf, apt-get> install autoconf automake`
 
@@ -39,7 +39,7 @@ Sisteminizde kullandığınız dil ile alakalı araçların bulunduğunu varsay�
 
 * Adımlara geçmeden önce ne yapacağımız ile ilgili açıklayıcı maddeleri verelim.
 
-  + Basit bir C++ projesi için bir tane kaynak dosyası oluşturacağız ve içine ekrana "Merhaba Dünya" çıktısını verecek kodu yazacağız. "NEWS, INSTALL, README, COPYING, AUTHORS, ChangeLog" dosyalarını oluşturacağız. GNU kodlama standartlarına göre bu dosyalarının da bu dizinde bulunması gereklidir. 
+  + Basit bir C++ projesi için bir tane kaynak dosyası oluşturacağız ve içine ekrana "Merhaba Dünya" çıktısını verecek kodu yazacağız. "NEWS, INSTALL, README, COPYING, AUTHORS, ChangeLog" dosyalarını oluşturacağız. GNU kodlama standartlarına göre bu dosyalarının da bu dizinde bulunması gereklidir. GNU bu konuda baya bir katıdır. Genelde bir proje yaparken bu gibi dosyaları geçin kaynak kod içerisine bile birşeyler yazmayı tercih etmeyebiliyor geliştiriciler. 
   + "Makefile.am" dosyası oluşturacağız. Bu dosyayı automake aracı kullanacak. Bu dosya proje içindeki klasör yapısını, derlenecek programlar için bilgileri, projemiz için oluşturacağımız paket içeriğinde olmasını istediğimiz başlık dosyalarını, man sayfalarını, veri (resim, video vb.) dosyalarını gibi bilgileri içerebilir. İşlem sonunda "Makefile.in" dosyası oluşur.
   + "configure.ac" dosyası oluşturacağız. Bu dosyayı autoconf aracı kullanacak. "configure.ac" yerine "configure.in" dosyası da olabilirdi. Lakin yeni paketler için artık önerilen "configure.ac" dosya ismidir. Bu dosyaya bu autoconf'un anlayabileceği yazı kuralında (Bash betik diline benzer) proje ile alakalı bilgileri yazacağız. Bu bilgiler derleyici bilgisi, bazı kütüphanelerin ve kütüphane yollarınının bulunması, bazı başlık dosyalarının varlığının kontrolü gibi ayarlamalar olabilir. Örneğin "AC_PROG_CC" isimli autoconf makrosunu bu dosyada kullandığımızda autoconf bu dosyayı okurken CC isimli değişkene C derleyicisini atayacaktır. "AC_PROG_CXX" de C++ için kullanılır. İşlem sonunda "configure" programı oluşur.
   
@@ -58,7 +58,7 @@ GNU Autotools araçları birbirinden bağımsız araçlar değildir ve 2 tane de
   + make && make install.
     - Çıktı
 
-### 1. C++ Projesi ve Gerekli Dosyalar {-}
+### A. C++ Projesi ve Gerekli Dosyalar {-}
 
 "test_app" klasörü altında "app.cpp" isimli bir C++ kaynak dosyası oluşturalım ve içine aşağıdaki kodu kopyalayalım.
 Dosya ismi : main.cpp
@@ -81,7 +81,7 @@ $ touch NEWS INSTALL README COPYING AUTHORS ChangeLog
 
 "configure.ac" dosyasına eğer AM_INIT_AUTOMAKE([foreign]) eklenirse, "foreign" den ötürü bu dosyaların şartı kalkacaktır. Lakin bunu es geçiyoruz.
 
-### 2. "Makefile.am" dosyası {-}
+### B. "Makefile.am" dosyası {-}
 
 Kaynak kodları genelde birden fazla dizinlerde tutarız Ancak her bir dizin için "Makefile" ile uğraşmamız gerekecektir. Buna yönelik çözüm olan "mantıksal bir dil" tarzında "Makefile.am" dosyaları oluşturuyoruz.
 
@@ -94,7 +94,7 @@ TestApp_SOURCES = app.cpp
 
 TestApp eğer bir kütüphaneye bağımlı ise örneğin "TestApp_LDADD = -lm" diyerek linker için bilgi ekleyebiliriz. "PROGRAMS" için belirtilen isim için "_SOURCES" ve "_LDADD" yanında "_LDFLAGS" ve "_DEPENDENCIES" tanımlamarı da vardır. Burada sadece bahsederek geçiyoruz.
 
-### 3. "configure.ac" dosyası {-}
+### C. "configure.ac" dosyası {-}
 
 "Makefile.am" dosyasında ne derleyiciyi ayarı vardı ne de kurulum ile alakalı adımlar. İşte bu dosyanın amacı da bu. Öncelikle ne yazacağımıza, sonra da açıklamalarına bakalım.
 
@@ -135,6 +135,10 @@ Bu arada programımızın çıktısını ./TestApp diyerek gözlemleyebilirsiniz
 $ ./configure CC=clang CXX=clang++ --prefix=$HOME/opt/test_app
 ```
 
+## Ayrıntılar {-}
+
+  ...
+
 * Belgeler
   
   + [Autoconf ve Automake Kullanımı](http://www.belgeler.org/howto/makefile-nasil-autoconf_automake.html)
@@ -156,12 +160,11 @@ $ ./configure CC=clang CXX=clang++ --prefix=$HOME/opt/test_app
 	+ `$ info autoconf`
 	+ `$ info libtool`
 
-
-## GNU Autotools Avantajları
+## Avantajlar {-}
 
 GNU Autotools bir nevi kendi derleme sistemini oluşturarak, bir yazılımın her hangi bir sistemde 2-3 komut ile çalışabilir hale gelmesini sağlayabilir. 
 
-## GNU Autotools Dezavantajları
+## Dezavantajlar {-}
 
 GNU Autotools yapımcıları tarafından kullanımı basit şeklinde ifade ediliyor ama kullanımı biraz uğraştırıcıdır. 
 

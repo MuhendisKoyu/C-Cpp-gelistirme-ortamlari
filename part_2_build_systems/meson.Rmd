@@ -1,6 +1,6 @@
-# Meson
+# Meson {-}
 
-## Meson Nedir
+## Açıklama {-}
 
 --- 
 favicon: images/favicon1.ico
@@ -13,8 +13,6 @@ cover-image: images/meson.png
 
 + Meson'un belirtilen bir diğer amacı, modern programlama araçları ve en iyi uygulamalar için birinci sınıf destek sağlamaktı. Bunlar, birim testi, kod kapsamı raporlaması, önceden derlenmiş başlıklar ve benzerleri gibi çeşitli özellikleri içerir. Bu özelliklerin tümü Meson kullanan herhangi bir projeye anında ulaşılabilir olmalıdır. Kullanıcının bu özellikleri alabilmesi için üçüncü taraf makroları araması veya kabuk komut dosyaları yazması gerekmez.Meson bunları kullanıcıların yerine yapar.
 
-
-### Özellikleri 
  
 **-->** Meson, MacOS,Windows ve diğer işletim sistemleri de dahil olmak üzere Unix benzeri işletim sistemlerinde yerel olarak çalışır.
 
@@ -28,7 +26,7 @@ cover-image: images/meson.png
 
 **-->**  Meson, Meson ve CMake alt projelerini destekler. Bir Meson derleme dosyası WrapDB hizmetine de başvurabilir.
 
-## Meson Kullanımı
+## Kullanım {-}
 
 Meson, kullanımı olabildiğince basit olacak şekilde tasarlanmıştır.
 Meson, Python 3'te uygulanmaktadır ve 3.5 veya daha yenisini gerektirir. İşletim sisteminiz bir paket yöneticisi sağlıyorsa, onunla birlikte yüklemelisiniz. Paket yöneticisi olmayan platformlar için, 
@@ -193,7 +191,12 @@ Bu beklenen çıktıyı üretir.
 Hello world!
 ```
 
-## Meson Avantajları
+## Ayrıntılar {-}
+
+...
+
+
+## Avantajlar {-}
 
 Meson kullanımının avantajları:
 
@@ -217,7 +220,7 @@ Ayrıca, Meson bu kullanım durumu için baştan tasarlandığından, diğer dil
  
  9-Pkg-config dosya üreticisi vardır.
  
-## Meson Dezavantajları
+## Dezavantajlar {-}
 
 Meson kullanımının dezavantajları:
 

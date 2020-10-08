@@ -1,18 +1,22 @@
-# Kbuild
+# Kbuild {-}
 
-## Kbuild Nedir
-
-Kbuild kullanımı avantajı dezavantajı...
-
-## Kbuild Kullanımı
+## Açıklama {-}
 
 Kbuild kullanımı avantajı dezavantajı...
 
-## Kbuild Avantajları
+## Kullanım {-}
 
 Kbuild kullanımı avantajı dezavantajı...
 
-## Kbuild Dezavantajları
+## Ayrıntılar {-}
+
+...
+
+## Avantajlar {-}
+
+Kbuild kullanımı avantajı dezavantajı...
+
+## Dezavantajlar {-}
 
 Kbuild kullanımı avantajı dezavantajı...
 

@@ -1,69 +1,79 @@
-# Cmake
+# Cmake {-}
 
-Herhangi bir programlama dili ile yazılan kodun çalıştırılabilir olması için derlenmesi gerekir.Derleme işlemi sırasında derleyiciye uygun parametrelerin eklenmesi, gerekli kütüphanelerin dahil edilmesi, birim testlerin çalıştırılması gibi işlemler yapılır. Tüm bu işlemler için IDE kullanılır ancak IDE ayarları birbirinden farklıdır ve bir IDE tüm işletim sistemlerinde yer almayabilir.
-C ve C++ bu işlemler için make adında bir araca sahiptir ancak bu araç sadece Linux/Unix tabanlı işletim sistemlerinde çalışır.
+## Açıklama {-}
 
-İşte bu durumda Cmake yardımcı oluyor. 
+Çoğu programlama dili ile yazılan kodun çalıştırılabilir olması için derlenmesi gerekir.Derleme işlemi sırasında derleyiciye uygun parametrelerin eklenmesi, gerekli kütüphanelerin dahil edilmesi, birim testlerin çalıştırılması gibi işlemler yapılır. Tüm bu işlemler için sadece IDE kullanılabildiği gibi IDE ile birlikte başka araçlarlar ile de yapılabilir. Ancak IDE programlarının ayarları birbirinden farklıdır (Eclipse, VS). Bir IDE tüm işletim sistemlerinde yer almayabilir (VS). Aynı IDE farklı işletim sistemlerinde farklı ayarlara sahip olabilir (Eclipse). Önceki bölümde görüldüğü üzere Makefile ile bu iş yapılaiblir ancak Makefile'ın gerektirdiği make sadece Linux/Unix tabanlı işletim sistemlerinde gayet iyi çalışmaktadır. Windows'da fazla bir kullanım söz konusu değildir (nmake aracı olsa da). Bu durumları görmezden gelsek bile proje büyüdüğünde Makefile ile uğraşmak zorlayıcı olabilmektedir. Öte yandan, bir makefile ile yönetilen projeyi bağımsız şekilde istenilen bir IDE ortamında açmak uğraştırıcı olmaktadır.
 
-CMake C++ program oluşturma sürecini işletim sisteminden ve derleyiciden bağımsız bir şekilde gerçekleştirmemize olanak sağlayan açık kaynak kodlu ve çapraz platformlu bir sistemdir.
+İşte bu gibi sorunlara Cmake yardımcı oluyor. CMake C/C++ program oluşturma sürecini işletim sisteminden ve derleyiciden bağımsız bir şekilde gerçekleştirmemize olanak sağlayan açık kaynak kodlu ve çapraz platformlu bir sistemdir. Sisteminizdeki derleyici ve IDE'ye göre projeyi kullanabilecek konfigürasyonları üretebilir. Ek olarak test etme ve paketleme yapmamızı da sağlar.
 
-## Cmake Kullanımı
+* Cmake Kullanan Bazı Projeler
+  + [OpenCV](https://github.com/emacs-mirror/emacs)
+  Bilgisayar görüsü alanında en popüler açık kaynak bir kütüphane.
+  + [KDE](https://github.com/KDE/plasma-desktop)
+  KDE'nin masaüstü programı
+  + [MySQL](https://github.com/gcc-mirror/gcc)
+  Dünyanın en bilinen açık kaynaklı veri tabanı programı
+  + [Boost](https://github.com/gcc-mirror/gcc)
+  C++ için standart birçok kütüphane içeren oldukça popüler kütüphaneler kümesi.
+  
+## Kullanım {-}
 
-### Windows'ta Kurulum
-
-Cmake.org sayfasından kurulum yapılabilir.
-
-Alternatif olarak;
+Öncelikle, "https://cmake.org/download" sayfasından işletim sisteminize göre kurulum yapılabilir. Alternatif olarak, ilgili ortamlar için tercih edilebilecek linkler:
 
 * https://chocolatey.org/packages/cmake
 * https://packages.msys2.org/base/mingw-w64-cmake
 
-### Linux'ta Kurulum
+Linux ortamında ise aşağıdaki formatta kurabilirsiniz.
 
-* Ubuntu için:
+` $ <package_manager dnf, apt-get> install cmake `
 
-```bash
-sudo apt update 
+Nasıl ki, make uygulaması için bir Makefile gerekliyse Cmake uygulaması içinde bir dosya gerekli, ismi de "CmakeLists.txt". Bu dosyanın içine, proje adı, çalıştırılabilir dosyalar, kütüphanelerin yönetimi (nasıl ekleneceği) gibi ayarlar yaparak aslında proje ile alakalı daha soyutsal bilgiler veririz. Sonra cmake programı zaten hiyerarşiyi, proje ismini, bağımlı olunan kütüphaneleri vb. bilgileri içeren dosyanın yardımıyla istediğimiz IDE için varsa yine istediğimiz derleyici için konfügurasyonlar oluşturacağız hatta ve hatta Makefile'ın kendinisini de bu yolla oluşturabileceğiz.
 
-sudo apt-get install cmake 
+Şimdi basit bir Cmake projesi yapalım. Öncelikle bir "app.cpp" oluşturalım içine "Merhaba Dünya" örneği kod yazalım.
+
+```Cpp
+#include <iostream>
+
+int main()
+{
+  std::cout << "Hello world cmake" << '\n';
+  return 0;
+}
+```
+
+"CMakeLists.txt" dosyasının oluşturulalım ve içine aşağıdaki yazıları yazalım.
 
 ```
-* Fedora için:
-
-``` sudo dnf install snapd ``` -> Snap kurulu değilse kurulur.
-
-``` sudo ln -s /var/lib/snapd/snap /snap ```
-
-``` sudo snap install cmake --classic ```
-
-### Projenin oluşturulması
-
-Geliştirilen ve geliştirilmiş bir projede Cmake ayarlarının yapılması için CMakeLists.txt dosyasının oluşturulması gerekir.
-Bu dosya içerisinde aşağıdaki gibi temel ayarlar yer alır.
-```bash
+project(TestApp)
 cmake_minimum_required(VERSION 3.16.3) 
-
-project(projeAdı)
-
-add_executable(proje proje.cpp) 
+add_executable(TestApp app.cpp)
+set(TestApp_VERSION_MAJOR 1)
+set(TestApp_VERSION_MINOR 0)
 ```
-* cmake_minimum_required(VERSION 3.16.3) -> Proje için gerekli olan Cmake sürümünü
-ifade eder.
 
-* add_executable -> Çalıştırılabilir dosyanın hangi dosyalarla oluşturulacağını ifade eder.
+* Bu dosya içerisinde aşağıdaki temel ayarların anlamına değinelim.
+  + project : Projenin adını belirttiğimiz yerdir. Eğer cmake kullanarak VS için proje dosyaları üretirsek "TestApp.sln" dosyası oluşacaktır.
+  + cmake_minimum_required : Proje için gerekli olan en düşük Cmake sürümününü belirtir. Cmake sürümleri arasında farklılıklar vardır. Cmake geliştikçe yeni özellikler kazanmaktadır.
+  + add_executable : Çalıştırılabilir dosyanın hangi dosyalarla oluşturulacağını ifade eder. Tabi büyük projelerde dosyaları el ile bu şekilde yazmıyoruz.
+  + set : Bir değişkene (sol taraf) bir değer atar (sağ taraf). Buradaki değişkenler Cmake tarafından kullanılacak global değişkenler olabildiği gibi, kendinize özgü de olabilir.
 
+Evet, bu kadar. Başka birşeye gerek yok. Şimdi elimizde Cmake ile desteklenmiş bir proje var. Nasıl kullanacağız? 
+
+## Ayrıntılar {-}
 
 * Dahil edilecek dosyaların aranacağı yolları eklemek için (include path):
-
-  ``` include_directories(include_dir) ```
+  ```
+  include_directories(include_dir)
+  ```
 
 * Kütüphane eklemek için:
+  
+  ```txt
+     add_library(Cfile STATIC FxParser) : statik kütüphane
+     add_library(Cfile SHARED FxParser) : paylaşılan kütüphane
+     add_library(Cfile MODULE FxParser) : modül kütüphane 
+  ```
 
-```bash 
-   add_library(Cfile STATIC FxParser) -> statik kütüphane
-   add_library(Cfile SHARED FxParser) -> paylaşılan kütüphane
-   add_library(Cfile MODULE FxParser) -> modül kütüphane 
-   ```
 * ``` Static ``` yalnızca derleme zamanında doğrudan gömülebilen kütüphanedir.
 * ``` Shared ```  derleme zamanında linklenebilen ve çalışma zamanında yüklenebilen kütüphanedir.
 * ``` Module ``` derleme zamanında linkleme olmaksızın, çalışma zamanında ihtiyaç hâlinde yüklenebilen kütüphanedir.
@@ -73,12 +83,14 @@ CMakeLists.txt dosyamıza çeşitli seçenekler ekleyip bunları kullanabiliriz.
 
 Seçenekler için syntax şu şekildedir:
 
-``` option(ayar_adı "ayarın açıklaması" varsayılan_durum[ON/OFF]) ```
+```
+option(ayar_adı "ayarın açıklaması" varsayılan_durum[ON/OFF])
+```
 
 ```bash
    option(BUILD_DOXYGEN "Insa dokumentasyonu" OFF)
    option(BUILD_TESTS "Insa testleri" OFF)
-   ```
+```
    
 * Alt Proje Dizini Oluşturma
 
@@ -106,12 +118,12 @@ CMake ile değişken atamak için set komutunu kullanmamız yeterlidir. Bu komut
   
 
 ```bash 
-   set(Cfile_VERSION_MAJOR 1) -> versiyon atama
+   set : versiyon atama
    set(Cfile_VERSION_MINOR 0) -> versiyon atama
    set(disable_derivative on) -> değişken oluşturma & değer atama
-   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin) -> global değişkene değer atama -çalışma dizini yolu gösteriyor-
-   
+   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin) -> global değişkene değer atama -çalışma dizini yolu gösteriyor.
 ```
+
 Tüm anlatılanları toplama açısından bir CMakeLists.txt örneği aşağıdadır.
 
 ```bash 
@@ -148,10 +160,10 @@ if(BUILD_DOXYGEN)
 
 * Derleyiciye Parametre Eklemek
 
-  ```bash 
-    set(CMAKE_CXX_FLAGS "Hello World" -> derleyicinin tek parametresi
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} Hello World") -> mevcut parametrelerin sonuna ekleme yapar.
-  ```
+```bash 
+  set(CMAKE_CXX_FLAGS "Hello World" -> derleyicinin tek parametresi
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} Hello World") -> mevcut parametrelerin sonuna ekleme yapar.
+```
 
 * Include Klasörü Eklemek
 
@@ -163,9 +175,9 @@ if(BUILD_DOXYGEN)
 
 * Kütüphaneleri Bağlamak
 
-  ```bash
-   target_link_libraries(Cfile ${Boost_LIBRARIES})
-  ```
+```bash
+ target_link_libraries(Cfile ${Boost_LIBRARIES})
+```
   
 * Örnek olması açısından Ubuntu terminal üzerinden Cmake kullanarak "Hello World" yazdıralım.
 
@@ -230,7 +242,7 @@ Scanning dependencies of target helloworld
 Hello World!
 ```
  
-## Cmake Avantajları
+## Avantajlar {-}
 
 * Verimlidir.
   + Uzun süreli kod yazma, düşük süreli inşa sistemi çözme.
@@ -246,10 +258,10 @@ Hello World!
 * Makefile dosyalarını Cmake yazar.
 * Organizasyonu sağlar.
 
-## Cmake Dezavantajları
+## Dezavantajlar {-}
 
 * Dili/Söz dizimi
-  + Cmake dili önceden kullandığınız dillerle karşılaştırılmamalıdır. Çünkü sınıf(class), eşleme(map) ve sanal bir fonksiyon ya da lambda içermez. Yeni başlayanlar için giriş argümanlarını çözümlemek ve bir fonksiyonun sonuç döndürmesini anlamak karmaşıktır. Sezgisel olduğu halde Cmake betik dilini öğrenmek gereklidir.
+  + Cmake dili önceden kullandığınız dillerle karşılaştırılmamalıdır. Çünkü sınıf(class), eşleme(map) ve sanal bir fonksiyon ya da lambda ifadeleri içermez. Yeni başlayanlar için giriş argümanlarını çözümlemek ve bir fonksiyonun sonuç döndürmesini anlamak karmaşıktır.
 
 * İş akışına etkisi
   + Cmake kullanırken projenin inşa konfigürasyonunu doğrudan IDE üzerinden güncelleştirilemez. CMakeLists.txt dosyasına eklenen ya da değiştirilen her target dosyası yazılmalı. Aksi halde IDE üzerinden yapılan güncellemeler ve değişiklikler Cmake çalıştırıldığında kaybolacaktır.

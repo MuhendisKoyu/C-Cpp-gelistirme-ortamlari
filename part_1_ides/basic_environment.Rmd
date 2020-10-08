@@ -1,14 +1,11 @@
-# (PART) IDE {-}
+# Basit Geliştirme Ortamı (Editör + Derleyici) {-}
 
-# Açıklama
-
-##  Bölüm içeriği {-}
+## Açıklama {-}
 
 Bu kısımda önsözde kısaca bahsettiğimiz problemlerin çıkış noktaları ile C/C++ için inşa sistemleri ve paket yöneticilerine değineceğiz.
 
-## IDE Kullanımı {-}
-
 ## Editör + Derleyici Kullanımı {-}
+
 Bir çok yazılım dilinde olduğu gibi programlarımızı IDE'ler olmadan da geliştirme imkanımız bulunmaktadır. IDE'ler güçlü bir geliştirme imkanı sunmasına rağmen yeni başlayanlar için karmaşık bir hal alabilmektedir. Aynı zamanda kaynak tüketimi editörlere göre daha yüksektir. Bu bölümde C yazılımları geliştirebileceğiniz en temel seviyeli editör olan **Vim**'e değinip, programlarınızı nasıl manuel olarak derleyebileceğinizden bahsedeceğiz.
 
 Bu başlık altında VIM editörü hakkında anlatılacak bilgiler [MIT | The Missing Semester of Your CS Education TR](https://missing-semester-tr.github.io/)'den alınmıştır. VIM dahil diğer dersleri kaynak linkinden inceleyebilirsiniz.
@@ -110,7 +107,3 @@ Math kütüphanesini dahil ettiğimiz kodumuzu belirtmiş olduğumuz şekilde ek
 Bu şekilde kodumuz uygun bir biçimde derlenecektir. `./us_alma` yazarak kodumuzu çalıştırabiliriz.
 
 Vim ile temel seviyede C kodu yazılması ve derlenmesi bu şekilde özetlenebilir. Vim veya başka bir editör (VS Code, SublimeText vb.) kullanarak yazdığımız programları manuel olarak derlememiz gerekmektedir. Programlarımızın kapsamı genişledikçe bağlantılamamız gereken kütüphane sayısı artmakta ve bunu sürekli olarak yapmak zor bir hal almaktadır. Bu durumları hızlandırmak için ise makefile dediğimiz linkleme işlemlerini bizim için gerçekleştiren programların yazılmasına bu dokümanın ileriki bölümlerinde değineceğiz.
-
-## C/C++ için İnşa Sistemleri {-}
-
-## C/C++ için Paket Yöneticileri {-}

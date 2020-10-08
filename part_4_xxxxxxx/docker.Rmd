@@ -1,8 +1,6 @@
-# (PART) XXXXX XXXXX {-}
+# Docker {-}
 
-# Docker
-
-## Açıklama
+## Açıklama {-}
 
 Conan kullanımı avantajı dezavantajı...
 
